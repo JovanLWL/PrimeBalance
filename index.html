@@ -777,7 +777,7 @@
             line-height: 1.4;
         }
 
-        /* ФУТЕР СО ОФИЦИЈАЛНИ SVG ИКОНИ ЗА ВИБЕР И ВАЦАП */
+        /* ФУТЕР СО ОФИЦИЈАЛНИ SVG ИКОНИ ЗА ВИБЕР И ВАЦАП СО ПРАВИЛНИ ЛИНКОВИ */
         footer {
             background-color: #1A0A0D;
             color: var(--white);
@@ -1449,14 +1449,15 @@
                 return;
             }
 
-            let orderDetails = `Нова нарачка од сајтот Prime Balance:\n\nИме: ${name}\nЕ-пошта: ${email}\nАдреса: ${address}, ${city}\nТелефон: ${phone}\n\nПроизводи:\n`;
+            let orderDetails = "Нова нарачка од сајтот Prime Balance:\n\n";
+            orderDetails += `Име: ${name}\nЕ-пошта: ${email}\nАдреса: ${address}, ${city}\nТелефон: ${phone}\n\nПроизводи:\n`;
             cart.forEach(item => {
                 orderDetails += `- ${item.name} (${item.qty} kg) - ${item.price * item.qty} ден\n`;
             });
             orderDetails += `\nВкупно за наплата: ${document.getElementById('cartTotalPrice').innerText}`;
 
-            // Користиме mailto за директно праќање кон primebalancelwl@gmail.com без потреба од API клучеви кои блокираат
-            const mailtoLink = `mailto:primebalancelwl@gmail.com?subject=Нова Нарачка од ${encodeURIComponent(name)}&body=${encodeURIComponent(orderDetails)}`;
+            // Директно отварање на маил клиент со форматирани податоци насочени кон primebalancelwl@gmail.com
+            const mailtoLink = `mailto:primebalancelwl@gmail.com?subject=Нова Нарачка - ${encodeURIComponent(name)}&body=${encodeURIComponent(orderDetails)}`;
             
             window.location.href = mailtoLink;
 
