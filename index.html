@@ -74,6 +74,46 @@
             gap: 15px;
         }
 
+        /* ИКОНА ЗА КОШНИЧКА ВО ХЕДЕРОТ */
+        .cart-icon-btn {
+            background-color: var(--white);
+            border: 2px solid var(--gold);
+            color: var(--bordeaux);
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
+            transition: var(--transition);
+            font-weight: 800;
+        }
+
+        .cart-icon-btn:hover {
+            background: linear-gradient(135deg, var(--bordeaux), var(--bordeaux-dark));
+            color: var(--white);
+            border-color: var(--bordeaux);
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            background-color: var(--bordeaux);
+            color: var(--white);
+            font-size: 11px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            border: 2px solid var(--white);
+        }
+
         /* ЈАЗИЧНИ КОЦКИЧКИ СО ЗЛАТНА РАМКА И БОРДО СЈАЈ */
         .lang-switch {
             display: flex;
@@ -104,42 +144,6 @@
             color: var(--white);
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(115, 0, 16, 0.35);
-        }
-
-        /* МЕНИ КОПЧЕ */
-        .menu-toggle {
-            background-color: var(--white);
-            border: 2px solid var(--gold);
-            border-radius: 8px;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 42px;
-            height: 42px;
-            gap: 5px;
-            transition: var(--transition);
-            box-shadow: 0 3px 10px rgba(212, 175, 55, 0.15);
-        }
-
-        .menu-toggle:hover {
-            background: linear-gradient(135deg, var(--bordeaux), var(--bordeaux-dark));
-            border-color: var(--bordeaux);
-            transform: translateY(-2px);
-        }
-
-        .menu-toggle:hover span {
-            background-color: var(--white);
-        }
-
-        .menu-toggle span {
-            display: block;
-            width: 20px;
-            height: 2px;
-            background-color: var(--bordeaux);
-            border-radius: 2px;
-            transition: var(--transition);
         }
 
         /* HERO СЕКЦИЈА */
@@ -333,7 +337,7 @@
             line-height: 1.5;
         }
 
-        /* ДЕЛ ЗА НАРАЧКА */
+        /* ДЕЛ ЗА ДОДАВАЊЕ ВО КОШНИЧКА */
         .order-box {
             display: flex;
             align-items: center;
@@ -364,19 +368,18 @@
         }
 
         .btn-order {
-            flex: 1.2;
+            flex: 1.4;
             background: linear-gradient(135deg, var(--bordeaux), var(--bordeaux-dark));
             color: var(--white);
             border: none;
-            padding: 10px 16px;
+            padding: 10px 14px;
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-weight: 700;
             font-size: 13px;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
             border-radius: 8px;
             cursor: pointer;
             transition: var(--transition);
-            text-decoration: none;
             text-align: center;
             box-shadow: 0 3px 12px rgba(115, 0, 16, 0.2);
         }
@@ -424,7 +427,6 @@
             border: 1.5px solid rgba(212, 175, 55, 0.3);
         }
 
-        /* СТИЛИЗАЦИЈА ЗА НАСЛОВОТ СО МАЛА СЛИКА ВО БЛОГОТ */
         .recipe-header-flex {
             display: flex;
             align-items: center;
@@ -484,7 +486,7 @@
             font-weight: 700;
         }
 
-        /* НУТРИТИВНА ТАБЕЛА / КАРТОН */
+        /* НУТРИТИВНА ТАБЕЛА И ТАБЕЛА ЗА ХРАНЕЊЕ */
         .nutrition-box {
             margin-top: 25px;
             background: var(--white);
@@ -533,6 +535,142 @@
             color: var(--bordeaux);
         }
 
+        /* ТАБЕЛА ЗА ХРАНЕЊЕ */
+        .feeding-table {
+            width: 100%;
+            margin-top: 15px;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        .feeding-table th, .feeding-table td {
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 8px 12px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .feeding-table th {
+            background-color: var(--bordeaux);
+            color: var(--white);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        .feeding-table tr:nth-child(even) {
+            background-color: var(--cream);
+        }
+
+        /* МОДАЛЕН ПРОЗОР ЗА КОШНИЧКА */
+        .cart-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        .cart-content {
+            background: var(--white);
+            width: 90%;
+            max-width: 550px;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            border: 2px solid var(--gold);
+            position: relative;
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .cart-header h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 28px;
+            color: var(--bordeaux);
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--bordeaux);
+            font-weight: bold;
+        }
+
+        .cart-items-list {
+            margin-bottom: 20px;
+            max-height: 250px;
+            overflow-y: auto;
+        }
+
+        .cart-item-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--bordeaux);
+            margin-bottom: 25px;
+            padding-top: 15px;
+            border-top: 2px solid var(--gold);
+        }
+
+        .btn-checkout {
+            width: 100%;
+            background: linear-gradient(135deg, var(--bordeaux), var(--bordeaux-dark));
+            color: var(--white);
+            border: none;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(115, 0, 16, 0.3);
+        }
+
+        .btn-checkout:hover {
+            opacity: 0.95;
+            transform: translateY(-2px);
+        }
+
+        .success-message {
+            display: none;
+            text-align: center;
+            color: var(--bordeaux);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-weight: 800;
+            padding: 20px 0;
+        }
+
         /* ФУТЕР */
         footer {
             background-color: #1A0A0D;
@@ -549,83 +687,46 @@
             font-weight: 600;
         }
 
-        /* МОБИЛНА РЕСПОНЗИВНОСТ (MOBILE RESPONSIVE) */
+        /* МОБИЛНА РЕСПОНЗИВНОСТ */
         @media (max-width: 768px) {
             header {
                 padding: 15px 20px;
                 flex-direction: column;
                 gap: 15px;
             }
-
-            .logo-container img {
-                height: 75px;
-            }
-
-            .brand-name-header {
-                font-size: 28px;
-                letter-spacing: 2px;
-            }
-
-            .hero {
-                flex-direction: column;
-                padding: 30px 20px;
-                text-align: center;
-                gap: 30px;
-            }
-
-            .hero-content h1 {
-                font-size: 36px;
-            }
-
-            .hero-image img {
-                max-width: 100%;
-            }
-
-            .about-section, .products-section, .blog-section {
-                padding: 40px 20px;
-            }
-
-            .section-title {
-                font-size: 30px;
-            }
-
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .recipe-header-flex {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-
-            .recipe-block h3 {
-                font-size: 22px;
-            }
+            .logo-container img { height: 75px; }
+            .brand-name-header { font-size: 28px; letter-spacing: 2px; }
+            .hero { flex-direction: column; padding: 30px 20px; text-align: center; gap: 30px; }
+            .hero-content h1 { font-size: 36px; }
+            .hero-image img { max-width: 100%; }
+            .about-section, .products-section, .blog-section { padding: 40px 20px; }
+            .section-title { font-size: 30px; }
+            .products-grid { grid-template-columns: 1fr; }
+            .recipe-header-flex { flex-direction: column; align-items: flex-start; gap: 10px; }
+            .recipe-block h3 { font-size: 22px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- СВЕТЛЕН ХЕДЕР СО НЕЖНА БОРДО НИЈАНСА -->
+    <!-- СВЕТЛЕН ХЕДЕР СО ИКОНА ЗА КОШНИЧКА -->
     <header>
         <a href="#" class="logo-container">
             <img src="logo.png" alt="Prime Balance Logo">
             <span class="brand-name-header">PRIME BALANCE</span>
         </a>
         <div class="header-right">
-            <!-- Јазични коцкички со златни рамки -->
+            <!-- Копче за отварање кошничка -->
+            <button class="cart-icon-btn" onclick="openCart()" title="Кошничка">
+                🛒
+                <span class="cart-badge" id="cartCount">0</span>
+            </button>
+            <!-- Јазични коцкички -->
             <div class="lang-switch">
                 <a href="#" class="lang-btn active" onclick="changeLang('mk'); return false;">MK</a>
                 <a href="#" class="lang-btn" onclick="changeLang('en'); return false;">EN</a>
                 <a href="#" class="lang-btn" onclick="changeLang('al'); return false;">AL</a>
             </div>
-            <!-- Мени копче -->
-            <button class="menu-toggle" aria-label="Мени">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
         </div>
     </header>
 
@@ -641,16 +742,16 @@
         </div>
     </section>
 
-    <!-- ЗА НАС СЕКЦИЈА -->
+    <!-- ЗА НАС СЕКЦИЈА (СО ТОЧНИТЕ ИНСТИРУИРАНИ ТЕКСТОВИ) -->
     <section class="about-section">
         <div class="about-container">
             <h2 data-mk="Нашата Приказна: Љубов сервирана во чинија" data-en="Our Story: Love Served in a Bowl" data-al="Historia Jonë: Dashuri e Shërbyer në Pjatë">Нашата Приказна: Љубов сервирана во чинија</h2>
-            <p data-mk="Секој сопственик на куче во срцето ја носи истата желба – нивниот најверен пријател да живее што е можно подолго, поздрав и посреќен живот. Токму од таа чиста љубов се роди и нашата мисија." data-en="Every dog owner carries the same wish in their heart – for their most loyal friend to live as long, healthy, and happy a life as possible. From this pure love, our mission was born." data-al="Çdo pronar qeni mban të njëjtën dëshirë në zemër – që miku i tij më besnik të jetojë një jetë sa më të gjatë, të shëndetshme dhe të lumtur. Pikërisht nga kjo dashuri e pastër lindi misioni ynë.">Секој сопственик на куче во срцето ја носи истата желба – нивниот најверен пријател да живее што е можно подолго, поздрав и посреќен живот. Токму од таа чиста љубов се роди и нашата мисија.</p>
-            <p><strong data-mk="Prime Balance" data-en="Prime Balance" data-al="Prime Balance">Prime Balance</strong> <span data-mk="започна како мала семејна и одгледувачка приказна. Водени од желбата да им го пружиме најдоброто на нашите сопствени миленици, усовршивме вистински избалансирана формула. Ова е избалансирана виталност. Ја изразуваме нашата љубов према милениците токму преку квалитетна, внимателно зготвена чинија." data-en="began as a small family and breeding story. Driven by the desire to provide the best for our own pets, we perfected a truly balanced formula. This is balanced vitality. We express our love for pets through a quality, carefully cooked bowl." data-al="filloi si një histori e vogël familjare dhe e mbarështimit. Të udhëhequr nga dëshira për t'u dhënë më të mirën kafshëve tona shtëpiake, ne përsosëm një formulë vërtet të ekuilibruar. Kjo është vitalitet i ekuilibruar. Dashurinë tonë për kafshët shtëpiake e shprehim përmes një pjate cilësore dhe të gatuar me kujdes.">започна како мала семејна и одгледувачка приказна. Водени од желбата да им го пружиме најдоброто на нашите сопствени миленици, усовршивме вистински избалансирана формула. Ова е избалансирана виталност. Ја изразуваме нашата љубов према милениците токму преку квалитетна, внимателно зготвена чинија.</span></p>
+            <p data-mk="Секој сопственик на куче во срцето ја носи истата желба – нивниот најверен пријател да живее што е можно подолго, да има поздрав и посреќен живот. Токму од таа чиста љубов се роди и нашата мисија." data-en="Every dog owner carries the same wish in their heart – for their most loyal friend to live as long as possible, to have a healthier and happier life. From this pure love, our mission was born." data-al="Çdo pronar qeni mban të njëjtën dëshirë në zemër – që miku i tij më besnik të jetojë sa më gjatë të jetë e mundur, të ketë një jetë më të shëndetshme dhe më të lumtur. Pikërisht nga kjo dashuri e pastër lindi misioni ynë.">Секој сопственик на куче во срцето ја носи истата желба – нивниот најверен пријател да живее што е можно подолго, да има поздрав и посреќен живот. Токму од таа чиста љубов се роди и нашата мисија.</p>
+            <p><strong data-mk="Prime Balance" data-en="Prime Balance" data-al="Prime Balance">Prime Balance</strong> <span data-mk="започна како мала семејна и одгледувачка приказна. Водени од желбата да им го пружиме најдоброто на нашите сопствени миленици, усовршивме вистински избалансирана формула. Внимателно зготвени оброци кои гарантираат силен имунитет, совршена дигестија и беспрекорно влакно. Ја изразуваме нашата љубов према милениците токму преку квалитетна чинија." data-en="began as a small family and breeding story. Driven by the desire to provide the best for our own pets, we perfected a truly balanced formula. Carefully cooked meals that guarantee strong immunity, perfect digestion, and a flawless coat. We express our love for pets through a quality bowl." data-al="filloi si një histori e vogël familjare dhe e mbarështimit. Të udhëhequr nga dëshira për t'u dhënë më të mirën kafshëve tona shtëpiake, ne përsosëm një formulë vërtet të ekuilibruar. Vakte të gatuara me kujdes që garantojnë imunitet të fortë, tretje të përsosur dhe gëzof të patëmetë. Dashurinë tonë për kafshët shtëpiake e shprehim përmes një pjate cilësore.">започна како мала семејна и одгледувачка приказна. Водени од желбата да им го пружиме најдоброто на нашите сопствени миленици, усовршивме вистински избалансирана формула. Внимателно зготвени оброци кои гарантираат силен имунитет, совршена дигестија и беспрекорно влакно. Ја изразуваме нашата љубов према милениците токму преку квалитетна чинија.</span></p>
         </div>
     </section>
 
-    <!-- ПРОИЗВОДИ (6-ТЕ МЕНИЈА) -->
+    <!-- ПРОИЗВОДИ (6-ТЕ МЕНИЈА СО ДОДАДИ ВО КОШНИЧКА) -->
     <section class="products-section" id="products">
         <h2 class="section-title" data-mk="Нашите Премиум Менија" data-en="Our Premium Menus" data-al="Menutë Tona Premium">Нашите Премиум Менија</h2>
         <p class="section-subtitle" data-mk="Изберете го идеалниот оброк прилагоден на потребите на вашиот миленик" data-en="Choose the ideal meal tailored to your pet's needs" data-al="Zgjidhni vaktin ideal të përshtatur për nevojat e kafshës suaj">Изберете го идеалниот оброк прилагоден на потребите на вашиот миленик</p>
@@ -667,12 +768,12 @@
                     <h3 data-mk="Prime Signature" data-en="Prime Signature" data-al="Prime Signature">Prime Signature</h3>
                     <p data-mk="Нашиот докажан, мулти-протеински рецепт кој нуди врвна виталност и силен имунитет. Совршен баланс за севкупно здравје и енергија." data-en="Our proven, multi-protein recipe offering top vitality and strong immunity. Perfect balance for overall health and energy." data-al="Receta jonë e provuar me shumë proteina që ofron vitalitet të lartë dhe imunitet të fortë. Balancë e përsosur për shëndetin dhe energjinë e përgjithshme.">Нашиот докажан, мулти-протеински рецепт кој нуди врвна виталност и силен имунитет. Совршен баланс за севкупно здравје и енергија.</p>
                     <div class="order-box">
-                        <select class="quantity-select">
-                            <option value="500g">500g</option>
-                            <option value="1kg" selected>1 kg</option>
-                            <option value="3kg">3 kg</option>
+                        <select class="quantity-select" id="qty-sig">
+                            <option value="500g" data-price="350">500g (350 ден)</option>
+                            <option value="1kg" data-price="650" selected>1 kg (650 ден)</option>
+                            <option value="3kg" data-price="1850">3 kg (1850 ден)</option>
                         </select>
-                        <a href="mailto:tvoj@email.com?subject=Нарачка%20за%20Prime%20Signature" class="btn-order" data-mk="Нарачај" data-en="Order" data-al="Porosis">Нарачај</a>
+                        <button class="btn-order" onclick="addToCart('Prime Signature', 'qty-sig')" data-mk="Додади во кошничка" data-en="Add to Cart" data-al="Shto në Shportë">Додади во кошничка</button>
                     </div>
                 </div>
             </div>
@@ -688,12 +789,12 @@
                     <h3 data-mk="Prime Beef Edition" data-en="Prime Beef Edition" data-al="Prime Beef Edition">Prime Beef Edition</h3>
                     <p data-mk="Моќен оброк базиран на чисто јунешко месо, дизајниран за градење цврста мускулна маса и долготрајна издржливост кај активни кучиња." data-en="A powerful meal based on pure beef, designed for building solid muscle mass and long-lasting endurance in active dogs." data-al="Një vakt i fuqishëm i bazuar në mish të pastër viçi, i krijuar për të ndërtuar masë të fortë muskulore dhe qëndrueshmëri afatgjatë te qentë aktivë.">Моќен оброк базиран на чисто јунешко месо, дизајниран за градење цврста мускулна маса и долготрајна издржливост кај активни кучиња.</p>
                     <div class="order-box">
-                        <select class="quantity-select">
-                            <option value="500g">500g</option>
-                            <option value="1kg" selected>1 kg</option>
-                            <option value="3kg">3 kg</option>
+                        <select class="quantity-select" id="qty-beef">
+                            <option value="500g" data-price="380">500g (380 ден)</option>
+                            <option value="1kg" data-price="700" selected>1 kg (700 ден)</option>
+                            <option value="3kg" data-price="2000">3 kg (2000 ден)</option>
                         </select>
-                        <a href="mailto:tvoj@email.com?subject=Нарачка%20за%20Prime%20Beef%20Edition" class="btn-order" data-mk="Нарачај" data-en="Order" data-al="Porosis">Нарачај</a>
+                        <button class="btn-order" onclick="addToCart('Prime Beef Edition', 'qty-beef')" data-mk="Додади во кошничка" data-en="Add to Cart" data-al="Shto në Shportë">Додади во кошничка</button>
                     </div>
                 </div>
             </div>
@@ -709,12 +810,12 @@
                     <h3 data-mk="Prime Salmon Edition" data-en="Prime Salmon Edition" data-al="Prime Salmon Edition">Prime Salmon Edition</h3>
                     <p data-mk="Богата порција свеж лосос која изобилува со Омега-3 масни киселини. Создадена специјално за беспрекорно сјајно крзно и здрава кожа." data-en="A rich portion of fresh salmon abundant in Omega-3 fatty acids. Created specifically for a flawlessly shiny coat and healthy skin." data-al="Një pjesë e pasur me salmon të freskët që abson me acide yndyrore Omega-3. Krijuar posaçërisht për një gëzof të ndritshëm dhe lëkurë të shëndetshme.">Богата порција свеж лосос која изобилува со Омега-3 масни киселини. Создадена специјално за беспрекорно сјајно крзно и здрава кожа.</p>
                     <div class="order-box">
-                        <select class="quantity-select">
-                            <option value="500g">500g</option>
-                            <option value="1kg" selected>1 kg</option>
-                            <option value="3kg">3 kg</option>
+                        <select class="quantity-select" id="qty-sal">
+                            <option value="500g" data-price="420">500g (420 ден)</option>
+                            <option value="1kg" data-price="780" selected>1 kg (780 ден)</option>
+                            <option value="3kg" data-price="2250">3 kg (2250 ден)</option>
                         </select>
-                        <a href="mailto:tvoj@email.com?subject=Нарачка%20за%20Prime%20Salmon%20Edition" class="btn-order" data-mk="Нарачај" data-en="Order" data-al="Porosis">Нарачај</a>
+                        <button class="btn-order" onclick="addToCart('Prime Salmon Edition', 'qty-sal')" data-mk="Додади во кошничка" data-en="Add to Cart" data-al="Shto në Shportë">Додади во кошничка</button>
                     </div>
                 </div>
             </div>
@@ -730,12 +831,12 @@
                     <h3 data-mk="Prime Chicken Edition" data-en="Prime Chicken Edition" data-al="Prime Chicken Edition">Prime Chicken Edition</h3>
                     <p data-mk="Лесен и лесно сварлив оброк со врвно пилешко месо, исклучително нежен за стомакот. Обезбедува чист протеин за секојдневна енергија." data-en="A light and easily digestible meal with premium chicken meat, exceptionally gentle on the stomach. Provides clean protein for daily energy." data-al="Një vakt i lehtë dhe lehtësisht i tretshëm me mish pule premium, jashtëzakonisht i butë për stomakun. Siguron proteina të pastra për energji ditore.">Лесен и лесно сварлив оброк со врвно пилешко месо, исклучително нежен за стомакот. Обезбедува чист протеин за секојдневна енергија.</p>
                     <div class="order-box">
-                        <select class="quantity-select">
-                            <option value="500g">500g</option>
-                            <option value="1kg" selected>1 kg</option>
-                            <option value="3kg">3 kg</option>
+                        <select class="quantity-select" id="qty-chk">
+                            <option value="500g" data-price="320">500g (320 ден)</option>
+                            <option value="1kg" data-price="600" selected>1 kg (600 ден)</option>
+                            <option value="3kg" data-price="1700">3 kg (1700 ден)</option>
                         </select>
-                        <a href="mailto:tvoj@email.com?subject=Нарачка%20за%20Prime%20Chicken%20Edition" class="btn-order" data-mk="Нарачај" data-en="Order" data-al="Porosis">Нарачај</a>
+                        <button class="btn-order" onclick="addToCart('Prime Chicken Edition', 'qty-chk')" data-mk="Додади во кошничка" data-en="Add to Cart" data-al="Shto në Shportë">Додади во кошничка</button>
                     </div>
                 </div>
             </div>
@@ -751,12 +852,12 @@
                     <h3 data-mk="Prime Pork Edition" data-en="Prime Pork Edition" data-al="Prime Pork Edition">Prime Pork Edition</h3>
                     <p data-mk="Исклучително вкусен оброк од посно свинско месо, богат со цинк и Б-витамини. Совршено решение за пребирливи кучиња кое ја штити кожата." data-en="An exceptionally tasty meal of lean pork, rich in zinc and B-vitamins. The perfect solution for picky dogs that protects the skin." data-al="Një vakt jashtëzakonisht i shijshëm me mish derri të dobët, i pasur me zink dhe vitamina B. Zgjidhja e përsosur për qentë e zgjedhur që mbron lëkurën.">Исклучително вкусен оброк од посно свинско месо, богат со цинк и Б-витамини. Совршено решение за пребирливи кучиња кое ја штити кожата.</p>
                     <div class="order-box">
-                        <select class="quantity-select">
-                            <option value="500g">500g</option>
-                            <option value="1kg" selected>1 kg</option>
-                            <option value="3kg">3 kg</option>
+                        <select class="quantity-select" id="qty-prk">
+                            <option value="500g" data-price="350">500g (350 ден)</option>
+                            <option value="1kg" data-price="650" selected>1 kg (650 ден)</option>
+                            <option value="3kg" data-price="1850">3 kg (1850 ден)</option>
                         </select>
-                        <a href="mailto:tvoj@email.com?subject=Нарачка%20за%20Prime%20Pork%20Edition" class="btn-order" data-mk="Нарачај" data-en="Order" data-al="Porosis">Нарачај</a>
+                        <button class="btn-order" onclick="addToCart('Prime Pork Edition', 'qty-prk')" data-mk="Додади во кошничка" data-en="Add to Cart" data-al="Shto në Shportë">Додади во кошничка</button>
                     </div>
                 </div>
             </div>
@@ -772,19 +873,19 @@
                     <h3 data-mk="Snow-White Coat (Специјална едиција)" data-en="Snow-White Coat (Special Edition)" data-al="Snow-White Coat (Edicion Special)">Snow-White Coat (Специјална едиција)</h3>
                     <p data-mk="Формула со мисиркино месо и бела риба која природно ги елиминира црвените дамки околу очите. Вашиот сојузник за совршено бело влакно." data-en="Formula with turkey and white fish that naturally eliminates tear stains around the eyes. Your ally for a perfectly white coat." data-al="Formulë me mish gjeldeti dhe peshk të bardhë që eliminon në mënyrë natyrale njollat ​​e lotëve rreth syve. Aleati juaj për një qime krejtësisht të bardhë.">Формула со мисиркино месо и бела риба која природно ги елиминира црвените дамки околу очите. Вашиот сојузник за совршено бело влакно.</p>
                     <div class="order-box">
-                        <select class="quantity-select">
-                            <option value="500g">500g</option>
-                            <option value="1kg" selected>1 kg</option>
-                            <option value="3kg">3 kg</option>
+                        <select class="quantity-select" id="qty-snw">
+                            <option value="500g" data-price="450">500g (450 ден)</option>
+                            <option value="1kg" data-price="850" selected>1 kg (850 ден)</option>
+                            <option value="3kg" data-price="2450">3 kg (2450 ден)</option>
                         </select>
-                        <a href="mailto:tvoj@email.com?subject=Нарачка%20за%20Snow-White%20Coat" class="btn-order" data-mk="Нарачај" data-en="Order" data-al="Porosis">Нарачај</a>
+                        <button class="btn-order" onclick="addToCart('Snow-White Coat', 'qty-snw')" data-mk="Додади во кошничка" data-en="Add to Cart" data-al="Shto në Shportë">Додади во кошничка</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- БЛОГ СЕКЦИЈА СО ДЕТАЛНИ РЕЦЕПТИ, СОСТОЈКИ И МАЛИ СЛИКИ -->
+    <!-- БЛОГ СЕКЦИЈА СО ТАБЕЛИ ЗА ХРАНЕЊЕ И НУТРИТИВНИ ВРЕДНОСТИ -->
     <section class="blog-section" id="blog-content">
         <div class="blog-container">
             <h2 data-mk="Тајните на нашите рецепти: Здравје во секоја чинија" data-en="The Secrets of Our Recipes: Health in Every Bowl" data-al="Sekretet e Recetave Tona: Shëndet në Çdo Pjatë">Тајните на нашите рецепти: Здравје во секоја чинија</h2>
@@ -820,6 +921,20 @@
                         <div class="nutri-item"><span class="nutri-label" data-mk="Јаглехидрати" data-en="Carbs" data-al="Karbohidrate">Јаглехидрати</span><span class="nutri-value">3.4 g</span></div>
                         <div class="nutri-item"><span class="nutri-label" data-mk="Влакна" data-en="Fiber" data-al="Fijet">Влакна</span><span class="nutri-value">1.1 g</span></div>
                     </div>
+
+                    <!-- Табела за хранење -->
+                    <div class="nutrition-title" style="margin-top: 20px;" data-mk="Табела за хранење (Дневна доза)" data-en="Feeding Guide (Daily Dose)" data-al="Udhëzues Ushqyerjeje (Dozë Ditore)">Табела за хранење (Дневна доза)</div>
+                    <table class="feeding-table">
+                        <tr>
+                            <th data-mk="Тежина на куче" data-en="Dog Weight" data-al="Pesha e Qenit">Тежина на куче</th>
+                            <th data-mk="Возрасни (Adult)" data-en="Adult Dogs" data-al="Qen të rritur">Возрасни (Adult)</th>
+                            <th data-mk="Активни / Јуниор" data-en="Active / Junior" data-al="Aktivë / Junior">Активни / Јуниор</th>
+                        </tr>
+                        <tr><td>2 - 5 kg</td><td>80g - 160g</td><td>100g - 200g</td></tr>
+                        <tr><td>5 - 10 kg</td><td>160g - 300g</td><td>200g - 380g</td></tr>
+                        <tr><td>10 - 25 kg</td><td>300g - 600g</td><td>380g - 750g</td></tr>
+                        <tr><td>25 - 40 kg+</td><td>600g - 900g+</td><td>750g - 1100g+</td></tr>
+                    </table>
                 </div>
             </div>
 
@@ -833,7 +948,7 @@
                 <ul class="ingredient-list">
                     <li><strong data-mk="Јунешко месо:" data-en="Beef meat:" data-al="Mish viçi:">Јунешко месо:</strong> <span data-mk="Чист, висококвалитетен протеин кој гради цврста мускулна маса и обезбедува долготрајна енергија." data-en="Pure, high-quality protein that builds solid muscle mass and provides long-lasting energy." data-al="Proteinë e pastër dhe e cilësisë së lartë që ndërton masë të fortë muskulore dhe siguron energji afatgjatë.">Чист, висококвалитетен протеин кој гради цврста мускулна маса и обезбедува долготрајна енергија.</span></li>
                     <li><strong data-mk="Свеж лосос:" data-en="Fresh salmon:" data-al="Salmon i freskët:">Свеж лосос:</strong> <span data-mk="Природен извор на Омега-3 масни киселини за беспрекорен сјај на крзното и здрава кожа." data-en="Natural source of Omega-3 fatty acids for flawless coat shine and healthy skin." data-al="Burim natyror i acideve yndyrore Omega-3 për shkëlqim të përsosur të gëzofit dhe lëkurë të shëndetshme.">Природен извор на Омега-3 масни киселини за беспрекорен сјај на крзното и здрава кожа.</span></li>
-                    <li><strong data-mk="Пилешко месо:" data-en="Chicken meat:" data-al="Mish pule:">Пилешко месо:</strong> <span data-mk="Лесно сварлив протеин кој ја поддржува севкупната виталност и одржува силен скелет." data-en="Easily digestible protein that supports overall vitality and maintains a strong skeleton." data-al="Proteinë lehtësisht e tretshme që mbështet vitalitetit e përgjithshëm dhe ruan një skelet të fortë.">Лесно сварлив протеин кој ја поддржува севкупната виталност и одржува силен скелет.</span></li>
+                    <li><strong data-mk="Пилешко месо:" data-en="Chicken meat:" data-al="Mish pule:">Пилешко месо:</strong> <span data-mk="Лесно сварлив протеин кој ја поддржува севкупната виталност и одржува силен скелет." data-en="Easily digestible protein that supports overall vitality and maintains a strong skeleton." data-al="Proteinë lehtësisht e tretshme që mbështet vitalitetin e përgjithshëm dhe ruan një skelet të fortë.">Лесно сварлив протеин кој ја поддржува севкупната виталност и одржува силен скелет.</span></li>
                     <li><strong data-mk="Варен компир:" data-en="Boiled potato:" data-al="Patate e zier:">Варен компир:</strong> <span data-mk="Внимателно дозиран извор на јаглехидрати за лесно варење и стабилна енергија." data-en="Carefully dosed source of carbohydrates for easy digestion and stable energy." data-al="Burim i dozuar me kujdes i karbohidrateve për tretje të lehtë dhe energji të qëndrueshme.">Внимателно дозиран извор на јаглехидрати за лесно варење и стабилна енергија.</span></li>
                     <li><strong data-mk="Свеж зеленчук (Морков, Тиквица):" data-en="Fresh vegetables (Carrot, Zucchini):" data-al="Perime të freskëta (Karrota, Kungulleshë):">Свеж зеленчук (Морков, Тиквица):</strong> <span data-mk="Богатство од природни растителни влакна за здрав стомак и дигестија." data-en="Wealth of natural plant fibers for a healthy stomach and digestion." data-al="Pasuri e fibrave bimore natyrore për një stomak dhe tretje të shëndetshme.">Богатство од природни растителни влакна за здрав стомак и дигестија.</span></li>
                     <li><strong data-mk="Јунешки џигер:" data-en="Beef liver:" data-al="Mëlçi viçi:">Јунешки џигер:</strong> <span data-mk="Мултивитаминска бомба есенцијална за Витамин А и силен имунитет." data-en="Multivitamin bomb essential for Vitamin A and strong immunity." data-al="Bombë multivitaminesh thelbësore për Vitaminën A dhe imunitet të fortë.">Мултивитаминска бомба есенцијална за Витамин А и силен имунитет.</span></li>
@@ -852,6 +967,20 @@
                         <div class="nutri-item"><span class="nutri-label" data-mk="Јаглехидрати" data-en="Carbs" data-al="Karbohidrate">Јаглехидрати</span><span class="nutri-value">3.0 g</span></div>
                         <div class="nutri-item"><span class="nutri-label" data-mk="Влакна" data-en="Fiber" data-al="Fijet">Влакна</span><span class="nutri-value">0.9 g</span></div>
                     </div>
+
+                    <!-- Табела за хранење -->
+                    <div class="nutrition-title" style="margin-top: 20px;" data-mk="Табела за хранење (Дневна доза)" data-en="Feeding Guide (Daily Dose)" data-al="Udhëzues Ushqyerjeje (Dozë Ditore)">Табела за хранење (Дневна доза)</div>
+                    <table class="feeding-table">
+                        <tr>
+                            <th data-mk="Тежина на куче" data-en="Dog Weight" data-al="Pesha e Qenit">Тежина на куче</th>
+                            <th data-mk="Возрасни (Adult)" data-en="Adult Dogs" data-al="Qen të rritur">Возрасни (Adult)</th>
+                            <th data-mk="Активни / Јуниор" data-en="Active / Junior" data-al="Aktivë / Junior">Активни / Јуниор</th>
+                        </tr>
+                        <tr><td>2 - 5 kg</td><td>75g - 150g</td><td>95g - 190g</td></tr>
+                        <tr><td>5 - 10 kg</td><td>150g - 280g</td><td>190g - 350g</td></tr>
+                        <tr><td>10 - 25 kg</td><td>280g - 550g</td><td>350g - 680g</td></tr>
+                        <tr><td>25 - 40 kg+</td><td>550g - 850g+</td><td>680g - 1050g+</td></tr>
+                    </table>
                 </div>
             </div>
 
@@ -879,26 +1008,147 @@
                         <div class="nutri-item"><span class="nutri-label" data-mk="Јаглехидрати" data-en="Carbs" data-al="Karbohidrate">Јаглехидрати</span><span class="nutri-value">3.2 g</span></div>
                         <div class="nutri-item"><span class="nutri-label" data-mk="Влакна" data-en="Fiber" data-al="Fijet">Влакна</span><span class="nutri-value">1.0 g</span></div>
                     </div>
+
+                    <!-- Табела за хранење -->
+                    <div class="nutrition-title" style="margin-top: 20px;" data-mk="Табела за хранење (Дневна доза)" data-en="Feeding Guide (Daily Dose)" data-al="Udhëzues Ushqyerjeje (Dozë Ditore)">Табела за хранење (Дневна доза)</div>
+                    <table class="feeding-table">
+                        <tr>
+                            <th data-mk="Тежина на куче" data-en="Dog Weight" data-al="Pesha e Qenit">Тежина на куче</th>
+                            <th data-mk="Возрасни (Adult)" data-en="Adult Dogs" data-al="Qen të rritur">Возрасни (Adult)</th>
+                            <th data-mk="Активни / Јуниор" data-en="Active / Junior" data-al="Aktivë / Junior">Активни / Јуниор</th>
+                        </tr>
+                        <tr><td>2 - 5 kg</td><td>80g - 155g</td><td>100g - 195g</td></tr>
+                        <tr><td>5 - 10 kg</td><td>155g - 290g</td><td>195g - 360g</td></tr>
+                        <tr><td>10 - 25 kg</td><td>290g - 580g</td><td>360g - 700g</td></tr>
+                        <tr><td>25 - 40 kg+</td><td>580g - 880g+</td><td>700g - 1080g+</td></tr>
+                    </table>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- МОДАЛЕН ПРОЗОР ЗА КОШНИЧКА (SHOPPING CART POPUP) -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3 data-mk="Вашата Кошничка" data-en="Your Shopping Cart" data-al="Shporta Juaj">Вашата Кошничка</h3>
+                <button class="close-cart" onclick="closeCart()">&times;</button>
+            </div>
+            <div class="cart-items-list" id="cartItemsList">
+                <p style="text-align: center; color: #777; font-weight: 600;" data-mk="Кошничката е празна" data-en="Your cart is empty" data-al="Shporta është bosh">Кошничката е празна</p>
+            </div>
+            <div class="cart-total" id="cartTotalSection" style="display: none;">
+                <span data-mk="Вкупно:" data-en="Total:" data-al="Totali:">Вкупно:</span>
+                <span id="cartTotalPrice">0 ден</span>
+            </div>
+            <div id="checkoutActionContainer">
+                <button class="btn-checkout" id="checkoutBtn" onclick="checkoutOrder()" style="display: none;" data-mk="Нарачај" data-en="Checkout" data-al="Porosis">Нарачај</button>
+            </div>
+            <div class="success-message" id="successMessage" data-mk="Вашата нарачка е примена!" data-en="Your order has been received!" data-al="Porosia juaj u pranua!">
+                Вашата нарачка е примена!
+            </div>
+        </div>
+    </div>
 
     <!-- ЛУКСУЗЕН ФУТЕР -->
     <footer>
         <p>&copy; 2026 Prime Balance. <span data-mk="Сите права се задржани." data-en="All rights reserved." data-al="Të gjitha të drejtat e rezervuara.">Сите права се задржани.</span></p>
     </footer>
 
-    <!-- ЈАСАВРИПТ ЗА ПРЕВОД НА СТРАНАТА -->
+    <!-- JAVASCRIPT ЗА КОШНИЧКА, ШОП И ПРЕВОД -->
     <script>
+        let cart = [];
+
+        function addToCart(productName, selectId) {
+            const selectElem = document.getElementById(selectId);
+            const selectedOption = selectElem.options[selectElem.selectedIndex];
+            const size = selectedOption.value;
+            const price = parseInt(selectedOption.getAttribute('data-price'));
+
+            // Проверка дали производот со таа големина веќе постои во кошничката
+            const existingIndex = cart.findIndex(item => item.name === productName && item.size === size);
+            if (existingIndex > -1) {
+                cart[existingIndex].qty += 1;
+            } else {
+                cart.push({ name: productName, size: size, price: price, qty: 1 });
+            }
+
+            updateCartUI();
+            openCart();
+        }
+
+        function updateCartUI() {
+            const cartCount = document.getElementById('cartCount');
+            const cartItemsList = document.getElementById('cartItemsList');
+            const cartTotalSection = document.getElementById('cartTotalSection');
+            const cartTotalPrice = document.getElementById('cartTotalPrice');
+            const checkoutBtn = document.getElementById('checkoutBtn');
+
+            let totalCount = 0;
+            let totalPrice = 0;
+
+            if (cart.length === 0) {
+                cartItemsList.innerHTML = '<p style="text-align: center; color: #777; font-weight: 600;">Кошничката е празна</p>';
+                cartTotalSection.style.display = 'none';
+                checkoutBtn.style.display = 'none';
+            } else {
+                let html = '';
+                cart.forEach((item, index) => {
+                    totalCount += item.qty;
+                    totalPrice += item.price * item.qty;
+                    html += `
+                        <div class="cart-item-row">
+                            <div>
+                                <strong>${item.name}</strong> (${item.size})<br>
+                                <span style="font-size: 13px; color: #666;">Количина: ${item.qty}</span>
+                            </div>
+                            <div style="text-align: right;">
+                                ${item.price * item.qty} ден<br>
+                                <button onclick="removeItem(${index})" style="background:none; border:none; color:#730010; font-size:12px; cursor:pointer; font-weight:700;">Избриши</button>
+                            </div>
+                        </div>
+                    `;
+                });
+                cartItemsList.innerHTML = html;
+                cartTotalPrice.innerText = totalPrice + ' ден';
+                cartTotalSection.style.display = 'flex';
+                checkoutBtn.style.display = 'block';
+            }
+            cartCount.innerText = totalCount;
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function openCart() {
+            document.getElementById('cartModal').style.display = 'flex';
+            document.getElementById('successMessage').style.display = 'none';
+            document.getElementById('checkoutBtn').style.display = cart.length > 0 ? 'block' : 'none';
+        }
+
+        function closeCart() {
+            document.getElementById('cartModal').style.display = 'none';
+        }
+
+        function checkoutOrder() {
+            if (cart.length === 0) return;
+            // Испразни ја кошничката и покажи успешна порака
+            cart = [];
+            updateCartUI();
+            document.getElementById('checkoutBtn').style.display = 'none';
+            document.getElementById('cartTotalSection').style.display = 'none';
+            document.getElementById('cartItemsList').innerHTML = '';
+            document.getElementById('successMessage').style.display = 'block';
+        }
+
         function changeLang(lang) {
-            // Промена на активната коцкичка
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
             event.target.classList.add('active');
 
-            // Превод на сите елементи со data атрибути
             document.querySelectorAll('[data-' + lang + ']').forEach(el => {
                 el.innerHTML = el.getAttribute('data-' + lang);
             });
