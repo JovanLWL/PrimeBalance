@@ -32,19 +32,18 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* ПРОЗИРЕН БОРДО ХЕДЕР СО ГЛАСМОФИЗИСКИ ЕФЕКТ */
+        /* СВЕТЛЕН, ЕЛЕГАНТЕН ХЕДЕР СО МВЕЌА НЕЖНА БОРДО НИЈАНСА */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 18px 50px;
-            background-color: rgba(115, 0, 16, 0.88);
-            backdrop-filter: blur(12px);
-            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+            background-color: rgba(115, 0, 16, 0.04);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid rgba(212, 175, 55, 0.25);
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
         }
 
         .logo-container {
@@ -60,15 +59,13 @@
             object-fit: contain;
         }
 
-        /* Името на брендот во хедерот сега е блескаво бело/златно за совршен контраст на бордо позадина */
         .brand-name-header {
             font-family: 'Cormorant Garamond', serif;
             font-size: 48px;
             font-weight: 800;
             letter-spacing: 3px;
-            color: var(--white);
+            color: var(--bordeaux);
             text-transform: uppercase;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
         .header-right {
@@ -77,7 +74,7 @@
             gap: 15px;
         }
 
-        /* ЈАЗИЧНИ КОЦКИЧКИ ПРИЛАГОДЕНИ ЗА БОРДО ХЕДЕР */
+        /* ВРАТЕНИТЕ ЈАЗИЧНИ КОЦКИЧКИ СО ЗЛАТНА РАМКА И БОРДО СЈАЈ */
         .lang-switch {
             display: flex;
             gap: 6px;
@@ -86,9 +83,9 @@
         .lang-btn {
             width: 42px;
             height: 42px;
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: var(--white);
             border: 2px solid var(--gold);
-            color: var(--white);
+            color: var(--bordeaux);
             font-weight: 800;
             font-size: 14px;
             border-radius: 8px;
@@ -98,20 +95,20 @@
             cursor: pointer;
             transition: var(--transition);
             text-decoration: none;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 3px 10px rgba(212, 175, 55, 0.15);
         }
 
         .lang-btn:hover, .lang-btn.active {
-            background-color: var(--gold);
-            border-color: var(--gold);
-            color: var(--bordeaux-dark);
+            background: linear-gradient(135deg, var(--bordeaux), var(--bordeaux-dark));
+            border-color: var(--bordeaux);
+            color: var(--white);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+            box-shadow: 0 5px 15px rgba(115, 0, 16, 0.35);
         }
 
         /* МЕНИ КОПЧЕ */
         .menu-toggle {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: var(--white);
             border: 2px solid var(--gold);
             border-radius: 8px;
             cursor: pointer;
@@ -123,23 +120,24 @@
             height: 42px;
             gap: 5px;
             transition: var(--transition);
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 3px 10px rgba(212, 175, 55, 0.15);
         }
 
         .menu-toggle:hover {
-            background-color: var(--gold);
+            background: linear-gradient(135deg, var(--bordeaux), var(--bordeaux-dark));
+            border-color: var(--bordeaux);
             transform: translateY(-2px);
         }
 
         .menu-toggle:hover span {
-            background-color: var(--bordeaux-dark);
+            background-color: var(--white);
         }
 
         .menu-toggle span {
             display: block;
             width: 20px;
             height: 2px;
-            background-color: var(--gold);
+            background-color: var(--bordeaux);
             border-radius: 2px;
             transition: var(--transition);
         }
@@ -548,14 +546,14 @@
 </head>
 <body>
 
-    <!-- ПРОИРИЕН БОРДО ХЕДЕР -->
+    <!-- СВЕТЛЕН ХЕДЕР СО НЕЖНА БОРДО НИЈАНСА И ВРАТЕНИ КОЦКИЧКИ -->
     <header>
         <a href="#" class="logo-container">
             <img src="logo.png" alt="Prime Balance Logo">
             <span class="brand-name-header">PRIME BALANCE</span>
         </a>
         <div class="header-right">
-            <!-- Јазични коцкички со златен акцент -->
+            <!-- Јазични коцкички со златни рамки -->
             <div class="lang-switch">
                 <a href="#" class="lang-btn active" onclick="changeLang('mk'); return false;">MK</a>
                 <a href="#" class="lang-btn" onclick="changeLang('en'); return false;">EN</a>
@@ -808,7 +806,7 @@
                         <div class="nutri-item"><span class="nutri-label" data-mk="Калории" data-en="Calories" data-al="Kalori">Калории</span><span class="nutri-value">138 kcal</span></div>
                         <div class="nutri-item"><span class="nutri-label" data-mk="Протеини" data-en="Proteins" data-al="Proteina">Протеини</span><span class="nutri-value">17.0 g</span></div>
                         <div class="nutri-item"><span class="nutri-label" data-mk="Масти" data-en="Fats" data-al="Yndyrna">Масти</span><span class="nutri-value">6.5 g</span></div>
-                        <div class="nutri-item"><span class="nutri-label" data-mk="Јаглехидрати" data-en="Carbs" data-al="Karbohidrate">Јаглехидрати</span><span class="nutri-value">3.2 g</span></div>
+                        <div class="nutri-item"><span class="nutri-label" data-mk="Калории" data-en="Carbs" data-al="Karbohidrate">Јаглехидрати</span><span class="nutri-value">3.2 g</span></div>
                         <div class="nutri-item"><span class="nutri-label" data-mk="Влакна" data-en="Fiber" data-al="Fijet">Влакна</span><span class="nutri-value">1.0 g</span></div>
                     </div>
                 </div>
