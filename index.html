@@ -32,18 +32,19 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* УЛТРА МОЌЕН И МАКСИМАЛНО ЗГОЛЕМЕН ХЕДЕР */
+        /* ПРОЗИРЕН БОРДО ХЕДЕР СО ГЛАСМОФИЗИСКИ ЕФЕКТ */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 50px;
-            background-color: rgba(250, 248, 245, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 2px solid rgba(212, 175, 55, 0.25);
+            padding: 18px 50px;
+            background-color: rgba(115, 0, 16, 0.88);
+            backdrop-filter: blur(12px);
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
         }
 
         .logo-container {
@@ -59,13 +60,15 @@
             object-fit: contain;
         }
 
+        /* Името на брендот во хедерот сега е блескаво бело/златно за совршен контраст на бордо позадина */
         .brand-name-header {
             font-family: 'Cormorant Garamond', serif;
             font-size: 48px;
             font-weight: 800;
             letter-spacing: 3px;
-            color: var(--bordeaux);
+            color: var(--white);
             text-transform: uppercase;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
         .header-right {
@@ -74,7 +77,7 @@
             gap: 15px;
         }
 
-        /* ЈАЗИЧНИ КОЦКИЧКИ ВО БОРДО СТИЛ СО СЈАЈ */
+        /* ЈАЗИЧНИ КОЦКИЧКИ ПРИЛАГОДЕНИ ЗА БОРДО ХЕДЕР */
         .lang-switch {
             display: flex;
             gap: 6px;
@@ -83,9 +86,9 @@
         .lang-btn {
             width: 42px;
             height: 42px;
-            background-color: var(--white);
-            border: 2px solid var(--bordeaux);
-            color: var(--bordeaux);
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 2px solid var(--gold);
+            color: var(--white);
             font-weight: 800;
             font-size: 14px;
             border-radius: 8px;
@@ -95,21 +98,21 @@
             cursor: pointer;
             transition: var(--transition);
             text-decoration: none;
-            box-shadow: 0 3px 10px rgba(115, 0, 16, 0.2);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
         }
 
         .lang-btn:hover, .lang-btn.active {
-            background: linear-gradient(135deg, var(--bordeaux), var(--bordeaux-dark));
-            border-color: var(--bordeaux);
-            color: var(--white);
+            background-color: var(--gold);
+            border-color: var(--gold);
+            color: var(--bordeaux-dark);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(115, 0, 16, 0.35);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
         }
 
         /* МЕНИ КОПЧЕ */
         .menu-toggle {
-            background: var(--white);
-            border: 2px solid var(--bordeaux);
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 2px solid var(--gold);
             border-radius: 8px;
             cursor: pointer;
             display: flex;
@@ -120,23 +123,23 @@
             height: 42px;
             gap: 5px;
             transition: var(--transition);
-            box-shadow: 0 3px 10px rgba(115, 0, 16, 0.2);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
         }
 
         .menu-toggle:hover {
-            background: linear-gradient(135deg, var(--bordeaux), var(--bordeaux-dark));
+            background-color: var(--gold);
             transform: translateY(-2px);
         }
 
         .menu-toggle:hover span {
-            background-color: var(--white);
+            background-color: var(--bordeaux-dark);
         }
 
         .menu-toggle span {
             display: block;
             width: 20px;
             height: 2px;
-            background-color: var(--bordeaux);
+            background-color: var(--gold);
             border-radius: 2px;
             transition: var(--transition);
         }
@@ -545,14 +548,14 @@
 </head>
 <body>
 
-    <!-- УЛТРА МОЌЕН И МАКСИМАЛНО ЗГОЛЕМЕН ХЕДЕР -->
+    <!-- ПРОИРИЕН БОРДО ХЕДЕР -->
     <header>
         <a href="#" class="logo-container">
             <img src="logo.png" alt="Prime Balance Logo">
             <span class="brand-name-header">PRIME BALANCE</span>
         </a>
         <div class="header-right">
-            <!-- Јазични коцкички со превод -->
+            <!-- Јазични коцкички со златен акцент -->
             <div class="lang-switch">
                 <a href="#" class="lang-btn active" onclick="changeLang('mk'); return false;">MK</a>
                 <a href="#" class="lang-btn" onclick="changeLang('en'); return false;">EN</a>
