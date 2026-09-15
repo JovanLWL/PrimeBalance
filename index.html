@@ -779,7 +779,7 @@
             line-height: 1.4;
         }
 
-        /* ФУТЕР СО ОФИЦИЈАЛНИ SVG ИКОНИ ЗА ВИБЕР И ВАЦАП (БЕЗ МЕЈЛ ИКОНА) */
+        /* ФУТЕР СО ОФИЦИЈАЛНИ SVG ИКОНИ ЗА ВИБЕР И ВАЦАП */
         footer {
             background-color: #1A0A0D;
             color: var(--white);
@@ -1241,7 +1241,7 @@
                         <img src="pork.jpg" alt="Prime Pork Edition" class="recipe-thumb">
                         <h3 data-mk="Prime Pork Edition" data-en="Prime Pork Edition" data-al="Prime Pork Edition">Prime Pork Edition</h3>
                     </div>
-                    <a href="#card-pork" class="back-to-food-btn" data-mk="↑ Назад кон менито" data-en="↑ Back to menu" data-al="↑ Kthehu te menuja">↑ Назад кон менито</a>
+                    <a href="#card-snowwhite" class="back-to-food-btn" data-mk="↑ Назад кон менито" data-en="↑ Back to menu" data-al="↑ Kthehu te menuja">↑ Назад кон менито</a>
                 </div>
                 <p data-mk="Исклучително вкусен оброк од посно свинско месо, богат со цинк и Б-витамини. Совршено решение за пребирливи кучиња кое ја штити кожата." data-en="An exceptionally tasty meal of lean pork, rich in zinc and B-vitamins. The perfect solution for picky dogs that protects the skin." data-al="Një vakt jashtëzakonisht i shijshëm me mish derri të dobët, i pasur me zink dhe vitamina B. Zgjidhja e përsosur për qentë e zgjedhur që mbron lëkurën.">Исклучително вкусен оброк од посно свинско месо, богат со цинк и Б-витамини. Совршено решение за пребирливи кучиња кое ја штити кожата.</p>
                 
@@ -1303,7 +1303,7 @@
                 <input type="email" class="form-input" id="custEmail" name="email" placeholder="Е-пошта (Mejl)" required>
                 <input type="text" class="form-input" id="custCity" name="city" placeholder="Град" required>
                 <input type="tel" class="form-input" id="custPhone" name="phone" placeholder="Број за контакт (телефон)" required>
-                <textarea name="order_details" id="orderDetailsInput" style="display:none;"></textarea>
+                <textarea name="message" id="orderDetailsInput" style="display:none;"></textarea>
             </form>
 
             <div class="cart-total" id="cartTotalSection" style="display: none;">
@@ -1319,7 +1319,7 @@
         </div>
     </div>
 
-    <!-- ФУТЕР СО ОФИЦИЈАЛНИ SVG ИКОНИ ЗА ВИБЕР И ВАЦАП -->
+    <!-- ФУТЕР СО ОФИЦИЈАЛНИ SVG ИКОНИ ЗА ВИБЕР И ВАЦАП (БЕЗ МЕЈЛ ИКОНА) -->
     <footer>
         <div class="social-icons-footer">
             <a href="viber://chat?number=%2B38970322521" class="social-icon" style="background-color: var(--viber-color);" title="Viber">
@@ -1473,7 +1473,7 @@
                 });
                 const result = await response.json();
                 if (!result.success) {
-                    alert("Настана грешка при испраќање на нарачката. Ве молиме контактирајте нè директно преку Viber или WhatsApp.");
+                    alert("Настана грешка при испраќање на нарачката. Ве молиме обидете се повторно.");
                     return;
                 }
             } catch (err) {
