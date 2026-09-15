@@ -48,14 +48,15 @@
             text-decoration: none;
         }
 
+        /* Зголемено лого во хедерот */
         .logo-container img {
-            height: 55px;
+            height: 85px;
             width: auto;
         }
 
         .brand-name-header {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 26px;
+            font-size: 32px;
             font-weight: 800;
             letter-spacing: 2px;
             color: var(--primary-bordeaux);
@@ -240,12 +241,26 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            padding: 30px;
             transition: transform 0.3s;
         }
 
         .product-card:hover {
             transform: translateY(-5px);
+        }
+
+        /* Слика на рецептот во картичката */
+        .product-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .product-info {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
 
         .product-card h3 {
@@ -315,6 +330,8 @@
 
         @media (max-width: 768px) {
             header { padding: 15px 20px; }
+            .logo-container img { height: 60px; }
+            .brand-name-header { font-size: 24px; }
             .hero { flex-direction: column; padding: 40px 20px; text-align: center; }
             .hero-content h1 { font-size: 38px; }
             .products-section { padding: 40px 20px; }
@@ -374,97 +391,103 @@
         <div class="products-grid">
             <!-- 1. Signature -->
             <div class="product-card">
-                <div>
+                <img src="signature.jpg" alt="Prime Signature Menu" class="product-img">
+                <div class="product-info">
                     <h3>Prime Signature</h3>
                     <p>Нашиот докажан, мулти-протеински рецепт кој нуди врвна виталност и силен имунитет. Совршен баланс за севкупно здравје и енергија.</p>
-                </div>
-                <div class="order-box">
-                    <select class="quantity-select">
-                        <option value="500g">500g</option>
-                        <option value="1kg" selected>1 kg</option>
-                        <option value="3kg">3 kg</option>
-                    </select>
-                    <a href="mailto:tvoj@email.com?subject=Нарачка%20за%20Prime%20Signature" class="btn-order">Нарачај</a>
+                    <div class="order-box">
+                        <select class="quantity-select">
+                            <option value="500g">500g</option>
+                            <option value="1kg" selected>1 kg</option>
+                            <option value="3kg">3 kg</option>
+                        </select>
+                        <a href="mailto:tvoj@email.com?subject=Нарачка%20за%20Prime%20Signature" class="btn-order">Нарачај</a>
+                    </div>
                 </div>
             </div>
 
             <!-- 2. Beef -->
             <div class="product-card">
-                <div>
+                <img src="beef.jpg" alt="Prime Beef Menu" class="product-img">
+                <div class="product-info">
                     <h3>Prime Beef Edition</h3>
                     <p>Моќен оброк базиран на чисто јунешко месо, дизајниран за градење цврста мускулна маса и долготрајна издржливост кај активни кучиња.</p>
-                </div>
-                <div class="order-box">
-                    <select class="quantity-select">
-                        <option value="500g">500g</option>
-                        <option value="1kg" selected>1 kg</option>
-                        <option value="3kg">3 kg</option>
-                    </select>
-                    <a href="mailto:tvoj@email.com?subject=Нарачка%20за%20Prime%20Beef%20Edition" class="btn-order">Нарачај</a>
+                    <div class="order-box">
+                        <select class="quantity-select">
+                            <option value="500g">500g</option>
+                            <option value="1kg" selected>1 kg</option>
+                            <option value="3kg">3 kg</option>
+                        </select>
+                        <a href="mailto:tvoj@email.com?subject=Нарачка%20за%20Prime%20Beef%20Edition" class="btn-order">Нарачај</a>
+                    </div>
                 </div>
             </div>
 
             <!-- 3. Salmon -->
             <div class="product-card">
-                <div>
+                <img src="salmon.jpg" alt="Prime Salmon Menu" class="product-img">
+                <div class="product-info">
                     <h3>Prime Salmon Edition</h3>
                     <p>Богата порција свеж лосос која изобилува со Омега-3 масни киселини. Создадена специјално за беспрекорно сјајно крзно и здрава кожа.</p>
-                </div>
-                <div class="order-box">
-                    <select class="quantity-select">
-                        <option value="500g">500g</option>
-                        <option value="1kg" selected>1 kg</option>
-                        <option value="3kg">3 kg</option>
-                    </select>
-                    <a href="mailto:tvoj@email.com?subject=Нарачка%20за%20Prime%20Salmon%20Edition" class="btn-order">Нарачај</a>
+                    <div class="order-box">
+                        <select class="quantity-select">
+                            <option value="500g">500g</option>
+                            <option value="1kg" selected>1 kg</option>
+                            <option value="3kg">3 kg</option>
+                        </select>
+                        <a href="mailto:tvoj@email.com?subject=Нарачка%20за%20Prime%20Salmon%20Edition" class="btn-order">Нарачај</a>
+                    </div>
                 </div>
             </div>
 
             <!-- 4. Chicken -->
             <div class="product-card">
-                <div>
+                <img src="chicken.jpg" alt="Prime Chicken Menu" class="product-img">
+                <div class="product-info">
                     <h3>Prime Chicken Edition</h3>
                     <p>Лесен и лесно сварлив оброк со врвно пилешко месо, исклучително нежен за стомакот. Обезбедува чист протеин за секојдневна енергија.</p>
-                </div>
-                <div class="order-box">
-                    <select class="quantity-select">
-                        <option value="500g">500g</option>
-                        <option value="1kg" selected>1 kg</option>
-                        <option value="3kg">3 kg</option>
-                    </select>
-                    <a href="mailto:tvoj@email.com?subject=Нарачка%20за%20Prime%20Chicken%20Edition" class="btn-order">Нарачај</a>
+                    <div class="order-box">
+                        <select class="quantity-select">
+                            <option value="500g">500g</option>
+                            <option value="1kg" selected>1 kg</option>
+                            <option value="3kg">3 kg</option>
+                        </select>
+                        <a href="mailto:tvoj@email.com?subject=Нарачка%20за%20Prime%20Chicken%20Edition" class="btn-order">Нарачај</a>
+                    </div>
                 </div>
             </div>
 
             <!-- 5. Pork -->
             <div class="product-card">
-                <div>
+                <img src="pork.jpg" alt="Prime Pork Menu" class="product-img">
+                <div class="product-info">
                     <h3>Prime Pork Edition</h3>
                     <p>Исклучително вкусен оброк од посно свинско месо, богат со цинк и Б-витамини. Совршено решение за пребирливи кучиња кое ја штити кожата.</p>
-                </div>
-                <div class="order-box">
-                    <select class="quantity-select">
-                        <option value="500g">500g</option>
-                        <option value="1kg" selected>1 kg</option>
-                        <option value="3kg">3 kg</option>
-                    </select>
-                    <a href="mailto:tvoj@email.com?subject=Нарачка%20за%20Prime%20Pork%20Edition" class="btn-order">Нарачај</a>
+                    <div class="order-box">
+                        <select class="quantity-select">
+                            <option value="500g">500g</option>
+                            <option value="1kg" selected>1 kg</option>
+                            <option value="3kg">3 kg</option>
+                        </select>
+                        <a href="mailto:tvoj@email.com?subject=Нарачка%20за%20Prime%20Pork%20Edition" class="btn-order">Нарачај</a>
+                    </div>
                 </div>
             </div>
 
             <!-- 6. Snow-White Coat -->
             <div class="product-card">
-                <div>
+                <img src="snowwhite.jpg" alt="Snow-White Coat Menu" class="product-img">
+                <div class="product-info">
                     <h3>Snow-White Coat (Специјална едиција)</h3>
                     <p>Формула со мисиркино месо и бела риба која природно ги елиминира црвените дамки околу очите. Вашиот сојузник за совршено бело влакно.</p>
-                </div>
-                <div class="order-box">
-                    <select class="quantity-select">
-                        <option value="500g">500g</option>
-                        <option value="1kg" selected>1 kg</option>
-                        <option value="3kg">3 kg</option>
-                    </select>
-                    <a href="mailto:tvoj@email.com?subject=Нарачка%20за%20Snow-White%20Coat" class="btn-order">Нарачај</a>
+                    <div class="order-box">
+                        <select class="quantity-select">
+                            <option value="500g">500g</option>
+                            <option value="1kg" selected>1 kg</option>
+                            <option value="3kg">3 kg</option>
+                        </select>
+                        <a href="mailto:tvoj@email.com?subject=Нарачка%20за%20Snow-White%20Coat" class="btn-order">Нарачај</a>
+                    </div>
                 </div>
             </div>
         </div>
