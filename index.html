@@ -544,7 +544,7 @@
             font-weight: 700;
         }
 
-        /* ОРИГИНАЛНИ НУТРИТИВНИ ТАБЕЛИ (ФИКСИРАНИ И СРЕДЕНИ) */
+        /* СТРУЧНО СРЕДЕНИ И СТАБИЛНИ НУТРИТИВНИ ТАБЕЛИ */
         .nutrition-box {
             margin-top: 25px;
             background: var(--white);
@@ -552,6 +552,7 @@
             padding: 20px;
             border: 1px solid rgba(212, 175, 55, 0.4);
             box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            overflow-x: auto;
         }
 
         .nutrition-title {
@@ -566,29 +567,36 @@
 
         .nutrition-grid {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 12px;
+            grid-template-columns: repeat(5, minmax(80px, 1fr));
+            gap: 10px;
+            width: 100%;
         }
 
         .nutri-item {
             background: var(--cream);
-            padding: 12px 8px;
+            padding: 10px 4px;
             border-radius: 8px;
             text-align: center;
             border: 1px solid rgba(212, 175, 55, 0.2);
+            min-height: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .nutri-label {
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 700;
             color: #666;
             text-transform: uppercase;
             display: block;
-            margin-bottom: 4px;
+            margin-bottom: 2px;
+            white-space: nowrap;
         }
 
         .nutri-value {
-            font-size: 15px;
+            font-size: 13px;
             font-weight: 800;
             color: var(--bordeaux);
         }
@@ -598,13 +606,15 @@
             margin-top: 15px;
             border-collapse: collapse;
             font-size: 14px;
+            table-layout: fixed;
         }
 
         .feeding-table th, .feeding-table td {
             border: 1px solid rgba(212, 175, 55, 0.3);
-            padding: 10px 14px;
+            padding: 10px 12px;
             text-align: center;
             font-weight: 600;
+            word-wrap: break-word;
         }
 
         .feeding-table th {
@@ -793,7 +803,7 @@
             .section-title { font-size: 30px; }
             .products-grid { grid-template-columns: 1fr; }
             .recipe-header-flex { flex-direction: column; align-items: flex-start; gap: 10px; }
-            .nutrition-grid { grid-template-columns: repeat(2, 1fr); }
+            .nutrition-grid { grid-template-columns: repeat(3, 1fr); }
         }
     </style>
 </head>
@@ -1248,10 +1258,11 @@
                 <p style="text-align: center; color: #777; font-weight: 600;" data-mk="Кошничката е празна" data-en="Your cart is empty" data-al="Shporta është bosh">Кошничката е празна</p>
             </div>
 
-            <!-- Формулар за внес на податоци -->
+            <!-- Формулар за внес на податоци (Вклучувајќи Е-пошта) -->
             <div class="checkout-form" id="checkoutForm" style="display: none;">
                 <input type="text" class="form-input" id="custName" placeholder="Име и презиме" required>
                 <input type="text" class="form-input" id="custAddress" placeholder="Адреса за достава" required>
+                <input type="email" class="form-input" id="custEmail" placeholder="Е-пошта (Mejl)" required>
                 <input type="text" class="form-input" id="custCity" placeholder="Град" required>
                 <input type="tel" class="form-input" id="custPhone" placeholder="Број за контакт (телефон)" required>
             </div>
@@ -1387,16 +1398,17 @@
 
             const name = document.getElementById('custName').value.trim();
             const address = document.getElementById('custAddress').value.trim();
+            const email = document.getElementById('custEmail').value.trim();
             const city = document.getElementById('custCity').value.trim();
             const phone = document.getElementById('custPhone').value.trim();
 
-            if (!name || !address || !city || !phone) {
-                alert('Ве молиме пополнете ги сите полиња за достава (Име, Адреса, Град, Број за контакт).');
+            if (!name || !address || !email || !city || !phone) {
+                alert('Ве молиме пополнете ги сите полиња за достава (Име, Адреса, Е-пошта, Град, Број за контакт).');
                 return;
             }
 
-            let orderDetails = "Нова нарачка од сајтот:\n\n";
-            orderDetails += `Име: ${name}\nАдреса: ${address}, ${city}\nТелефон: ${phone}\n\nПроизводи:\n`;
+            let orderDetails = "Нова нарачка од сајтот Prime Balance:\n\n";
+            orderDetails += `Име: ${name}\nЕ-пошта: ${email}\nАдреса: ${address}, ${city}\nТелефон: ${phone}\n\nПроизводи:\n`;
             cart.forEach(item => {
                 orderDetails += `- ${item.name} (${item.qty} kg) - ${item.price * item.qty} ден\n`;
             });
