@@ -32,12 +32,12 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* УЛТРА КОМПАКТЕН ЛУКСУЗЕН ХЕДЕР */
+        /* УЛТРА МОЌЕН И МАКСИМАЛНО ЗГОЛЕМЕН ХЕДЕР */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 50px;
+            padding: 20px 50px;
             background-color: rgba(250, 248, 245, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 2px solid rgba(212, 175, 55, 0.25);
@@ -49,22 +49,21 @@
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 20px;
             text-decoration: none;
         }
 
         .logo-container img {
-            height: 85px;
+            height: 110px;
             width: auto;
             object-fit: contain;
         }
 
-        /* Истиот фонт како на логото */
         .brand-name-header {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 38px;
+            font-size: 48px;
             font-weight: 800;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             color: var(--bordeaux);
             text-transform: uppercase;
         }
@@ -82,13 +81,13 @@
         }
 
         .lang-btn {
-            width: 38px;
-            height: 38px;
+            width: 42px;
+            height: 42px;
             background-color: var(--white);
             border: 2px solid var(--bordeaux);
             color: var(--bordeaux);
             font-weight: 800;
-            font-size: 13px;
+            font-size: 14px;
             border-radius: 8px;
             display: flex;
             align-items: center;
@@ -117,8 +116,8 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            width: 38px;
-            height: 38px;
+            width: 42px;
+            height: 42px;
             gap: 5px;
             transition: var(--transition);
             box-shadow: 0 3px 10px rgba(115, 0, 16, 0.2);
@@ -135,14 +134,14 @@
 
         .menu-toggle span {
             display: block;
-            width: 18px;
+            width: 20px;
             height: 2px;
             background-color: var(--bordeaux);
             border-radius: 2px;
             transition: var(--transition);
         }
 
-        /* HERO СЕКЦИЈА (намален простор) */
+        /* HERO СЕКЦИЈА */
         .hero {
             display: flex;
             align-items: center;
@@ -467,6 +466,55 @@
             font-weight: 700;
         }
 
+        /* НУТРИТИВНА ТАБЕЛА / КАРТОН */
+        .nutrition-box {
+            margin-top: 25px;
+            background: var(--white);
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+
+        .nutrition-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            color: var(--bordeaux);
+            font-weight: 800;
+            margin-bottom: 12px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 6px;
+        }
+
+        .nutrition-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 12px;
+        }
+
+        .nutri-item {
+            background: var(--cream);
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .nutri-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: #666;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .nutri-value {
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--bordeaux);
+        }
+
         /* ФУТЕР */
         footer {
             background-color: #1A0A0D;
@@ -486,8 +534,8 @@
         /* РЕСПОНЗИВНОСТ */
         @media (max-width: 900px) {
             header { padding: 15px 20px; }
-            .logo-container img { height: 70px; }
-            .brand-name-header { font-size: 24px; }
+            .logo-container img { height: 80px; }
+            .brand-name-header { font-size: 28px; }
             .hero { flex-direction: column; padding: 40px 20px; text-align: center; }
             .hero-content h1 { font-size: 34px; }
             .products-section, .blog-section { padding: 40px 20px; }
@@ -497,18 +545,18 @@
 </head>
 <body>
 
-    <!-- УЛТРА КОМПАКТЕН ЛУКСУЗЕН ХЕДЕР -->
+    <!-- УЛТРА МОЌЕН И МАКСИМАЛНО ЗГОЛЕМЕН ХЕДЕР -->
     <header>
         <a href="#" class="logo-container">
             <img src="logo.png" alt="Prime Balance Logo">
             <span class="brand-name-header">PRIME BALANCE</span>
         </a>
         <div class="header-right">
-            <!-- Јазични коцкички во бордо сјај -->
+            <!-- Јазични коцкички со превод -->
             <div class="lang-switch">
-                <a href="#" class="lang-btn active">MK</a>
-                <a href="#" class="lang-btn">EN</a>
-                <a href="#" class="lang-btn">AL</a>
+                <a href="#" class="lang-btn active" onclick="changeLang('mk'); return false;">MK</a>
+                <a href="#" class="lang-btn" onclick="changeLang('en'); return false;">EN</a>
+                <a href="#" class="lang-btn" onclick="changeLang('al'); return false;">AL</a>
             </div>
             <!-- Мени копче -->
             <button class="menu-toggle" aria-label="Мени">
@@ -522,9 +570,9 @@
     <!-- HERO СЕКЦИЈА -->
     <section class="hero">
         <div class="hero-content">
-            <h1>ПРИРОДНА МОЌ.<br>СОВРШЕН БАЛАНС.</h1>
-            <p>Природна исхрана инспирана од совршенството на природата. Внимателно зготвени оброци кои гарантираат моќен имунитет, совршена дигестија и врвна изложбена кондиција.</p>
-            <a href="#products" class="btn-primary">Разгледај ги Менијата</a>
+            <h1 data-mk="ПРИРОДНА МОЌ.<br>СОВРШЕН БАЛАНС." data-en="NATURAL POWER.<br>PERFECT BALANCE." data-al="FUQIA NATYRORE.<br>BALANCI I PËRSOSUR.">ПРИРОДНА МОЌ.<br>СОВРШЕН БАЛАНС.</h1>
+            <p data-mk="Природна исхрана инспирана од совршеството на природата. Внимателно зготвени оброци кои гарантираат моќен имунитет, совршена дигестија и беспрекорно влакно." data-en="Natural nutrition inspired by the perfection of nature. Carefully cooked meals guaranteeing powerful immunity, perfect digestion, and flawless coat." data-al="Ushqim natyral i frymëzuar nga përsosmëria e natyrës. Vakte të gatuara me kujdes që garantojnë imunitet të fuqishëm, tretje të përsosur dhe qime të patëmetë.">Природна исхрана инспирана од совршеството на природата. Внимателно зготвени оброци кои гарантираат моќен имунитет, совршена дигестија и беспрекорно влакно.</p>
+            <a href="#products" class="btn-primary" data-mk="Разгледај ги Менијата" data-en="Explore Menus" data-al="Shiko Menutë">Разгледај ги Менијата</a>
         </div>
         <div class="hero-image">
             <img src="labrador.jpg" alt="Лабрадор со сјајно крзно - Prime Balance">
@@ -534,16 +582,16 @@
     <!-- ЗА НАС СЕКЦИЈА -->
     <section class="about-section">
         <div class="about-container">
-            <h2>Нашата Приказна: Љубов сервирана во чинија</h2>
-            <p>Секој сопственик на куче во срцето ја носи истата желба – нивниот најверен пријател да живее што е можно подолго, поздрав и посреќен живот. Токму од таа чиста љубов се роди и нашата мисија.</p>
-            <p><strong>Prime Balance</strong> започна како мала семејна и одгледувачка приказна. Водени од желбата да им го пружиме најдоброто на нашите сопствени миленици, усовршивме вистински избалансирана формула. Ова е избалансирана виталност. Ја изразуваме нашата љубов према милениците токму преку квалитетна, внимателно зготвена чинија.</p>
+            <h2 data-mk="Нашата Приказна: Љубов сервирана во чинија" data-en="Our Story: Love Served in a Bowl" data-al="Historia Jonë: Dashuri e Shërbyer në Pjatë">Нашата Приказна: Љубов сервирана во чинија</h2>
+            <p data-mk="Секој сопственик на куче во срцето ја носи истата желба – нивниот најверен пријател да живее што е можно подолго, поздрав и посреќен живот. Токму од таа чиста љубов се роди и нашата мисија." data-en="Every dog owner carries the same wish in their heart – for their most loyal friend to live as long, healthy, and happy a life as possible. From this pure love, our mission was born." data-al="Çdo pronar qeni mban të njëjtën dëshirë në zemër – që miku i tij më besnik të jetojë një jetë sa më të gjatë, të shëndetshme dhe të lumtur. Pikërisht nga kjo dashuri e pastër lindi misioni ynë.">Секој сопственик на куче во срцето ја носи истата желба – нивниот најверен пријател да живее што е можно подолго, поздрав и посреќен живот. Токму од таа чиста љубов се роди и нашата мисија.</p>
+            <p><strong data-mk="Prime Balance" data-en="Prime Balance" data-al="Prime Balance">Prime Balance</strong> <span data-mk="започна како мала семејна и одгледувачка приказна. Водени од желбата да им го пружиме најдоброто на нашите сопствени миленици, усовршивме вистински избалансирана формула. Ова е избалансирана виталност. Ја изразуваме нашата љубов према милениците токму преку квалитетна, внимателно зготвена чинија." data-en="began as a small family and breeding story. Driven by the desire to provide the best for our own pets, we perfected a truly balanced formula. This is balanced vitality. We express our love for pets through a quality, carefully cooked bowl." data-al="filloi si një histori e vogël familjare dhe e mbarështimit. Të udhëhequr nga dëshira për t'u dhënë më të mirën kafshëve tona shtëpiake, ne përsosëm një formulë vërtet të ekuilibruar. Kjo është vitalitet i ekuilibruar. Dashurinë tonë për kafshët shtëpiake e shprehim përmes një pjate cilësore dhe të gatuar me kujdes.">започна како мала семејна и одгледувачка приказна. Водени од желбата да им го пружиме најдоброто на нашите сопствени миленици, усовршивме вистински избалансирана формула. Ова е избалансирана виталност. Ја изразуваме нашата љубов према милениците токму преку квалитетна, внимателно зготвена чинија.</span></p>
         </div>
     </section>
 
     <!-- ПРОИЗВОДИ (6-ТЕ МЕНИЈА) -->
     <section class="products-section" id="products">
-        <h2 class="section-title">Нашите Премиум Менија</h2>
-        <p class="section-subtitle">Изберете го идеалниот оброк прилагоден на потребите на вашиот миленик</p>
+        <h2 class="section-title" data-mk="Нашите Премиум Менија" data-en="Our Premium Menus" data-al="Menutë Tona Premium">Нашите Премиум Менија</h2>
+        <p class="section-subtitle" data-mk="Изберете го идеалниот оброк прилагоден на потребите на вашиот миленик" data-en="Choose the ideal meal tailored to your pet's needs" data-al="Zgjidhni vaktin ideal të përshtatur për nevojat e kafshës suaj">Изберете го идеалниот оброк прилагоден на потребите на вашиот миленик</p>
 
         <div class="products-grid">
             <!-- 1. Signature -->
@@ -554,15 +602,15 @@
                     </a>
                 </div>
                 <div class="product-info">
-                    <h3>Prime Signature</h3>
-                    <p>Нашиот докажан, мулти-протеински рецепт кој нуди врвна виталност и силен имунитет. Совршен баланс за севкупно здравје и енергија.</p>
+                    <h3 data-mk="Prime Signature" data-en="Prime Signature" data-al="Prime Signature">Prime Signature</h3>
+                    <p data-mk="Нашиот докажан, мулти-протеински рецепт кој нуди врвна виталност и силен имунитет. Совршен баланс за севкупно здравје и енергија." data-en="Our proven, multi-protein recipe offering top vitality and strong immunity. Perfect balance for overall health and energy." data-al="Receta jonë e provuar me shumë proteina që ofron vitalitet të lartë dhe imunitet të fortë. Balancë e përsosur për shëndetin dhe energjinë e përgjithshme.">Нашиот докажан, мулти-протеински рецепт кој нуди врвна виталност и силен имунитет. Совршен баланс за севкупно здравје и енергија.</p>
                     <div class="order-box">
                         <select class="quantity-select">
                             <option value="500g">500g</option>
                             <option value="1kg" selected>1 kg</option>
                             <option value="3kg">3 kg</option>
                         </select>
-                        <a href="mailto:tvoj@email.com?subject=Нарачка%20за%20Prime%20Signature" class="btn-order">Нарачај</a>
+                        <a href="mailto:tvoj@email.com?subject=Нарачка%20за%20Prime%20Signature" class="btn-order" data-mk="Нарачај" data-en="Order" data-al="Porosis">Нарачај</a>
                     </div>
                 </div>
             </div>
@@ -575,15 +623,15 @@
                     </a>
                 </div>
                 <div class="product-info">
-                    <h3>Prime Beef Edition</h3>
-                    <p>Моќен оброк базиран на чисто јунешко месо, дизајниран за градење цврста мускулна маса и долготрајна издржливост кај активни кучиња.</p>
+                    <h3 data-mk="Prime Beef Edition" data-en="Prime Beef Edition" data-al="Prime Beef Edition">Prime Beef Edition</h3>
+                    <p data-mk="Моќен оброк базиран на чисто јунешко месо, дизајниран за градење цврста мускулна маса и долготрајна издржливост кај активни кучиња." data-en="A powerful meal based on pure beef, designed for building solid muscle mass and long-lasting endurance in active dogs." data-al="Një vakt i fuqishëm i bazuar në mish të pastër viçi, i krijuar për të ndërtuar masë të fortë muskulore dhe qëndrueshmëri afatgjatë te qentë aktivë.">Моќен оброк базиран на чисто јунешко месо, дизајниран за градење цврста мускулна маса и долготрајна издржливост кај активни кучиња.</p>
                     <div class="order-box">
                         <select class="quantity-select">
                             <option value="500g">500g</option>
                             <option value="1kg" selected>1 kg</option>
                             <option value="3kg">3 kg</option>
                         </select>
-                        <a href="mailto:tvoj@email.com?subject=Нарачка%20за%20Prime%20Beef%20Edition" class="btn-order">Нарачај</a>
+                        <a href="mailto:tvoj@email.com?subject=Нарачка%20за%20Prime%20Beef%20Edition" class="btn-order" data-mk="Нарачај" data-en="Order" data-al="Porosis">Нарачај</a>
                     </div>
                 </div>
             </div>
@@ -596,15 +644,15 @@
                     </a>
                 </div>
                 <div class="product-info">
-                    <h3>Prime Salmon Edition</h3>
-                    <p>Богата порција свеж лосос која изобилува со Омега-3 масни киселини. Создадена специјално за беспрекорно сјајно крзно и здрава кожа.</p>
+                    <h3 data-mk="Prime Salmon Edition" data-en="Prime Salmon Edition" data-al="Prime Salmon Edition">Prime Salmon Edition</h3>
+                    <p data-mk="Богата порција свеж лосос која изобилува со Омега-3 масни киселини. Создадена специјално за беспрекорно сјајно крзно и здрава кожа." data-en="A rich portion of fresh salmon abundant in Omega-3 fatty acids. Created specifically for a flawlessly shiny coat and healthy skin." data-al="Një pjesë e pasur me salmon të freskët që abson me acide yndyrore Omega-3. Krijuar posaçërisht për një gëzof të ndritshëm dhe lëkurë të shëndetshme.">Богата порција свеж лосос која изобилува со Омега-3 масни киселини. Создадена специјално за беспрекорно сјајно крзно и здрава кожа.</p>
                     <div class="order-box">
                         <select class="quantity-select">
                             <option value="500g">500g</option>
                             <option value="1kg" selected>1 kg</option>
                             <option value="3kg">3 kg</option>
                         </select>
-                        <a href="mailto:tvoj@email.com?subject=Нарачка%20за%20Prime%20Salmon%20Edition" class="btn-order">Нарачај</a>
+                        <a href="mailto:tvoj@email.com?subject=Нарачка%20за%20Prime%20Salmon%20Edition" class="btn-order" data-mk="Нарачај" data-en="Order" data-al="Porosis">Нарачај</a>
                     </div>
                 </div>
             </div>
@@ -617,15 +665,15 @@
                     </a>
                 </div>
                 <div class="product-info">
-                    <h3>Prime Chicken Edition</h3>
-                    <p>Лесен и лесно сварлив оброк со врвно пилешко месо, исклучително нежен за стомакот. Обезбедува чист протеин за секојдневна енергија.</p>
+                    <h3 data-mk="Prime Chicken Edition" data-en="Prime Chicken Edition" data-al="Prime Chicken Edition">Prime Chicken Edition</h3>
+                    <p data-mk="Лесен и лесно сварлив оброк со врвно пилешко месо, исклучително нежен за стомакот. Обезбедува чист протеин за секојдневна енергија." data-en="A light and easily digestible meal with premium chicken meat, exceptionally gentle on the stomach. Provides clean protein for daily energy." data-al="Një vakt i lehtë dhe lehtësisht i tretshëm me mish pule premium, jashtëzakonisht i butë për stomakun. Siguron proteina të pastra për energji ditore.">Лесен и лесно сварлив оброк со врвно пилешко месо, исклучително нежен за стомакот. Обезбедува чист протеин за секојдневна енергија.</p>
                     <div class="order-box">
                         <select class="quantity-select">
                             <option value="500g">500g</option>
                             <option value="1kg" selected>1 kg</option>
                             <option value="3kg">3 kg</option>
                         </select>
-                        <a href="mailto:tvoj@email.com?subject=Нарачка%20за%20Prime%20Chicken%20Edition" class="btn-order">Нарачај</a>
+                        <a href="mailto:tvoj@email.com?subject=Нарачка%20за%20Prime%20Chicken%20Edition" class="btn-order" data-mk="Нарачај" data-en="Order" data-al="Porosis">Нарачај</a>
                     </div>
                 </div>
             </div>
@@ -638,15 +686,15 @@
                     </a>
                 </div>
                 <div class="product-info">
-                    <h3>Prime Pork Edition</h3>
-                    <p>Исклучително вкусен оброк од посно свинско месо, богат со цинк и Б-витамини. Совршено решение за пребирливи кучиња кое ја штити кожата.</p>
+                    <h3 data-mk="Prime Pork Edition" data-en="Prime Pork Edition" data-al="Prime Pork Edition">Prime Pork Edition</h3>
+                    <p data-mk="Исклучително вкусен оброк од посно свинско месо, богат со цинк и Б-витамини. Совршено решение за пребирливи кучиња кое ја штити кожата." data-en="An exceptionally tasty meal of lean pork, rich in zinc and B-vitamins. The perfect solution for picky dogs that protects the skin." data-al="Një vakt jashtëzakonisht i shijshëm me mish derri të dobët, i pasur me zink dhe vitamina B. Zgjidhja e përsosur për qentë e zgjedhur që mbron lëkurën.">Исклучително вкусен оброк од посно свинско месо, богат со цинк и Б-витамини. Совршено решение за пребирливи кучиња кое ја штити кожата.</p>
                     <div class="order-box">
                         <select class="quantity-select">
                             <option value="500g">500g</option>
                             <option value="1kg" selected>1 kg</option>
                             <option value="3kg">3 kg</option>
                         </select>
-                        <a href="mailto:tvoj@email.com?subject=Нарачка%20за%20Prime%20Pork%20Edition" class="btn-order">Нарачај</a>
+                        <a href="mailto:tvoj@email.com?subject=Нарачка%20за%20Prime%20Pork%20Edition" class="btn-order" data-mk="Нарачај" data-en="Order" data-al="Porosis">Нарачај</a>
                     </div>
                 </div>
             </div>
@@ -659,80 +707,132 @@
                     </a>
                 </div>
                 <div class="product-info">
-                    <h3>Snow-White Coat (Специјална едиција)</h3>
-                    <p>Формула со мисиркино месо и бела риба која природно ги елиминира црвените дамки околу очите. Вашиот сојузник за совршено бело влакно.</p>
+                    <h3 data-mk="Snow-White Coat (Специјална едиција)" data-en="Snow-White Coat (Special Edition)" data-al="Snow-White Coat (Edicion Special)">Snow-White Coat (Специјална едиција)</h3>
+                    <p data-mk="Формула со мисиркино месо и бела риба која природно ги елиминира црвените дамки околу очите. Вашиот сојузник за совршено бело влакно." data-en="Formula with turkey and white fish that naturally eliminates tear stains around the eyes. Your ally for a perfectly white coat." data-al="Formulë me mish gjeldeti dhe peshk të bardhë që eliminon në mënyrë natyrale njollat ​​e lotëve rreth syve. Aleati juaj për një qime krejtësisht të bardhë.">Формула со мисиркино месо и бела риба која природно ги елиминира црвените дамки околу очите. Вашиот сојузник за совршено бело влакно.</p>
                     <div class="order-box">
                         <select class="quantity-select">
                             <option value="500g">500g</option>
                             <option value="1kg" selected>1 kg</option>
                             <option value="3kg">3 kg</option>
                         </select>
-                        <a href="mailto:tvoj@email.com?subject=Нарачка%20за%20Snow-White%20Coat" class="btn-order">Нарачај</a>
+                        <a href="mailto:tvoj@email.com?subject=Нарачка%20за%20Snow-White%20Coat" class="btn-order" data-mk="Нарачај" data-en="Order" data-al="Porosis">Нарачај</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- БЛОГ СЕКЦИЈА НА ИСТАТА СТРАНИЦА -->
+    <!-- БЛОГ СЕКЦИЈА СО ДЕТАЛНИ РЕЦЕПТИ, СОСТОЈКИ И НУТРИТИВНИ ВРЕДНОСТИ -->
     <section class="blog-section" id="blog-content">
         <div class="blog-container">
-            <h2>Тајните на нашите рецепти: Здравје во секоја чинија</h2>
-            <p class="blog-intro">Откријте зошто секоја состојка во Prime Balance има пресудна улога за здравјето, виталноста и долгиот живот на вашето куче.</p>
+            <h2 data-mk="Тајните на нашите рецепти: Здравје во секоја чинија" data-en="The Secrets of Our Recipes: Health in Every Bowl" data-al="Sekretet e Recetave Tona: Shëndet në Çdo Pjatë">Тајните на нашите рецепти: Здравје во секоја чинија</h2>
+            <p class="blog-intro" data-mk="Откријте зошто секоја состојка во Prime Balance има пресудна улога за здравјето, виталноста и долгиот живот на вашето куче." data-en="Discover why every ingredient in Prime Balance plays a crucial role in your dog's health, vitality, and longevity." data-al="Zbuloni pse çdo përbërës në Prime Balance luan një rol kyç për shëndetin, vitalitetin dhe jetëgjatësinë e qenit tuaj.">Откријте зошто секоја состојка во Prime Balance има пресудна улога за здравјето, виталноста и долгиот живот на вашето куче.</p>
 
             <!-- 1. Snow-White Coat -->
             <div class="recipe-block">
-                <h3>❄️ Snow-White Coat (Специјална едиција)</h3>
-                <p>Врвен баланс на лесно сварливо бело месо и нутритивно богато посно свинско, збогатено со двоен рибен комплекс. Формулирано за елиминирање на дамките од солзи, поддршка на имунитетот и одржување на совршено бело, густо влакно.</p>
+                <h3 data-mk="❄️ Snow-White Coat (Специјална едиција)" data-en="❄️ Snow-White Coat (Special Edition)" data-al="❄️ Snow-White Coat (Edicion Special)">❄️ Snow-White Coat (Специјална едиција)</h3>
+                <p data-mk="Врвен баланс на лесно сварливо бело месо и нутритивно богато посно свинско, збогатено со двоен рибен комплекс. Формулирано за елиминирање на дамките од солзи, поддршка на имунитетот и одржување на совршено бело, густо влакно." data-en="Top balance of easily digestible white meat and nutritionally rich lean pork, enriched with a dual fish complex. Formulated to eliminate tear stains, support immunity, and maintain a perfectly white, dense coat." data-al="Balancë e lartë e mishit të bardhë lehtësisht të tretshëm dhe mishit të derrit të dobët të pasur ushqyesisht, të pasuruar me kompleks të dyfishtë peshku. Formuluar për të eliminuar njollat ​​e lotëve, për të mbështetur imunitetin dhe për të ruajtur një gëzof të bardhë dhe të dendur.">Врвен баланс на лесно сварливо бело месо и нутритивно богато посно свинско, збогатено со двоен рибен комплекс. Формулирано за елиминирање на дамките од солзи, поддршка на имунитетот и одржување на совршено бело, густо влакно.</p>
                 <ul class="ingredient-list">
-                    <li><strong>Мисиркино месо (чисто):</strong> Лесно сварливо бело месо со ниско ниво на порфирини, чувар на белината околу очите.</li>
-                    <li><strong>Посно свинско месо (кртина):</strong> Богато со цинк и Б-витамини за обнова на кожата и неверојатен вкус.</li>
-                    <li><strong>Ослич (Бела риба):</strong> Нискокалоричен протеин кој не го оптоварува стомакот и ја одржува идеалната тежина.</li>
-                    <li><strong>Лосос филети:</strong> Омега-3 бустер за елиминирање на сува кожа и давање на свиленкаст изложбен сјај.</li>
-                    <li><strong>Пилешки џигер:</strong> Природен мултивитамин кој обезбедува есенцијален Витамин А и железо за силен имунитет.</li>
-                    <li><strong>Сладок компир (варен):</strong> Сложен јаглен хидрат кој бавно ослободува енергија и е перфектен за чувствителен дигестивен систем.</li>
-                    <li><strong>Тиквичка и целер:</strong> Растителни влакна за одлична дигестија; целерот природно го освежува здивот.</li>
-                    <li><strong>Кокосово масло:</strong> Природен антибактериски додаток кој спречува чешање и перутање под густото влакно.</li>
-                    <li><strong>Шумско овошје:</strong> Моќни антиоксиданси за клеточна заштита.</li>
-                    <li><strong>Мелена лушпа од јајце:</strong> Најбезбедниот природен извор на неопходниот калциум во зготвен оброк без коски.</li>
+                    <li><strong data-mk="Мисиркино месо (чисто):" data-en="Turkey meat (pure):" data-al="Mish gjeldeti (i pastër):">Мисиркино месо (чисто):</strong> <span data-mk="Лесно сварливо бело месо со ниско ниво на порфирини, чувар на белината околу очите." data-en="Easily digestible white meat with low porphyrin levels, guardian of the whiteness around the eyes." data-al="Mish i bardhë lehtësisht i tretshëm me nivele të ulëta porfirine, mbrojtës i bardhësisë rreth syve.">Лесно сварливо бело месо со ниско ниво на порфирини, чувар на белината околу очите.</span></li>
+                    <li><strong data-mk="Посно свинско месо (кртина):" data-en="Lean pork meat:" data-al="Mish derri i dobët:">Посно свинско месо (кртина):</strong> <span data-mk="Богато со цинк и Б-витамини за обнова на кожата и неверојатен вкус." data-en="Rich in zinc and B-vitamins for skin renewal and incredible taste." data-al="I pasur me zink dhe vitamina B për ripërtëritjen e lëkurës dhe shije të jashtëzakonshme.">Богато со цинк и Б-витамини за обнова на кожата и неверојатен вкус.</span></li>
+                    <li><strong data-mk="Ослич (Бела риба):" data-en="Hake (White fish):" data-al="Merluc (Peshk i bardhë):">Ослич (Бела риба):</strong> <span data-mk="Нискокалоричен протеин кој не го оптоварува стомакот и ја одржува идеалната тежина." data-en="Low-calorie protein that does not burden the stomach and maintains ideal weight." data-al="Proteinë me pak kalori që nuk e ngarkon stomakun dhe ruan peshën ideale.">Нискокалоричен протеин кој не го оптоварува стомакот и ја одржува идеалната тежина.</span></li>
+                    <li><strong data-mk="Лосос филети:" data-en="Salmon fillets:" data-al="Fileto salmoni:">Лосос филети:</strong> <span data-mk="Омега-3 бустер за елиминирање на сува кожа и давање на свиленкаст изложбен сјај." data-en="Omega-3 booster to eliminate dry skin and provide a silky show shine." data-al="Forcues i Omega-3 për të eliminuar lëkurën e thatë dhe për të dhënë shkëlqim mëndafshi.">Омега-3 бустер за елиминирање на сува кожа и давање на свиленкаст изложбен сјај.</span></li>
+                    <li><strong data-mk="Пилешки џигер:" data-en="Chicken liver:" data-al="Mëlçi pule:">Пилешки џигер:</strong> <span data-mk="Природен мултивитамин кој обезбедува есенцијален Витамин А и железо за силен имунитет." data-en="Natural multivitamin providing essential Vitamin A and iron for strong immunity." data-al="Multivitaminë natyrale që siguron Vitaminë A thelbësore dhe hekur për imunitet të fortë.">Природен мултивитамин кој обезбедува есенцијален Витамин А и железо за силен имунитет.</span></li>
+                    <li><strong data-mk="Сладок компир (варен):" data-en="Sweet potato (cooked):" data-al="Patate e ëmbël (e gatuar):">Сладок компир (варен):</strong> <span data-mk="Сложени јаглен хидрати кои бавно ослободуваат енергија и се перфектни за чувствителен дигестивен систем." data-en="Complex carbohydrates that release energy slowly and are perfect for sensitive digestive systems." data-al="Karbohidrate komplekse që lëshojnë energji ngadalë dhe janë perfekte për sistemin e ndjeshëm tretës.">Сложени јаглен хидрати кои бавно ослободуваат енергија и се перфектни за чувствителен дигестивен систем.</span></li>
+                    <li><strong data-mk="Тиквичка и целер:" data-en="Zucchini and celery:" data-al="Kungulleshë dhe selino:">Тиквичка и целер:</strong> <span data-mk="Растителни влакна за одлична дигестија; целерот природно го освежува здивот." data-en="Plant fibers for excellent digestion; celery naturally refreshes the breath." data-al="Fijet bimore për tretje të shkëlqyer; selinoja freskon në mënyrë natyrale erën e gojës.">Растителни влакна за одлична дигестија; целерот природно го освежува здивот.</span></li>
+                    <li><strong data-mk="Кокосово масло:" data-en="Coconut oil:" data-al="Vaj kokosi:">Кокосово масло:</strong> <span data-mk="Природен антибактериски додаток кој спречува чешање и перутање под густото влакно." data-en="Natural antibacterial supplement that prevents itching and flaking under the dense coat." data-al="Suplement natyral antibakterial që parandalon kruajtjen dhe luspëzimin nën gëzofin e dendur.">Природен антибактериски додаток кој спречува чешање и перутање под густото влакно.</span></li>
+                    <li><strong data-mk="Шумско овошје:" data-en="Berries:" data-al="Fruta pylli:">Шумско овошје:</strong> <span data-mk="Моќни антиоксиданси за клеточна заштита." data-en="Powerful antioxidants for cellular protection." data-al="Antioksidantë të fuqizuar për mbrojtjen qelizore.">Моќни антиоксиданси за клеточна заштита.</span></li>
+                    <li><strong data-mk="Мелена лушпа од јајце:" data-en="Ground eggshell:" data-al="Lëvozhgë veze e bluar:">Мелена лушпа од јајце:</strong> <span data-mk="Најбезбедниот природен извор на неопходниот калциум во зготвен оброк без коски." data-en="The safest natural source of essential calcium in a cooked meal without bones." data-al="Burimi natyror më i sigurt i kalciumit thelbësor në një vakt të gatuar pa eshtra.">Најбезбедниот природен извор на неопходниот калциум во зготвен оброк без коски.</span></li>
                 </ul>
+
+                <!-- Нутритивен Картон -->
+                <div class="nutrition-box">
+                    <div class="nutrition-title" data-mk="Нутритивна вредност (на 100g)" data-en="Nutritional Value (per 100g)" data-al="Vlera Ushqyese (për 100g)">Нутритивна вредност (на 100g)</div>
+                    <div class="nutrition-grid">
+                        <div class="nutri-item"><span class="nutri-label" data-mk="Калории" data-en="Calories" data-al="Kalori">Калории</span><span class="nutri-value">132 kcal</span></div>
+                        <div class="nutri-item"><span class="nutri-label" data-mk="Протеини" data-en="Proteins" data-al="Proteina">Протеини</span><span class="nutri-value">16.8 g</span></div>
+                        <div class="nutri-item"><span class="nutri-label" data-mk="Масти" data-en="Fats" data-al="Yndyrna">Масти</span><span class="nutri-value">6.2 g</span></div>
+                        <div class="nutri-item"><span class="nutri-label" data-mk="Јаглехидрати" data-en="Carbs" data-al="Karbohidrate">Јаглехидрати</span><span class="nutri-value">3.4 g</span></div>
+                        <div class="nutri-item"><span class="nutri-label" data-mk="Влакна" data-en="Fiber" data-al="Fijet">Влакна</span><span class="nutri-value">1.1 g</span></div>
+                    </div>
+                </div>
             </div>
 
             <!-- 2. Prime Signature -->
             <div class="recipe-block">
-                <h3>🥩 Prime Signature: Нашата Совршена Формула</h3>
-                <p>Ние не користиме полнила. Секоја состојка е внимателно одбрана со една единствена цел – да донесе видлива здравствена придобивка. Ова е избалансирана виталност.</p>
+                <h3 data-mk="🥩 Prime Signature: Нашата Совршена Формула" data-en="🥩 Prime Signature: Our Perfect Formula" data-al="🥩 Prime Signature: Formula Jonë e Përsosur">🥩 Prime Signature: Нашата Совршена Формула</h3>
+                <p data-mk="Ние не користиме полнила. Секоја состојка е внимателно одбрана со една единствена цел – да донесе видлива здравствена придобивка. Ова е избалансирана виталност." data-en="We do not use fillers. Every ingredient is carefully chosen with a single purpose – to bring a visible health benefit. This is balanced vitality." data-al="Ne nuk përdorim mbushës. Çdo përbërës është zgjedhur me kujdes me një qëllim të vetëm – të sjellë një përfitim të dukshëm shëndetësor. Kjo është vitalitet i ekuilibruar.">Ние не користиме полнила. Секоја состојка е внимателно одбрана со една единствена цел – да донесе видлива здравствена придобивка. Ова е избалансирана виталност.</p>
                 <ul class="ingredient-list">
-                    <li><strong>Јунешко месо:</strong> Чист, висококвалитетен протеин кој гради цврста мускулна маса и обезбедува долготрајна енергија.</li>
-                    <li><strong>Свеж лосос:</strong> Природен извор на Омега-3 масни киселини за беспрекорен сјај на крзното и здрава кожа.</li>
-                    <li><strong>Пилешко месо:</strong> Лесно сварлив протеин кој ја поддржува севкупната виталност и одржува силен скелет.</li>
-                    <li><strong>Варен компир:</strong> Внимателно дозиран извор на јаглехидрати за лесно варење и стабилна енергија.</li>
-                    <li><strong>Свеж зеленчук (Морков, Тиквица):</strong> Богаство од природни растителни влакна за здрав стомак и дигестија.</li>
-                    <li><strong>Јунешки џигер:</strong> Мултивитаминска бомба есенцијална за Витамин А и силен имунитет.</li>
-                    <li><strong>Јунешки бубрег:</strong> Извор на Б-група витамини и природно железо за одлична крвна слика.</li>
-                    <li><strong>Препеличино јајце:</strong> Висококонцентриран извор на холин и чисти протеини за фокус и развој.</li>
-                    <li><strong>Шумско овошје:</strong> Природни антиоксиданси за заштита на клетките.</li>
+                    <li><strong data-mk="Јунешко месо:" data-en="Beef meat:" data-al="Mish viçi:">Јунешко месо:</strong> <span data-mk="Чист, висококвалитетен протеин кој гради цврста мускулна маса и обезбедува долготрајна енергија." data-en="Pure, high-quality protein that builds solid muscle mass and provides long-lasting energy." data-al="Proteinë e pastër dhe e cilësisë së lartë që ndërton masë të fortë muskulore dhe siguron energji afatgjatë.">Чист, висококвалитетен протеин кој гради цврста мускулна маса и обезбедува долготрајна енергија.</span></li>
+                    <li><strong data-mk="Свеж лосос:" data-en="Fresh salmon:" data-al="Salmon i freskët:">Свеж лосос:</strong> <span data-mk="Природен извор на Омега-3 масни киселини за беспрекорен сјај на крзното и здрава кожа." data-en="Natural source of Omega-3 fatty acids for flawless coat shine and healthy skin." data-al="Burim natyror i acideve yndyrore Omega-3 për shkëlqim të përsosur të gëzofit dhe lëkurë të shëndetshme.">Природен извор на Омега-3 масни киселини за беспрекорен сјај на крзното и здрава кожа.</span></li>
+                    <li><strong data-mk="Пилешко месо:" data-en="Chicken meat:" data-al="Mish pule:">Пилешко месо:</strong> <span data-mk="Лесно сварлив протеин кој ја поддржува севкупната виталност и одржува силен скелет." data-en="Easily digestible protein that supports overall vitality and maintains a strong skeleton." data-al="Proteinë lehtësisht e tretshme që mbështet vitalitetin e përgjithshëm dhe ruan një skelet të fortë.">Лесно сварлив протеин кој ја поддржува севкупната виталност и одржува силен скелет.</span></li>
+                    <li><strong data-mk="Варен компир:" data-en="Boiled potato:" data-al="Patate e zier:">Варен компир:</strong> <span data-mk="Внимателно дозиран извор на јаглехидрати за лесно варење и стабилна енергија." data-en="Carefully dosed source of carbohydrates for easy digestion and stable energy." data-al="Burim i dozuar me kujdes i karbohidrateve për tretje të lehtë dhe energji të qëndrueshme.">Внимателно дозиран извор на јаглехидрати за лесно варење и стабилна енергија.</span></li>
+                    <li><strong data-mk="Свеж зеленчук (Морков, Тиквица):" data-en="Fresh vegetables (Carrot, Zucchini):" data-al="Perime të freskëta (Karrota, Kungulleshë):">Свеж зеленчук (Морков, Тиквица):</strong> <span data-mk="Богатство од природни растителни влакна за здрав стомак и дигестија." data-en="Wealth of natural plant fibers for a healthy stomach and digestion." data-al="Pasuri e fibrave bimore natyrore për një stomak dhe tretje të shëndetshme.">Богатство од природни растителни влакна за здрав стомак и дигестија.</span></li>
+                    <li><strong data-mk="Јунешки џигер:" data-en="Beef liver:" data-al="Mëlçi viçi:">Јунешки џигер:</strong> <span data-mk="Мултивитаминска бомба есенцијална за Витамин А и силен имунитет." data-en="Multivitamin bomb essential for Vitamin A and strong immunity." data-al="Bombë multivitaminesh thelbësore për Vitaminën A dhe imunitet të fortë.">Мултивитаминска бомба есенцијална за Витамин А и силен имунитет.</span></li>
+                    <li><strong data-mk="Јунешки бубрег:" data-en="Beef kidney:" data-al="Veshkë viçi:">Јунешки бубрег:</strong> <span data-mk="Извор на Б-група витамини и природно железо за одлична крвна слика." data-en="Source of B-group vitamins and natural iron for an excellent blood count." data-al="Burim i vitaminave të grupit B dhe hekurit natyror për një pasqyrë të shkëlqyer të gjakut.">Извор на Б-група витамини и природно железо за одлична крвна слика.</span></li>
+                    <li><strong data-mk="Препеличино јајце:" data-en="Quail egg:" data-al="Vezë thëllëze:">Препеличино јајце:</strong> <span data-mk="Висококонцентриран извор на холин и чисти протеини за фокус и развој." data-en="Highly concentrated source of choline and clean proteins for focus and development." data-al="Burim i përqendruar lart i kolinës dhe proteinave të pastra për fokus dhe zhvillim.">Висококонцентриран извор на холин и чисти протеини за фокус и развој.</span></li>
+                    <li><strong data-mk="Шумско овошје:" data-en="Berries:" data-al="Fruta pylli:">Шумско овошје:</strong> <span data-mk="Природни антиоксиданси за заштита на клетките." data-en="Natural antioxidants for cell protection." data-al="Antioksidantë natyrorë për mbrojtjen e qelizave.">Природни антиоксиданси за заштита на клетките.</span></li>
                 </ul>
+
+                <!-- Нутритивен Картон -->
+                <div class="nutrition-box">
+                    <div class="nutrition-title" data-mk="Нутритивна вредност (на 100g)" data-en="Nutritional Value (per 100g)" data-al="Vlera Ushqyese (për 100g)">Нутритивна вредност (на 100g)</div>
+                    <div class="nutrition-grid">
+                        <div class="nutri-item"><span class="nutri-label" data-mk="Калории" data-en="Calories" data-al="Kalori">Калории</span><span class="nutri-value">145 kcal</span></div>
+                        <div class="nutri-item"><span class="nutri-label" data-mk="Протеини" data-en="Proteins" data-al="Proteina">Протеини</span><span class="nutri-value">18.2 g</span></div>
+                        <div class="nutri-item"><span class="nutri-label" data-mk="Масти" data-en="Fats" data-al="Yndyrna">Масти</span><span class="nutri-value">7.1 g</span></div>
+                        <div class="nutri-item"><span class="nutri-label" data-mk="Јаглехидрати" data-en="Carbs" data-al="Karbohidrate">Јаглехидрати</span><span class="nutri-value">3.0 g</span></div>
+                        <div class="nutri-item"><span class="nutri-label" data-mk="Влакна" data-en="Fiber" data-al="Fijet">Влакна</span><span class="nutri-value">0.9 g</span></div>
+                    </div>
+                </div>
             </div>
 
             <!-- 3. Основни едиции -->
             <div class="recipe-block">
-                <h3>🌟 Основните едиции (Beef, Salmon, Chicken, Pork)</h3>
-                <p>Создадени по истите високи стандарди, прилагодени за кучиња со специфични вкусови или потреби во исхраната:</p>
+                <h3 data-mk="🌟 Основните едиции (Beef, Salmon, Chicken, Pork)" data-en="🌟 The Basic Editions (Beef, Salmon, Chicken, Pork)" data-al="🌟 Edicionet Bazë (Beef, Salmon, Chicken, Pork)">🌟 Основните едиции (Beef, Salmon, Chicken, Pork)</h3>
+                <p data-mk="Создадени по истите високи стандарди, прилагодени за кучиња со специфични вкусови или потреби во исхраната:" data-en="Created to the same high standards, tailored for dogs with specific tastes or dietary needs:" data-al="Krijuar sipas të njëjtave standarde të larta, të përshtatura për qen me shije specifike ose nevoja dietike:">Создадени по истите високи стандарди, прилагодени за кучиња со специфични вкусови или потреби во исхраната:</p>
                 <ul class="ingredient-list">
-                    <li><strong>Prime Beef Edition:</strong> Моќен оброк со чисто јунешко месо за цврста мускулна маса и издржливост кај активни кучиња.</li>
-                    <li><strong>Prime Salmon Edition:</strong> Богата порција свеж лосос со висок процент на Омега-3 за спектакуларно сјајно крзно.</li>
-                    <li><strong>Prime Chicken Edition:</strong> Нежен и лесно сварлив оброк за кучиња со чувствителен стомак и секојдневна лесна енергија.</li>
-                    <li><strong>Prime Pork Edition:</strong> Исклучително вкусен оброк од посно свинско месо, богат со цинк, идеален за пребирливи миленици.</li>
+                    <li><strong data-mk="Prime Beef Edition:" data-en="Prime Beef Edition:" data-al="Prime Beef Edition:">Prime Beef Edition:</strong> <span data-mk="Моќен оброк со чисто јунешко месо за цврста мускулна маса и издржливост кај активни кучиња." data-en="A powerful meal with pure beef for solid muscle mass and endurance in active dogs." data-al="Një vakt i fuqishëm me mish të pastër viçi për masë të fortë muskulore dhe qëndrueshmëri te qentë aktivë.">Моќен оброк со чисто јунешко месо за цврста мускулна маса и издржливост кај активни кучиња.</span></li>
+                    <li><strong data-mk="Prime Salmon Edition:" data-en="Prime Salmon Edition:" data-al="Prime Salmon Edition:">Prime Salmon Edition:</strong> <span data-mk="Богата порција свеж лосос со висок процент на Омега-3 за спектакуларно сјајно крзно." data-en="A rich portion of fresh salmon with a high percentage of Omega-3 for a spectacularly shiny coat." data-al="Një pjesë e pasur e salmonit të freskët me përqindje të lartë Omega-3 për një gëzof spektakolar të shkëlqyeshëm.">Богата порција свеж лосос со висок процент на Омега-3 за спектакуларно сјајно крзно.</span></li>
+                    <li><strong data-mk="Prime Chicken Edition:" data-en="Prime Chicken Edition:" data-al="Prime Chicken Edition:">Prime Chicken Edition:</strong> <span data-mk="Нежен и лесно сварлив оброк за кучиња со чувствителен стомак и секојдневна лесна енергија." data-en="A gentle and easily digestible meal for dogs with sensitive stomachs and daily light energy." data-al="Një vakt i butë dhe lehtësisht i tretshëm për qen me stomak të ndjeshëm dhe energji të lehtë të përditshme.">Нежен и лесно сварлив оброк за кучиња со чувствителен стомак и секојдневна лесна енергија.</span></li>
+                    <li><strong data-mk="Prime Pork Edition:" data-en="Prime Pork Edition:" data-al="Prime Pork Edition:">Prime Pork Edition:</strong> <span data-mk="Исклучително вкусен оброк од посно свинско месо, богат со цинк, идеален за пребирливи миленици." data-en="An exceptionally tasty lean pork meal, rich in zinc, ideal for picky pets." data-al="Një vakt jashtëzakonisht i shijshëm me mish derri të dobët, i pasur me zink, ideal për kafshët shtëpiake të zgjedhura.">Исклучително вкусен оброк од посно свинско месо, богат со цинк, идеален за пребирливи миленици.</span></li>
                 </ul>
+
+                <!-- Нутритивен Картон за Основните Едиции -->
+                <div class="nutrition-box">
+                    <div class="nutrition-title" data-mk="Нутритивна вредност - Просек (на 100g)" data-en="Nutritional Value - Average (per 100g)" data-al="Vlera Ushqyese - Mesatare (për 100g)">Нутритивна вредност - Просек (на 100g)</div>
+                    <div class="nutrition-grid">
+                        <div class="nutri-item"><span class="nutri-label" data-mk="Калории" data-en="Calories" data-al="Kalori">Калории</span><span class="nutri-value">138 kcal</span></div>
+                        <div class="nutri-item"><span class="nutri-label" data-mk="Протеини" data-en="Proteins" data-al="Proteina">Протеини</span><span class="nutri-value">17.0 g</span></div>
+                        <div class="nutri-item"><span class="nutri-label" data-mk="Масти" data-en="Fats" data-al="Yndyrna">Масти</span><span class="nutri-value">6.5 g</span></div>
+                        <div class="nutri-item"><span class="nutri-label" data-mk="Јаглехидрати" data-en="Carbs" data-al="Karbohidrate">Јаглехидрати</span><span class="nutri-value">3.2 g</span></div>
+                        <div class="nutri-item"><span class="nutri-label" data-mk="Влакна" data-en="Fiber" data-al="Fijet">Влакна</span><span class="nutri-value">1.0 g</span></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- ЛУКСУЗЕН ФУТЕР -->
     <footer>
-        <p>&copy; 2026 Prime Balance. Сите права се задржани.</p>
+        <p>&copy; 2026 Prime Balance. <span data-mk="Сите права се задржани." data-en="All rights reserved." data-al="Të gjitha të drejtat e rezervuara.">Сите права се задржани.</span></p>
     </footer>
+
+    <!-- ЈАСАВРИПТ ЗА ПРЕВОД НА СТРАНАТА -->
+    <script>
+        function changeLang(lang) {
+            // Промена на активната коцкичка
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Превод на сите елементи со data атрибути
+            document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+                el.innerHTML = el.getAttribute('data-' + lang);
+            });
+        }
+    </script>
 
 </body>
 </html>
