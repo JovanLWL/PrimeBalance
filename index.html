@@ -528,6 +528,7 @@
             font-weight: 700;
         }
 
+        /* СТРУЧНО ПОРАМНЕТИ И УРЕДНИ НУТРИТИВНИ ТАБЕЛИ */
         .nutrition-box {
             margin-top: 25px;
             background: var(--white);
@@ -549,31 +550,38 @@
 
         .nutrition-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-            gap: 12px;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
         }
 
         .nutri-item {
             background: var(--cream);
-            padding: 10px;
+            padding: 10px 6px;
             border-radius: 8px;
             text-align: center;
             border: 1px solid rgba(212, 175, 55, 0.2);
+            min-height: 65px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .nutri-label {
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 700;
             color: #666;
             text-transform: uppercase;
             display: block;
-            margin-bottom: 4px;
+            margin-bottom: 3px;
+            line-height: 1.2;
         }
 
         .nutri-value {
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 800;
             color: var(--bordeaux);
+            line-height: 1.2;
         }
 
         .feeding-table {
@@ -750,6 +758,7 @@
             .section-title { font-size: 30px; }
             .products-grid { grid-template-columns: 1fr; }
             .recipe-header-flex { flex-direction: column; align-items: flex-start; gap: 10px; }
+            .nutrition-grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
@@ -778,7 +787,7 @@
     <section class="hero">
         <div class="hero-content">
             <h1 data-mk="ПРИРОДНА МОЌ.<br>СОВРШЕН БАЛАНС." data-en="NATURAL POWER.<br>PERFECT BALANCE." data-al="FUQIA NATYRORE.<br>BALANCI I PËRSOSUR.">ПРИРОДНА МОЌ.<br>СОВРШЕН БАЛАНС.</h1>
-            <p data-mk="Природна исхрана инспирана од совршеството на природата. Внимателно зготвени оброци кои гарантираат моќен имунитет, совршена дигестија и беспрекорно влакно." data-en="Natural nutrition inspired by the perfection of nature. Carefully cooked meals guaranteeing powerful immunity, perfect digestion, and flawless coat." data-al="Ushqim natyral i frymëzuar nga përsosmëria e natyrës. Vakte të gatuara me kujdes që garantojnë imunitet të fuqishëm, tretje të përsosur dhe qime të patëmetë.">Природна исхрана инспирана од совршеството на природата. Внимателно зготвени оброци кои гарантираат моќен имунитет, совршена дигестија и беспрекорно влакно.</p>
+            <p data-mk="Природна исхрана инспирана од совршеството на природата. Внимателно зготвени оброци кои гарантираат силен имунитет, совршена дигестија и беспрекорно влакно." data-en="Natural nutrition inspired by the perfection of nature. Carefully cooked meals guaranteeing strong immunity, perfect digestion, and flawless coat." data-al="Ushqim natyral i frymëzuar nga përsosmëria e natyrës. Vakte të gatuara me kujdes që garantojnë imunitet të fuqishëm, tretje të përsosur dhe qime të patëmetë.">Природна исхрана инспирана од совршеството на природата. Внимателно зготвени оброци кои гарантираат силен имунитет, совршена дигестија и беспрекорно влакно.</p>
             <a href="#products" class="btn-primary" data-mk="Разгледај ги Менијата" data-en="Explore Menus" data-al="Shiko Menutë">Разгледај ги Менијата</a>
         </div>
         <div class="hero-image">
@@ -791,7 +800,7 @@
         <div class="about-container">
             <h2 data-mk="Нашата Приказна: Љубов сервирана во чинија" data-en="Our Story: Love Served in a Bowl" data-al="Historia Jonë: Dashuri e Shërbyer në Pjatë">Нашата Приказна: Љубов сервирана во чинија</h2>
             <p data-mk="Секој сопственик на куче во срцето ја носи истата желба – нивниот најверен пријател да живее што е можно подолго, да има поздрав и посреќен живот. Токму од таа чиста љубов се роди и нашата мисија." data-en="Every dog owner carries the same wish in their heart – for their most loyal friend to live as long as possible, to have a healthier and happier life. From this pure love, our mission was born." data-al="Çdo pronar qeni mban të njëjtën dëshirë në zemër – që miku i tij më besnik të jetojë sa më gjatë të jetë e mundur, të ketë një jetë më të shëndetshme dhe më të lumtur. Pikërisht nga kjo dashuri e pastër lindi misioni ynë.">Секој сопственик на куче во срцето ја носи истата желба – нивниот најверен пријател да живее што е можно подолго, да има поздрав и посреќен живот. Токму од таа чиста љубов се роди и нашата мисија.</p>
-            <p><span class="brand-highlight" data-mk="Prime Balance" data-en="Prime Balance" data-al="Prime Balance">Prime Balance</span> <span data-mk="започна како семејна и одгледувачка приказна. Водени од желбата да им го пружиме најдоброто на нашите сопствени миленици, усовршивме вистински избалансирана формула. Внимателно зготвени оброци кои гарантираат силен имунитет, совршена дигестија и беспрекорно влакно. Ја изразуваме нашата љубов према милениците токму преку квалитетна чинија, која хармонично и сезонски се менува — нудејќи им свеж зимски или летен зеленчук прилагоден на природниот биоритъм на кучето." data-en="began as a family and breeding story. Driven by the desire to provide the best for our own pets, we perfected a truly balanced formula. Carefully cooked meals that guarantee strong immunity, perfect digestion, and a flawless coat. We express our love for pets through a quality bowl, which harmoniously and seasonally changes — offering fresh winter or summer vegetables tailored to the dog's natural biorhythm." data-al="filloi si një histori familjare dhe e mbarështimit. Të udhëhequr nga dëshira për t'u dhënë më të mirën kafshëve tona shtëpiake, ne përsosëm një formulë vërtet të ekuilibruar. Vakte të gatuara me kujdes që garantojnë imunitet të fortë, tretje të përsosur dhe gëzof të patëmetë. Dashurinë tonë për kafshët shtëpiake e shprehim përmes një pjate cilësore, e cila ndryshon në mënyrë harmonike dhe sezonale — duke ofruar perime të freskëta dimërore ose verore të përshtatura me bioritmin natyror të qenit.">започна како семејна и одгледувачка приказна. Водени од желбата да им го пружиме најдоброто на нашите сопствени миленици, усовршивме вистински избалансирана формула. Внимателно зготвени оброци кои гарантираат силен имунитет, совршена дигестија и беспрекорно влакно. Ја изразуваме нашата љубов према милениците токму преку квалитетна чинија, која хармонично и сезонски се менува — нудејќи им свеж зимски или летен зеленчук прилагоден на природниот биоритъм на кучето.</span></p>
+            <p><span class="brand-highlight" data-mk="Prime Balance" data-en="Prime Balance" data-al="Prime Balance">Prime Balance</span> <span data-mk="започна како семејна и одгледувачка приказна. Водени од желбата да им го пружиме најдоброто на нашите сопствени миленици, усовршивме вистински избалансирана формула. Внимателно зготвени оброци кои гарантираат силен имунитет, совршена дигестија и беспрекорно влакно. Ја изразуваме нашата љубов према милениците токму преку квалитетна чинија, која хармонично и сезонски се менува — нудејќи им свеж зимски или летен зеленчук прилагоден на природниот биоритам на кучето." data-en="began as a family and breeding story. Driven by the desire to provide the best for our own pets, we perfected a truly balanced formula. Carefully cooked meals that guarantee strong immunity, perfect digestion, and a flawless coat. We express our love for pets through a quality bowl, which harmoniously and seasonally changes — offering fresh winter or summer vegetables tailored to the dog's natural biorhythm." data-al="filloi si një histori familjare dhe e mbarështimit. Të udhëhequr nga dëshira për t'u dhënë më të mirën kafshëve tona shtëpiake, ne përsosëm një formulë vërtet të ekuilibruar. Vakte të gatuara me kujdes që garantojnë imunitet të fortë, tretje të përsosur dhe gëzof të patëmetë. Dashurinë tonë për kafshët shtëpiake e shprehim përmes një pjate cilësore, e cila ndryshon në mënyrë harmonike dhe sezonale — duke ofruar perime të freskëta dimërore ose verore të përshtatura me bioritmin natyror të qenit.">започна како семејна и одгледувачка приказна. Водени од желбата да им го пружиме најдоброто на нашите сопствени миленици, усовршивме вистински избалансирана формула. Внимателно зготвени оброци кои гарантираат силен имунитет, совршена дигестија и беспрекорно влакно. Ја изразуваме нашата љубов према милениците токму преку квалитетна чинија, која хармонично и сезонски се менува — нудејќи им свеж зимски или летен зеленчук прилагоден на природниот биоритам на кучето.</span></p>
         </div>
     </section>
 
@@ -956,11 +965,11 @@
                 <div class="nutrition-box">
                     <div class="nutrition-title" data-mk="Нутритивна вредност (на 100g)" data-en="Nutritional Value (per 100g)" data-al="Vlera Ushqyese (për 100g)">Нутритивна вредност (на 100g)</div>
                     <div class="nutrition-grid">
-                        <div class="nutri-item"><span class="nutri-label" data-mk="Калории" data-en="Calories" data-al="Kalori">Калории</span><span class="nutri-value">132 kcal</span></div>
-                        <div class="nutri-item"><span class="nutri-label" data-mk="Протеини" data-en="Proteins" data-al="Proteina">Протеини</span><span class="nutri-value">16.8 g</span></div>
-                        <div class="nutri-item"><span class="nutri-label" data-mk="Масти" data-en="Fats" data-al="Yndyrna">Масти</span><span class="nutri-value">6.2 g</span></div>
-                        <div class="nutri-item"><span class="nutri-label" data-mk="Јаглехидрати" data-en="Carbs" data-al="Karbohidrate">Јаглехидрати</span><span class="nutri-value">3.4 g</span></div>
-                        <div class="nutri-item"><span class="nutri-label" data-mk="Влакна" data-en="Fiber" data-al="Fijet">Влакна</span><span class="nutri-value">1.1 g</span></div>
+                        <div class="nutri-item"><span class="nutri-label">Калории</span><span class="nutri-value">132 kcal</span></div>
+                        <div class="nutri-item"><span class="nutri-label">Протеини</span><span class="nutri-value">16.8 g</span></div>
+                        <div class="nutri-item"><span class="nutri-label">Масти</span><span class="nutri-value">6.2 g</span></div>
+                        <div class="nutri-item"><span class="nutri-label">Јагленхидрати</span><span class="nutri-value">3.4 g</span></div>
+                        <div class="nutri-item"><span class="nutri-label">Влакна</span><span class="nutri-value">1.1 g</span></div>
                     </div>
 
                     <div class="nutrition-title" style="margin-top: 20px;" data-mk="Табела за хранење (Дневна доза)" data-en="Feeding Guide (Daily Dose)" data-al="Udhëzues Ushqyerjeje (Dozë Ditore)">Табела за хранење (Дневна доза)</div>
@@ -999,11 +1008,11 @@
                 <div class="nutrition-box">
                     <div class="nutrition-title" data-mk="Нутритивна вредност (на 100g)" data-en="Nutritional Value (per 100g)" data-al="Vlera Ushqyese (për 100g)">Нутритивна вредност (на 100g)</div>
                     <div class="nutrition-grid">
-                        <div class="nutri-item"><span class="nutri-label" data-mk="Калории" data-en="Calories" data-al="Kalori">Калории</span><span class="nutri-value">145 kcal</span></div>
-                        <div class="nutri-item"><span class="nutri-label" data-mk="Протеини" data-en="Proteins" data-al="Proteina">Протеини</span><span class="nutri-value">18.2 g</span></div>
-                        <div class="nutri-item"><span class="nutri-label" data-mk="Масти" data-en="Fats" data-al="Yndyrna">Масти</span><span class="nutri-value">7.1 g</span></div>
-                        <div class="nutri-item"><span class="nutri-label" data-mk="Јаглехидрати" data-en="Carbs" data-al="Karbohidrate">Јаглехидрати</span><span class="nutri-value">3.0 g</span></div>
-                        <div class="nutri-item"><span class="nutri-label" data-mk="Влакна" data-en="Fiber" data-al="Fijet">Влакна</span><span class="nutri-value">0.9 g</span></div>
+                        <div class="nutri-item"><span class="nutri-label">Калории</span><span class="nutri-value">145 kcal</span></div>
+                        <div class="nutri-item"><span class="nutri-label">Протеини</span><span class="nutri-value">18.2 g</span></div>
+                        <div class="nutri-item"><span class="nutri-label">Масти</span><span class="nutri-value">7.1 g</span></div>
+                        <div class="nutri-item"><span class="nutri-label">Јагленхидрати</span><span class="nutri-value">3.0 g</span></div>
+                        <div class="nutri-item"><span class="nutri-label">Влакна</span><span class="nutri-value">0.9 g</span></div>
                     </div>
 
                     <div class="nutrition-title" style="margin-top: 20px;" data-mk="Табела за хранење (Дневна доза)" data-en="Feeding Guide (Daily Dose)" data-al="Udhëzues Ushqyerjeje (Dozë Ditore)">Табела за хранење (Дневна доза)</div>
@@ -1040,11 +1049,11 @@
                 <div class="nutrition-box">
                     <div class="nutrition-title" data-mk="Нутритивна вредност (на 100g)" data-en="Nutritional Value (per 100g)" data-al="Vlera Ushqyese (për 100g)">Нутритивна вредност (на 100g)</div>
                     <div class="nutrition-grid">
-                        <div class="nutri-item"><span class="nutri-label" data-mk="Калории" data-en="Calories" data-al="Kalori">Калории</span><span class="nutri-value">140 kcal</span></div>
-                        <div class="nutri-item"><span class="nutri-label" data-mk="Протеини" data-en="Proteins" data-al="Proteina">Протеини</span><span class="nutri-value">17.5 g</span></div>
-                        <div class="nutri-item"><span class="nutri-label" data-mk="Масти" data-en="Fats" data-al="Yndyrna">Масти</span><span class="nutri-value">6.8 g</span></div>
-                        <div class="nutri-item"><span class="nutri-label" data-mk="Јаглехидрати" data-en="Carbs" data-al="Karbohidrate">Јаглехидрати</span><span class="nutri-value">3.1 g</span></div>
-                        <div class="nutri-item"><span class="nutri-label" data-mk="Влакна" data-en="Fiber" data-al="Fijet">Влакна</span><span class="nutri-value">1.0 g</span></div>
+                        <div class="nutri-item"><span class="nutri-label">Калории</span><span class="nutri-value">140 kcal</span></div>
+                        <div class="nutri-item"><span class="nutri-label">Протеини</span><span class="nutri-value">17.5 g</span></div>
+                        <div class="nutri-item"><span class="nutri-label">Масти</span><span class="nutri-value">6.8 g</span></div>
+                        <div class="nutri-item"><span class="nutri-label">Јагленхидрати</span><span class="nutri-value">3.1 g</span></div>
+                        <div class="nutri-item"><span class="nutri-label">Влакна</span><span class="nutri-value">1.0 g</span></div>
                     </div>
 
                     <div class="nutrition-title" style="margin-top: 20px;" data-mk="Табела за хранење (Дневна доза)" data-en="Feeding Guide (Daily Dose)" data-al="Udhëzues Ushqyerjeje (Dozë Ditore)">Табела за хранење (Дневна доза)</div>
@@ -1081,11 +1090,11 @@
                 <div class="nutrition-box">
                     <div class="nutrition-title" data-mk="Нутритивна вредност (на 100g)" data-en="Nutritional Value (per 100g)" data-al="Vlera Ushqyese (për 100g)">Нутритивна вредност (на 100g)</div>
                     <div class="nutrition-grid">
-                        <div class="nutri-item"><span class="nutri-label" data-mk="Калории" data-en="Calories" data-al="Kalori">Калории</span><span class="nutri-value">150 kcal</span></div>
-                        <div class="nutri-item"><span class="nutri-label" data-mk="Протеини" data-en="Proteins" data-al="Proteina">Протеини</span><span class="nutri-value">17.0 g</span></div>
-                        <div class="nutri-item"><span class="nutri-label" data-mk="Масти" data-en="Fats" data-al="Yndyrna">Масти</span><span class="nutri-value">8.2 g</span></div>
-                        <div class="nutri-item"><span class="nutri-label" data-mk="Јаглехидрати" data-en="Carbs" data-al="Karbohidrate">Јаглехидрати</span><span class="nutri-value">2.8 g</span></div>
-                        <div class="nutri-item"><span class="nutri-label" data-mk="Влакна" data-en="Fiber" data-al="Fijet">Влакна</span><span class="nutri-value">0.9 g</span></div>
+                        <div class="nutri-item"><span class="nutri-label">Калории</span><span class="nutri-value">150 kcal</span></div>
+                        <div class="nutri-item"><span class="nutri-label">Протеини</span><span class="nutri-value">17.0 g</span></div>
+                        <div class="nutri-item"><span class="nutri-label">Масти</span><span class="nutri-value">8.2 g</span></div>
+                        <div class="nutri-item"><span class="nutri-label">Јагленхидрати</span><span class="nutri-value">2.8 g</span></div>
+                        <div class="nutri-item"><span class="nutri-label">Влакна</span><span class="nutri-value">0.9 g</span></div>
                     </div>
 
                     <div class="nutrition-title" style="margin-top: 20px;" data-mk="Табела за хранење (Дневна доза)" data-en="Feeding Guide (Daily Dose)" data-al="Udhëzues Ushqyerjeje (Dozë Ditore)">Табела за хранење (Дневна доза)</div>
@@ -1122,11 +1131,11 @@
                 <div class="nutrition-box">
                     <div class="nutrition-title" data-mk="Нутритивна вредност (на 100g)" data-en="Nutritional Value (per 100g)" data-al="Vlera Ushqyese (për 100g)">Нутритивна вредност (на 100g)</div>
                     <div class="nutrition-grid">
-                        <div class="nutri-item"><span class="nutri-label" data-mk="Калории" data-en="Calories" data-al="Kalori">Калории</span><span class="nutri-value">128 kcal</span></div>
-                        <div class="nutri-item"><span class="nutri-label" data-mk="Протеини" data-en="Proteins" data-al="Proteina">Протеини</span><span class="nutri-value">16.0 g</span></div>
-                        <div class="nutri-item"><span class="nutri-label" data-mk="Масти" data-en="Fats" data-al="Yndyrna">Масти</span><span class="nutri-value">5.5 g</span></div>
-                        <div class="nutri-item"><span class="nutri-label" data-mk="Јаглехидрати" data-en="Carbs" data-al="Karbohidrate">Јаглехидрати</span><span class="nutri-value">3.5 g</span></div>
-                        <div class="nutri-item"><span class="nutri-label" data-mk="Влакна" data-en="Fiber" data-al="Fijet">Влакна</span><span class="nutri-value">1.2 g</span></div>
+                        <div class="nutri-item"><span class="nutri-label">Калории</span><span class="nutri-value">128 kcal</span></div>
+                        <div class="nutri-item"><span class="nutri-label">Протеини</span><span class="nutri-value">16.0 g</span></div>
+                        <div class="nutri-item"><span class="nutri-label">Масти</span><span class="nutri-value">5.5 g</span></div>
+                        <div class="nutri-item"><span class="nutri-label">Јагленхидрати</span><span class="nutri-value">3.5 g</span></div>
+                        <div class="nutri-item"><span class="nutri-label">Влакна</span><span class="nutri-value">1.2 g</span></div>
                     </div>
 
                     <div class="nutrition-title" style="margin-top: 20px;" data-mk="Табела за хранење (Дневна доза)" data-en="Feeding Guide (Daily Dose)" data-al="Udhëzues Ushqyerjeje (Dozë Ditore)">Табела за хранење (Дневна доза)</div>
@@ -1163,11 +1172,11 @@
                 <div class="nutrition-box">
                     <div class="nutrition-title" data-mk="Нутритивна вредност (на 100g)" data-en="Nutritional Value (per 100g)" data-al="Vlera Ushqyese (për 100g)">Нутритивна вредност (на 100g)</div>
                     <div class="nutrition-grid">
-                        <div class="nutri-item"><span class="nutri-label" data-mk="Калории" data-en="Calories" data-al="Kalori">Калории</span><span class="nutri-value">136 kcal</span></div>
-                        <div class="nutri-item"><span class="nutri-label" data-mk="Протеини" data-en="Proteins" data-al="Proteina">Протеини</span><span class="nutri-value">17.2 g</span></div>
-                        <div class="nutri-item"><span class="nutri-label" data-mk="Масти" data-en="Fats" data-al="Yndyrna">Масти</span><span class="nutri-value">6.4 g</span></div>
-                        <div class="nutri-item"><span class="nutri-label" data-mk="Јаглехидрати" data-en="Carbs" data-al="Karbohidrate">Јаглехидрати</span><span class="nutri-value">3.1 g</span></div>
-                        <div class="nutri-item"><span class="nutri-label" data-mk="Влакна" data-en="Fiber" data-al="Fijet">Влакна</span><span class="nutri-value">1.0 g</span></div>
+                        <div class="nutri-item"><span class="nutri-label">Калории</span><span class="nutri-value">136 kcal</span></div>
+                        <div class="nutri-item"><span class="nutri-label">Протеини</span><span class="nutri-value">17.2 g</span></div>
+                        <div class="nutri-item"><span class="nutri-label">Масти</span><span class="nutri-value">6.4 g</span></div>
+                        <div class="nutri-item"><span class="nutri-label">Јагленхидрати</span><span class="nutri-value">3.1 g</span></div>
+                        <div class="nutri-item"><span class="nutri-label">Влакна</span><span class="nutri-value">1.0 g</span></div>
                     </div>
 
                     <div class="nutrition-title" style="margin-top: 20px;" data-mk="Табела за хранење (Дневна доза)" data-en="Feeding Guide (Daily Dose)" data-al="Udhëzues Ushqyerjeje (Dozë Ditore)">Табела за хранење (Дневна доза)</div>
