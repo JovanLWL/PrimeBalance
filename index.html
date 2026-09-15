@@ -528,7 +528,7 @@
             font-weight: 700;
         }
 
-        /* СТРУЧНО ПОРАМНЕТИ И УРЕДНИ НУТРИТИВНИ ТАБЕЛИ */
+        /* НУТРИТИВНИ ТАБЕЛИ */
         .nutrition-box {
             margin-top: 25px;
             background: var(--white);
@@ -610,7 +610,7 @@
             background-color: var(--cream);
         }
 
-        /* МОДАЛЕН ПРОЗОР ЗА КОШНИЧКА */
+        /* МОДАЛЕН ПРОЗОР ЗА КОШНИЧКА И ФОРМУЛАР */
         .cart-modal {
             position: fixed;
             top: 0;
@@ -663,7 +663,7 @@
 
         .cart-items-list {
             margin-bottom: 15px;
-            max-height: 220px;
+            max-height: 180px;
             overflow-y: auto;
         }
 
@@ -687,6 +687,33 @@
             color: var(--bordeaux);
             text-align: center;
             margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        /* ФОРМУЛАР ЗА ПОДАТОЦИ */
+        .checkout-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 11px 14px;
+            border: 1.5px solid rgba(212, 175, 55, 0.6);
+            border-radius: 8px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            background: var(--cream);
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-input:focus {
+            border-color: var(--bordeaux);
+            background: var(--white);
         }
 
         .cart-total {
@@ -695,8 +722,8 @@
             font-size: 18px;
             font-weight: 800;
             color: var(--bordeaux);
-            margin-bottom: 25px;
-            padding-top: 15px;
+            margin-bottom: 20px;
+            padding-top: 12px;
             border-top: 2px solid var(--gold);
         }
 
@@ -824,7 +851,7 @@
                         <strong data-mk="Препорачана доза (10kg куче):" data-en="Recommended dose (10kg dog):" data-al="Dozë e rekomanduar (qen 10kg):">Препорачана доза (10kg куче):</strong> 300g - 380g дневно
                     </div>
                     <div class="order-box">
-                        <input type="number" class="quantity-input" id="qty-sig" value="1" min="1" step="0.5" title="Количина во килограми">
+                        <input type="number" class="quantity-input" id="qty-sig" value="1" min="1" step="0.5" oninput="validateQty(this)" title="Количина во килограми">
                         <span style="font-size: 13px; font-weight: 700;">kg (650 ден/kg)</span>
                         <button class="btn-order" onclick="addToCart('Prime Signature', 'qty-sig', 650)" data-mk="Додади во кошничка" data-en="Add to Cart" data-al="Shto në Shportë">Додади во кошничка</button>
                     </div>
@@ -845,7 +872,7 @@
                         <strong data-mk="Препорачана доза (10kg куче):" data-en="Recommended dose (10kg dog):" data-al="Dozë e rekomanduar (qen 10kg):">Препорачана доза (10kg куче):</strong> 280g - 350g дневно
                     </div>
                     <div class="order-box">
-                        <input type="number" class="quantity-input" id="qty-beef" value="1" min="1" step="0.5" title="Количина во килограми">
+                        <input type="number" class="quantity-input" id="qty-beef" value="1" min="1" step="0.5" oninput="validateQty(this)" title="Количина во килограми">
                         <span style="font-size: 13px; font-weight: 700;">kg (700 ден/kg)</span>
                         <button class="btn-order" onclick="addToCart('Prime Beef Edition', 'qty-beef', 700)" data-mk="Додади во кошничка" data-en="Add to Cart" data-al="Shto në Shportë">Додади во кошничка</button>
                     </div>
@@ -866,7 +893,7 @@
                         <strong data-mk="Препорачана доза (10kg куче):" data-en="Recommended dose (10kg dog):" data-al="Dozë e rekomanduar (qen 10kg):">Препорачана доза (10kg куче):</strong> 250g - 320g дневно
                     </div>
                     <div class="order-box">
-                        <input type="number" class="quantity-input" id="qty-sal" value="1" min="1" step="0.5" title="Количина во килограми">
+                        <input type="number" class="quantity-input" id="qty-sal" value="1" min="1" step="0.5" oninput="validateQty(this)" title="Количина во килограми">
                         <span style="font-size: 13px; font-weight: 700;">kg (780 ден/kg)</span>
                         <button class="btn-order" onclick="addToCart('Prime Salmon Edition', 'qty-sal', 780)" data-mk="Додади во кошничка" data-en="Add to Cart" data-al="Shto në Shportë">Додади во кошничка</button>
                     </div>
@@ -887,7 +914,7 @@
                         <strong data-mk="Препорачана доза (10kg куче):" data-en="Recommended dose (10kg dog):" data-al="Dozë e rekomanduar (qen 10kg):">Препорачана доза (10kg куче):</strong> 320g - 400g дневно
                     </div>
                     <div class="order-box">
-                        <input type="number" class="quantity-input" id="qty-chk" value="1" min="1" step="0.5" title="Количина во килограми">
+                        <input type="number" class="quantity-input" id="qty-chk" value="1" min="1" step="0.5" oninput="validateQty(this)" title="Количина во килограми">
                         <span style="font-size: 13px; font-weight: 700;">kg (600 ден/kg)</span>
                         <button class="btn-order" onclick="addToCart('Prime Chicken Edition', 'qty-chk', 600)" data-mk="Додади во кошничка" data-en="Add to Cart" data-al="Shto në Shportë">Додади во кошничка</button>
                     </div>
@@ -908,7 +935,7 @@
                         <strong data-mk="Препорачана доза (10kg куче):" data-en="Recommended dose (10kg dog):" data-al="Dozë e rekomanduar (qen 10kg):">Препорачана доза (10kg куче):</strong> 290g - 360g дневно
                     </div>
                     <div class="order-box">
-                        <input type="number" class="quantity-input" id="qty-prk" value="1" min="1" step="0.5" title="Количина во килограми">
+                        <input type="number" class="quantity-input" id="qty-prk" value="1" min="1" step="0.5" oninput="validateQty(this)" title="Количина во килограми">
                         <span style="font-size: 13px; font-weight: 700;">kg (650 ден/kg)</span>
                         <button class="btn-order" onclick="addToCart('Prime Pork Edition', 'qty-prk', 650)" data-mk="Додади во кошничка" data-en="Add to Cart" data-al="Shto në Shportë">Додади во кошничка</button>
                     </div>
@@ -929,7 +956,7 @@
                         <strong data-mk="Препорачана доза (10kg куче):" data-en="Recommended dose (10kg dog):" data-al="Dozë e rekomanduar (qen 10kg):">Препорачана доза (10kg куче):</strong> 310g - 390g дневно
                     </div>
                     <div class="order-box">
-                        <input type="number" class="quantity-input" id="qty-snw" value="1" min="1" step="0.5" title="Количина во килограми">
+                        <input type="number" class="quantity-input" id="qty-snw" value="1" min="1" step="0.5" oninput="validateQty(this)" title="Количина во килограми">
                         <span style="font-size: 13px; font-weight: 700;">kg (850 ден/kg)</span>
                         <button class="btn-order" onclick="addToCart('Snow-White Coat', 'qty-snw', 850)" data-mk="Додади во кошничка" data-en="Add to Cart" data-al="Shto në Shportë">Додади во кошничка</button>
                     </div>
@@ -1197,7 +1224,7 @@
         </div>
     </section>
 
-    <!-- МОДАЛЕН ПРОЗОР ЗА КОШНИЧКА -->
+    <!-- МОДАЛЕН ПРОЗОР ЗА КОШНИЧКА И ФОРМУЛАР -->
     <div class="cart-modal" id="cartModal">
         <div class="cart-content">
             <div class="cart-header">
@@ -1205,13 +1232,22 @@
                 <button class="close-cart" onclick="closeCart()">&times;</button>
             </div>
             
-            <div class="shipping-notice" data-mk="Доставата чини 150 денари. За нарачки над 3000 денари доставата е бесплатна. Доставата се врши за 2 до 3 работни дена." data-en="Delivery costs 150 MKD. Free delivery for orders over 3000 MKD. Delivery takes 2 to 3 working days." data-al="Dërgesa kushton 150 denarë. Dërgesë falas për porositë mbi 3000 denarë. Dërgesa bëhet brenda 2 deri në 3 ditë pune.">
-                Доставата чини 150 денари. За нарачки над 3000 денари доставата е бесплатна. Доставата се врши за 2 до 3 работни дена.
+            <div class="shipping-notice" data-mk="Доставата чини 150 денари. За нарачки над 3000 денари доставата е бесплатна. Доставата се врши за 2 до 3 работни дена. Плаќањето се врши при достава." data-en="Delivery costs 150 MKD. Free delivery for orders over 3000 MKD. Delivery takes 2 to 3 working days. Payment is made upon delivery." data-al="Dërgesa kushton 150 denarë. Dërgesë falas për porositë mbi 3000 denarë. Dërgesa bëhet brenda 2 deri në 3 ditë pune. Pagesa bëhet në dorëzim.">
+                Доставата чини 150 денари. За нарачки над 3000 денари доставата е бесплатна. Доставата се врши за 2 до 3 работни дена. Плаќањето се врши при достава.
             </div>
 
             <div class="cart-items-list" id="cartItemsList">
                 <p style="text-align: center; color: #777; font-weight: 600;" data-mk="Кошничката е празна" data-en="Your cart is empty" data-al="Shporta është bosh">Кошничката е празна</p>
             </div>
+
+            <!-- Формулар за внес на податоци -->
+            <div class="checkout-form" id="checkoutForm" style="display: none;">
+                <input type="text" class="form-input" id="custName" placeholder="Име и презиме" required>
+                <input type="text" class="form-input" id="custAddress" placeholder="Адреса за достава" required>
+                <input type="text" class="form-input" id="custCity" placeholder="Град" required>
+                <input type="tel" class="form-input" id="custPhone" placeholder="Број за контакт (телефон)" required>
+            </div>
+
             <div class="cart-total" id="cartTotalSection" style="display: none;">
                 <span data-mk="Вкупно (со достава):" data-en="Total (with delivery):" data-al="Totali (me dërgesë):">Вкупно (со достава):</span>
                 <span id="cartTotalPrice">0 ден</span>
@@ -1233,6 +1269,16 @@
     <!-- JAVASCRIPT -->
     <script>
         let cart = [];
+
+        // Функција за валидација на внесот на количина (спречува 0 на почеток и празни/негативни броеви)
+        function validateQty(input) {
+            let val = input.value;
+            if (val === "" || parseFloat(val) < 1) {
+                input.value = 1;
+            } else if (val.length > 1 && val.startsWith('0')) {
+                input.value = parseFloat(val);
+            }
+        }
 
         function addToCart(productName, inputId, pricePerKg) {
             const inputElem = document.getElementById(inputId);
@@ -1260,6 +1306,7 @@
             const cartTotalSection = document.getElementById('cartTotalSection');
             const cartTotalPrice = document.getElementById('cartTotalPrice');
             const checkoutBtn = document.getElementById('checkoutBtn');
+            const checkoutForm = document.getElementById('checkoutForm');
 
             let totalItems = 0;
             let subtotal = 0;
@@ -1269,6 +1316,7 @@
                 cartItemsList.innerHTML = '<p style="text-align: center; color: #777; font-weight: 600;">Кошничката е празна</p>';
                 cartTotalSection.style.display = 'none';
                 checkoutBtn.style.display = 'none';
+                checkoutForm.style.display = 'none';
             } else {
                 let html = '';
                 cart.forEach((item, index) => {
@@ -1306,6 +1354,7 @@
                 cartTotalPrice.innerText = grandTotal + ' ден';
                 cartTotalSection.style.display = 'flex';
                 checkoutBtn.style.display = 'block';
+                checkoutForm.style.display = 'flex';
             }
             cartCount.innerText = totalItems;
         }
@@ -1320,6 +1369,7 @@
             document.getElementById('successMessage').style.display = 'none';
             document.getElementById('checkoutBtn').style.display = cart.length > 0 ? 'block' : 'none';
             document.getElementById('cartTotalSection').style.display = cart.length > 0 ? 'flex' : 'none';
+            document.getElementById('checkoutForm').style.display = cart.length > 0 ? 'flex' : 'none';
         }
 
         function closeCart() {
@@ -1328,10 +1378,23 @@
 
         function checkoutOrder() {
             if (cart.length === 0) return;
+
+            // Валидација на формуларот
+            const name = document.getElementById('custName').value.trim();
+            const address = document.getElementById('custAddress').value.trim();
+            const city = document.getElementById('custCity').value.trim();
+            const phone = document.getElementById('custPhone').value.trim();
+
+            if (!name || !address || !city || !phone) {
+                alert('Ве молиме пополнете ги сите полиња за достава (Име, Адреса, Град, Број за контакт).');
+                return;
+            }
+
             cart = [];
             updateCartUI();
             document.getElementById('checkoutBtn').style.display = 'none';
             document.getElementById('cartTotalSection').style.display = 'none';
+            document.getElementById('checkoutForm').style.display = 'none';
             document.getElementById('cartItemsList').innerHTML = '';
             document.getElementById('successMessage').style.display = 'block';
         }
