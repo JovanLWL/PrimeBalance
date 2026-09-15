@@ -1202,7 +1202,7 @@
                 
                 <ul class="ingredient-list">
                     <li><strong data-mk="Врвно пилешко месо:" data-en="Premium chicken meat:" data-al="Mish pule premium:">Врвно пилешко месо:</strong> <span data-mk="Ниска молекуларна тежина на протеините за брза гастрична празнења." data-en="Low molecular weight proteins for rapid gastric emptying." data-al="Proteina me peshë të ulët molekulare për zbrazje të shpejtë gastrike.">Ниска молекуларна тежина на протеините за брза гастрична празнења.</span></li>
-                    <li><strong data-mk="Тиквички и природни влакна:" data-en="Zucchini and natural fibers:" data-al="Kungulleshë dhe fibra natyrale:">Тиквички и природни влакна:</strong> <span data-mk="Деликатна поддршка на цревната микрофлора и беспрекорна дигестија." data-en="Delicate support of intestinal microflora and flawless digestion." data-al="Mbështetje e ndjeshme e mikroflorës zorrale dhe tretje e përsosur.">Деликатна поддршка на цревната микрофлора и беспрекорна дигестија.</span></li>
+                    <li><strong data-mk="Тиквички и природни влакна:" data-en="Zucchini and natural fibers:" data-al="Kungulleshë dhe fibra natyrale:">Тиквички и природни влакна:</strong> <span data-mk="Деликатна поддршка на цревната микрофлора и беспрекорна дигестија." data-en="Delicate support of intestinal microflora and flawless digestion." data-al="Mbështetje e ndjeshme e mikroflorës zorrale dhe tretje e pëorsosur.">Деликатна поддршка на цревната микрофлора и беспрекорна дигестија.</span></li>
                 </ul>
 
                 <div class="nutrition-box">
@@ -1367,17 +1367,17 @@
             const cartTotalSection = document.getElementById('cartTotalSection');
             const cartTotalPrice = document.getElementById('cartTotalPrice');
             const checkoutBtn = document.getElementById('checkoutBtn');
-            const checkoutForm = document.getElementById('checkoutForm');
+            const checkoutForm = document.getElementById('orderForm');
 
             let totalItems = 0;
             let subtotal = 0;
             let deliveryFee = 150;
 
             if (cart.length === 0) {
-                cartItemsList.innerHTML = '<p style="text-align: center; color: #777; font-weight: 600;">Кошничката е празна</p>';
-                cartTotalSection.style.display = 'none';
-                checkoutBtn.style.display = 'none';
-                checkoutForm.style.display = 'none';
+                if (cartItemsList) cartItemsList.innerHTML = '<p style="text-align: center; color: #777; font-weight: 600;">Кошничката е празна</p>';
+                if (cartTotalSection) cartTotalSection.style.display = 'none';
+                if (checkoutBtn) checkoutBtn.style.display = 'none';
+                if (checkoutForm) checkoutForm.style.display = 'none';
             } else {
                 let html = '';
                 cart.forEach((item, index) => {
@@ -1391,7 +1391,7 @@
                                 <span style="font-size: 13px; color: #666;">${item.qty} kg × ${item.price} ден = ${itemTotal} ден</span>
                             </div>
                             <div style="text-align: right;">
-                                <button onclick="removeItem(${index})" style="background:none; border:none; color:#730010; font-size:12px; cursor:pointer; font-weight:700; text-decoration:underline;">Избриши</button>
+                                <button type="button" onclick="removeItem(${index})" style="background:none; border:none; color:#730010; font-size:12px; cursor:pointer; font-weight:700; text-decoration:underline;">Избриши</button>
                             </div>
                         </div>
                     `;
@@ -1409,11 +1409,11 @@
                     </div>
                 `;
 
-                cartItemsList.innerHTML = html;
-                cartTotalPrice.innerText = grandTotal + ' ден';
-                cartTotalSection.style.display = 'flex';
-                checkoutBtn.style.display = 'block';
-                checkoutForm.style.display = 'flex';
+                if (cartItemsList) cartItemsList.innerHTML = html;
+                if (cartTotalPrice) cartTotalPrice.innerText = grandTotal + ' ден';
+                if (cartTotalSection) cartTotalSection.style.display = 'flex';
+                if (checkoutBtn) checkoutBtn.style.display = 'block';
+                if (checkoutForm) checkoutForm.style.display = 'flex';
             }
             if (cartCount) cartCount.innerText = totalItems;
         }
@@ -1425,14 +1425,21 @@
 
         function openCart() {
             const modal = document.getElementById('cartModal');
-            if (modal) modal.style.display = 'flex';
-            document.getElementById('successMessage').style.display = 'none';
+            if (modal) {
+                modal.style.display = 'flex';
+            }
+            const successMsg = document.getElementById('successMessage');
+            if (successMsg) {
+                successMsg.style.display = 'none';
+            }
             updateCartUI();
         }
 
         function closeCart() {
             const modal = document.getElementById('cartModal');
-            if (modal) modal.style.display = 'none';
+            if (modal) {
+                modal.style.display = 'none';
+            }
         }
 
         async function checkoutOrder() {
@@ -1480,7 +1487,7 @@
             updateCartUI();
             document.getElementById('checkoutBtn').style.display = 'none';
             document.getElementById('cartTotalSection').style.display = 'none';
-            document.getElementById('checkoutForm').style.display = 'none';
+            document.getElementById('orderForm').style.display = 'none';
             document.getElementById('cartItemsList').innerHTML = '';
             document.getElementById('successMessage').style.display = 'block';
         }
