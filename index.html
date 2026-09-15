@@ -1202,7 +1202,7 @@
                 
                 <ul class="ingredient-list">
                     <li><strong data-mk="Врвно пилешко месо:" data-en="Premium chicken meat:" data-al="Mish pule premium:">Врвно пилешко месо:</strong> <span data-mk="Ниска молекуларна тежина на протеините за брза гастрична празнења." data-en="Low molecular weight proteins for rapid gastric emptying." data-al="Proteina me peshë të ulët molekulare për zbrazje të shpejtë gastrike.">Ниска молекуларна тежина на протеините за брза гастрична празнења.</span></li>
-                    <li><strong data-mk="Тиквички и природни влакна:" data-en="Zucchini and natural fibers:" data-al="Kungulleshë dhe fibra natyrale:">Тиквички и природни влакна:</strong> <span data-mk="Деликатна поддршка на цревната микрофлора и беспрекорна дигестија." data-en="Delicate support of intestinal microflora and flawless digestion." data-al="Mbështetje e ndjeshme e mikroflorës zorrale dhe tretje e pëorsosur.">Деликатна поддршка на цревната микрофлора и беспрекорна дигестија.</span></li>
+                    <li><strong data-mk="Тиквички и природни влакна:" data-en="Zucchini and natural fibers:" data-al="Kungulleshë dhe fibra natyrale:">Тиквички и природни влакна:</strong> <span data-mk="Деликатна поддршка на цревната микрофлора и беспрекорна дигестија." data-en="Delicate support of intestinal microflora and flawless digestion." data-al="Mbështetje e ndjeshme e mikroflorës zorrale dhe tretje e përsosur.">Деликатна поддршка на цревната микрофлора и беспрекорна дигестија.</span></li>
                 </ul>
 
                 <div class="nutrition-box">
@@ -1292,7 +1292,7 @@
 
             <!-- Формулар за внес на податоци -->
             <form id="orderForm" class="checkout-form" style="display: none;" onsubmit="event.preventDefault(); checkoutOrder();">
-                <input type="hidden" name="access_key" value="55dc052e-d8ab-4350-ac0e-84cc04298584">
+                <input type="hidden" name="access_key" value="09e253b2-a0d1-486f-bb74-d5162d2da8ae">
                 <input type="hidden" name="subject" value="Нова Нарачка од Prime Balance Сајт">
                 <input type="text" class="form-input" id="custName" name="name" placeholder="Име и презиме" required>
                 <input type="text" class="form-input" id="custAddress" name="address" placeholder="Адреса за достава" required>
@@ -1445,11 +1445,19 @@
         async function checkoutOrder() {
             if (cart.length === 0) return;
 
-            const name = document.getElementById('custName').value.trim();
-            const address = document.getElementById('custAddress').value.trim();
-            const email = document.getElementById('custEmail').value.trim();
-            const city = document.getElementById('custCity').value.trim();
-            const phone = document.getElementById('custPhone').value.trim();
+            const nameInput = document.getElementById('custName');
+            const addressInput = document.getElementById('custAddress');
+            const emailInput = document.getElementById('custEmail');
+            const cityInput = document.getElementById('custCity');
+            const phoneInput = document.getElementById('custPhone');
+
+            if (!nameInput || !addressInput || !emailInput || !cityInput || !phoneInput) return;
+
+            const name = nameInput.value.trim();
+            const address = addressInput.value.trim();
+            const email = emailInput.value.trim();
+            const city = cityInput.value.trim();
+            const phone = phoneInput.value.trim();
 
             if (!name || !address || !email || !city || !phone) {
                 alert('Ве молиме пополнете ги сите полиња за достава (Име, Адреса, Е-пошта, Град, Број за контакт).');
