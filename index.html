@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prime Balance | Природна моќ. Совршен баланс.</title>
-    <!-- Вклучени фонтови и официјални брендирани икони (Font Awesome) -->
+    <!-- Вклучени фонтови и брендирани икони (Font Awesome) -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700;800&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -896,7 +896,7 @@
                 </div>
                 <div class="product-info">
                     <h3><a href="#blog-signature" data-mk="Prime Signature" data-en="Prime Signature" data-al="Prime Signature">Prime Signature</a></h3>
-                    <p data-mk="Нашиот докажан, мулти-протеински рецепт кој нуди врвна виталност и силен имунитет. Совршен баланс за севкупно здравје и енергија." data-en="Our proven, multi-protein recipe offering top vitality and strong immunity. Perfect balance for overall health and energy." data-al="Receta jonë e provuar me shumë proteina që ofron vitalitet të lartë dhe imunitet të fortë. Balancë e përsosur për shëndetin dhe energjinë e përgjithshме.">Нашиот докажан, мулти-протеински рецепт кој нуди врвна виталност и силен имунитет. Совршен баланс за севкупно здравје и енергија.</p>
+                    <p data-mk="Нашиот докажан, мулти-протеински рецепт кој нуди врвна виталност и силен имунитет. Совршен баланс за севкупно здравје и енергија." data-en="Our proven, multi-protein recipe offering top vitality and strong immunity. Perfect balance for overall health and energy." data-al="Receta jonë e provuar me shumë proteina që ofron vitalitet të lartë dhe imunitet të fortë. Balancë e përsosur për shëndetin dhe energjinë e përgjithshme.">Нашиот докажан, мулти-протеински рецепт кој нуди врвна виталност и силен имунитет. Совршен баланс за севкупно здравје и енергија.</p>
                     <div class="card-feeding-preview">
                         <strong data-mk="Препорачана доза (10kg куче):" data-en="Recommended dose (10kg dog):" data-al="Dozë e rekomanduar (qen 10kg):">Препорачана доза (10kg куче):</strong> 300g - 380g дневно
                     </div>
@@ -1388,11 +1388,10 @@
                         <div class="cart-item-row">
                             <div>
                                 <strong>${item.name}</strong><br>
-                                <span style="font-size: 13px; color: #666;">Количина: ${item.qty} kg</span>
+                                <span style="font-size: 13px; color: #666;">${item.qty} kg × ${item.price} ден = ${itemTotal} ден</span>
                             </div>
                             <div style="text-align: right;">
-                                ${itemTotal} ден<br>
-                                <button onclick="removeItem(${index})" style="background:none; border:none; color:#730010; font-size:12px; cursor:pointer; font-weight:700;">Избриши</button>
+                                <button onclick="removeItem(${index})" style="background:none; border:none; color:#730010; font-size:12px; cursor:pointer; font-weight:700; text-decoration:underline;">Избриши</button>
                             </div>
                         </div>
                     `;
@@ -1427,9 +1426,15 @@
         function openCart() {
             document.getElementById('cartModal').style.display = 'flex';
             document.getElementById('successMessage').style.display = 'none';
-            document.getElementById('checkoutBtn').style.display = cart.length > 0 ? 'block' : 'none';
-            document.getElementById('cartTotalSection').style.display = cart.length > 0 ? 'flex' : 'none';
-            document.getElementById('checkoutForm').style.display = cart.length > 0 ? 'flex' : 'none';
+            if (cart.length > 0) {
+                document.getElementById('checkoutBtn').style.display = 'block';
+                document.getElementById('cartTotalSection').style.display = 'flex';
+                document.getElementById('checkoutForm').style.display = 'flex';
+            } else {
+                document.getElementById('checkoutBtn').style.display = 'none';
+                document.getElementById('cartTotalSection').style.display = 'none';
+                document.getElementById('checkoutForm').style.display = 'none';
+            }
         }
 
         function closeCart() {
@@ -1453,7 +1458,7 @@
             let orderDetails = "Нова нарачка од сајтот Prime Balance:\n\n";
             orderDetails += `Име: ${name}\nЕ-пошта: ${email}\nАдреса: ${address}, ${city}\nТелефон: ${phone}\n\nПроизводи:\n`;
             cart.forEach(item => {
-                orderDetails += `- ${item.name} (${item.qty} kg) - ${item.price * item.qty} ден\n`;
+                orderDetails += `- ${item.name} (${item.qty} kg × ${item.price} ден) = ${item.qty * item.price} ден\n`;
             });
             orderDetails += `\nВкупно за наплата: ${document.getElementById('cartTotalPrice').innerText}`;
 
