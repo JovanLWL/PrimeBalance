@@ -39,6 +39,34 @@
             text-shadow: 0 2px 12px rgba(115, 0, 16, 0.15);
         }
 
+        /* АНИМАЦИЈА ЗА ТРЕПКАЊЕ ВО СЈАЈНО БОРДО БОЈА */
+        @keyframes glowingBlink {
+            0% { color: var(--bordeaux); text-shadow: 0 0 2px rgba(115, 0, 16, 0.3); }
+            50% { color: #D11A2A; text-shadow: 0 0 10px rgba(209, 26, 42, 0.8), 0 0 20px rgba(115, 0, 16, 0.5); }
+            100% { color: var(--bordeaux); text-shadow: 0 0 2px rgba(115, 0, 16, 0.3); }
+        }
+
+        .quantity-input {
+            width: 80px;
+            padding: 10px;
+            border: 1.5px solid rgba(212, 175, 55, 0.5);
+            border-radius: 8px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
+            font-size: 14px;
+            background: var(--cream);
+            outline: none;
+            text-align: center;
+            animation: glowingBlink 1.8s infinite;
+        }
+
+        .quantity-input:focus {
+            border-color: var(--bordeaux);
+            background: var(--white);
+            animation: none;
+            color: var(--bordeaux);
+        }
+
         /* СВЕТЛЕН ХЕДЕР СО НЕЖНА БОРДО НИЈАНСА */
         header {
             display: flex;
@@ -366,24 +394,11 @@
         .order-box {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             margin-top: auto;
             padding-top: 15px;
             border-top: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .quantity-input {
-            width: 80px;
-            padding: 10px;
-            border: 1.5px solid rgba(212, 175, 55, 0.5);
-            border-radius: 8px;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-weight: 700;
-            font-size: 13px;
-            background: var(--cream);
-            color: var(--text-main);
-            outline: none;
-            text-align: center;
+            width: 100%;
         }
 
         .btn-order {
@@ -391,7 +406,7 @@
             background: linear-gradient(135deg, var(--bordeaux), var(--bordeaux-dark));
             color: var(--white);
             border: none;
-            padding: 10px 14px;
+            padding: 11px 14px;
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-weight: 700;
             font-size: 13px;
@@ -401,6 +416,7 @@
             transition: var(--transition);
             text-align: center;
             box-shadow: 0 3px 12px rgba(115, 0, 16, 0.2);
+            white-space: nowrap;
         }
 
         .btn-order:hover {
@@ -528,7 +544,7 @@
             font-weight: 700;
         }
 
-        /* НУТРИТИВНИ ТАБЕЛИ */
+        /* ОРИГИНАЛНИ НУТРИТИВНИ ТАБЕЛИ (ФИКСИРАНИ И СРЕДЕНИ) */
         .nutrition-box {
             margin-top: 25px;
             background: var(--white);
@@ -551,20 +567,15 @@
         .nutrition-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 10px;
+            gap: 12px;
         }
 
         .nutri-item {
             background: var(--cream);
-            padding: 10px 6px;
+            padding: 12px 8px;
             border-radius: 8px;
             text-align: center;
             border: 1px solid rgba(212, 175, 55, 0.2);
-            min-height: 65px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
         }
 
         .nutri-label {
@@ -573,15 +584,13 @@
             color: #666;
             text-transform: uppercase;
             display: block;
-            margin-bottom: 3px;
-            line-height: 1.2;
+            margin-bottom: 4px;
         }
 
         .nutri-value {
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 800;
             color: var(--bordeaux);
-            line-height: 1.2;
         }
 
         .feeding-table {
@@ -593,7 +602,7 @@
 
         .feeding-table th, .feeding-table td {
             border: 1px solid rgba(212, 175, 55, 0.3);
-            padding: 8px 12px;
+            padding: 10px 14px;
             text-align: center;
             font-weight: 600;
         }
@@ -1377,7 +1386,7 @@
             if (cart.length === 0) return;
 
             const name = document.getElementById('custName').value.trim();
-            const address = document.getElementById('custAddress'].value.trim();
+            const address = document.getElementById('custAddress').value.trim();
             const city = document.getElementById('custCity').value.trim();
             const phone = document.getElementById('custPhone').value.trim();
 
@@ -1386,7 +1395,6 @@
                 return;
             }
 
-            // Креирање на порака и праќање директно кон primebalancelwl@gmail.com преку мејл клик
             let orderDetails = "Нова нарачка од сајтот:\n\n";
             orderDetails += `Име: ${name}\nАдреса: ${address}, ${city}\nТелефон: ${phone}\n\nПроизводи:\n`;
             cart.forEach(item => {
@@ -1396,7 +1404,6 @@
 
             const mailtoLink = `mailto:primebalancelwl@gmail.com?subject=Нова Нарачка - ${encodeURIComponent(name)}&body=${encodeURIComponent(orderDetails)}`;
             
-            // Отворање на маил апликацијата на корисникот кон вашиот мејл
             window.location.href = mailtoLink;
 
             cart = [];
