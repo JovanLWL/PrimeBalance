@@ -690,7 +690,6 @@
             line-height: 1.4;
         }
 
-        /* ФОРМУЛАР ЗА ПОДАТОЦИ */
         .checkout-form {
             display: flex;
             flex-direction: column;
@@ -1270,7 +1269,6 @@
     <script>
         let cart = [];
 
-        // Функција за валидација на внесот на количина (спречува 0 на почеток и празни/негативни броеви)
         function validateQty(input) {
             let val = input.value;
             if (val === "" || parseFloat(val) < 1) {
@@ -1337,7 +1335,6 @@
                     `;
                 });
                 
-                // Бесплатна достава за нарачки над 3000 денари
                 if (subtotal >= 3000) {
                     deliveryFee = 0;
                 }
@@ -1379,9 +1376,8 @@
         function checkoutOrder() {
             if (cart.length === 0) return;
 
-            // Валидација на формуларот
             const name = document.getElementById('custName').value.trim();
-            const address = document.getElementById('custAddress').value.trim();
+            const address = document.getElementById('custAddress'].value.trim();
             const city = document.getElementById('custCity').value.trim();
             const phone = document.getElementById('custPhone').value.trim();
 
@@ -1389,6 +1385,19 @@
                 alert('Ве молиме пополнете ги сите полиња за достава (Име, Адреса, Град, Број за контакт).');
                 return;
             }
+
+            // Креирање на порака и праќање директно кон primebalancelwl@gmail.com преку мејл клик
+            let orderDetails = "Нова нарачка од сајтот:\n\n";
+            orderDetails += `Име: ${name}\nАдреса: ${address}, ${city}\nТелефон: ${phone}\n\nПроизводи:\n`;
+            cart.forEach(item => {
+                orderDetails += `- ${item.name} (${item.qty} kg) - ${item.price * item.qty} ден\n`;
+            });
+            orderDetails += `\nВкупно за наплата: ${document.getElementById('cartTotalPrice').innerText}`;
+
+            const mailtoLink = `mailto:primebalancelwl@gmail.com?subject=Нова Нарачка - ${encodeURIComponent(name)}&body=${encodeURIComponent(orderDetails)}`;
+            
+            // Отворање на маил апликацијата на корисникот кон вашиот мејл
+            window.location.href = mailtoLink;
 
             cart = [];
             updateCartUI();
