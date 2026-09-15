@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prime Balance | Природна моќ. Совршен баланс.</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Модерни луксузни фонтови -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-bordeaux: #730010;
-            --dark-bordeaux: #4A0008;
+            --bordeaux: #5A0010;
+            --bordeaux-hover: #730014;
             --gold: #D4AF37;
-            --dark-gold: #9A7312;
-            --cream: #FDFBF7;
-            --text-dark: #2B1810;
+            --gold-light: #F4E8B1;
+            --cream: #FAF8F5;
+            --white: #FFFFFF;
+            --text-main: #1A1A1A;
+            --text-muted: #666666;
+            --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * {
@@ -22,20 +26,22 @@
         }
 
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--cream);
-            color: var(--text-dark);
+            color: var(--text-main);
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* ХЕДЕР СЕКЦИЈА */
+        /* УЛТРА МОДЕРЕН ЛУКСУЗЕН ХЕДЕР */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 50px;
-            background-color: var(--cream);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 24px 60px;
+            background-color: rgba(250, 248, 245, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -44,76 +50,90 @@
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 16px;
             text-decoration: none;
         }
 
-        /* Уште повеќе зголемено лого во хедерот */
         .logo-container img {
-            height: 110px;
+            height: 90px;
             width: auto;
+            object-fit: contain;
         }
 
         .brand-name-header {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 34px;
+            font-size: 26px;
             font-weight: 800;
-            letter-spacing: 2px;
-            color: var(--primary-bordeaux);
+            letter-spacing: 3px;
+            color: var(--bordeaux);
+            text-transform: uppercase;
         }
 
         .header-right {
             display: flex;
             align-items: center;
-            gap: 25px;
+            gap: 30px;
         }
 
-        /* ЈАЗИЧНИ КОЦКИЧКИ */
+        /* МОДЕРНИ ЈАЗИЧНИ КОЦКИЧКИ */
         .lang-switch {
             display: flex;
-            gap: 6px;
+            gap: 8px;
         }
 
         .lang-btn {
-            width: 35px;
-            height: 35px;
-            background-color: transparent;
-            border: 2px solid var(--gold);
-            color: var(--text-dark);
+            width: 38px;
+            height: 38px;
+            background-color: var(--white);
+            border: 1.5px solid var(--gold);
+            color: var(--text-main);
             font-weight: 700;
-            font-size: 13px;
+            font-size: 12px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             text-decoration: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
         }
 
         .lang-btn:hover, .lang-btn.active {
-            background-color: var(--primary-bordeaux);
-            border-color: var(--primary-bordeaux);
-            color: #ffffff;
+            background-color: var(--bordeaux);
+            border-color: var(--bordeaux);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(90, 0, 16, 0.25);
         }
 
-        /* МЕНИ КОПЧЕ (3 цртички) */
+        /* МОДЕРНО МЕНИ КОПЧЕ (3 цртички) */
         .menu-toggle {
-            background: none;
-            border: none;
+            background: var(--white);
+            border: 1.5px solid rgba(212, 175, 55, 0.4);
+            border-radius: 8px;
             cursor: pointer;
             display: flex;
             flex-direction: column;
-            gap: 6px;
-            padding: 5px;
+            justify-content: center;
+            align-items: center;
+            width: 42px;
+            height: 42px;
+            gap: 5px;
+            transition: var(--transition);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+
+        .menu-toggle:hover {
+            border-color: var(--bordeaux);
         }
 
         .menu-toggle span {
             display: block;
-            width: 30px;
-            height: 3px;
-            background-color: var(--primary-bordeaux);
+            width: 20px;
+            height: 2px;
+            background-color: var(--bordeaux);
             border-radius: 2px;
-            transition: 0.3s;
+            transition: var(--transition);
         }
 
         /* HERO СЕКЦИЈА */
@@ -121,10 +141,10 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 80px 50px;
-            max-width: 1300px;
+            padding: 100px 60px;
+            max-width: 1350px;
             margin: 0 auto;
-            gap: 50px;
+            gap: 60px;
         }
 
         .hero-content {
@@ -132,37 +152,40 @@
         }
 
         .hero-content h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 54px;
+            font-size: 52px;
             font-weight: 800;
-            color: var(--primary-bordeaux);
-            margin-bottom: 20px;
-            line-height: 1.1;
+            color: var(--bordeaux);
+            margin-bottom: 24px;
+            line-height: 1.15;
+            letter-spacing: -1px;
         }
 
         .hero-content p {
             font-size: 18px;
-            color: #555;
-            margin-bottom: 30px;
+            color: var(--text-muted);
+            margin-bottom: 35px;
+            line-height: 1.7;
         }
 
         .btn-primary {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--primary-bordeaux), var(--dark-bordeaux));
-            color: #fff;
-            padding: 15px 35px;
-            font-size: 16px;
-            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--bordeaux), #3A000A);
+            color: var(--white);
+            padding: 16px 36px;
+            font-size: 15px;
+            font-weight: 700;
             text-decoration: none;
-            letter-spacing: 1px;
-            border-radius: 4px;
-            box-shadow: 0 4px 15px rgba(115, 0, 16, 0.3);
-            transition: transform 0.2s, box-shadow 0.2s;
+            letter-spacing: 0.5px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(90, 0, 16, 0.25);
+            transition: var(--transition);
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(115, 0, 16, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(90, 0, 16, 0.35);
         }
 
         .hero-image {
@@ -172,188 +195,226 @@
 
         .hero-image img {
             width: 100%;
-            max-width: 480px;
-            border-radius: 12px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-            border: 3px solid var(--gold);
+            max-width: 500px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border: 2px solid var(--gold);
+            object-fit: cover;
         }
 
         /* ЗА НАС СЕКЦИЈА */
         .about-section {
-            background-color: #f7f3ed;
-            padding: 80px 50px;
+            background-color: var(--white);
+            padding: 90px 60px;
             text-align: center;
+            border-top: 1px solid rgba(212, 175, 55, 0.15);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
         }
 
         .about-container {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
         }
 
         .about-container h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 40px;
-            color: var(--primary-bordeaux);
+            font-size: 38px;
+            color: var(--bordeaux);
             margin-bottom: 25px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
         }
 
         .about-container p {
             font-size: 17px;
-            color: #444;
+            color: var(--text-muted);
             margin-bottom: 20px;
             line-height: 1.8;
         }
 
-        /* ПРОИЗВОДИ / МЕНИЈА */
+        /* ПРОИЗВОДИ / МЕНИЈА (ЛУКСУЗНИ КАРТИЧКИ) */
         .products-section {
-            padding: 80px 50px;
-            max-width: 1300px;
+            padding: 100px 60px;
+            max-width: 1350px;
             margin: 0 auto;
         }
 
         .section-title {
             text-align: center;
-            font-family: 'Cormorant Garamond', serif;
             font-size: 42px;
-            color: var(--primary-bordeaux);
-            margin-bottom: 15px;
+            color: var(--bordeaux);
+            margin-bottom: 12px;
+            font-weight: 800;
+            letter-spacing: -1px;
         }
 
         .section-subtitle {
             text-align: center;
             font-size: 16px;
-            color: #666;
-            margin-bottom: 50px;
+            color: var(--text-muted);
+            margin-bottom: 60px;
         }
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 35px;
         }
 
         .product-card {
-            background: #fff;
-            border-radius: 8px;
+            background: var(--white);
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            border: 1px solid rgba(212, 175, 55, 0.2);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: transform 0.3s;
+            transition: var(--transition);
         }
 
         .product-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(90, 0, 16, 0.08);
+            border-color: var(--gold);
         }
 
-        /* Слика на рецептот во картичката */
+        .product-img-wrapper {
+            position: relative;
+            overflow: hidden;
+            height: 220px;
+        }
+
         .product-img {
             width: 100%;
-            height: 200px;
+            height: 100%;
             object-fit: cover;
-            border-bottom: 2px solid var(--gold);
+            transition: transform 0.6s ease;
+        }
+
+        .product-card:hover .product-img {
+            transform: scale(1.05);
         }
 
         .product-info {
-            padding: 25px;
+            padding: 30px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
         }
 
         .product-card h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 26px;
-            color: var(--primary-bordeaux);
+            font-size: 24px;
+            color: var(--bordeaux);
             margin-bottom: 12px;
+            font-weight: 700;
         }
 
         .product-card p {
             font-size: 15px;
-            color: #666;
-            margin-bottom: 20px;
+            color: var(--text-muted);
+            margin-bottom: 25px;
             flex-grow: 1;
+            line-height: 1.6;
         }
 
+        /* УЛТРА МОДЕРЕН ДЕЛ ЗА НАРАЧКА И КОЛИЧИНА */
         .order-box {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid #eee;
+            gap: 12px;
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0,0,0,0.06);
         }
 
         .quantity-select {
-            padding: 8px 12px;
-            border: 1px solid var(--gold);
-            border-radius: 4px;
-            font-family: 'Montserrat', sans-serif;
+            flex: 1;
+            padding: 12px 16px;
+            border: 1.5px solid rgba(212, 175, 55, 0.5);
+            border-radius: 10px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             font-weight: 600;
+            font-size: 14px;
             background: var(--cream);
-            color: var(--text-dark);
+            color: var(--text-main);
+            outline: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .quantity-select:focus {
+            border-color: var(--bordeaux);
+            background: var(--white);
         }
 
         .btn-order {
+            flex: 1.2;
             background-color: var(--gold);
-            color: var(--text-dark);
+            color: var(--text-main);
             border: none;
-            padding: 10px 20px;
+            padding: 12px 20px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             font-weight: 700;
-            border-radius: 4px;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            border-radius: 10px;
             cursor: pointer;
-            transition: background 0.2s;
+            transition: var(--transition);
             text-decoration: none;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
         }
 
         .btn-order:hover {
-            background-color: var(--dark-gold);
-            color: #fff;
+            background-color: var(--bordeaux);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(90, 0, 16, 0.3);
         }
 
-        /* ФУТЕР */
+        /* ЛУКСУЗЕН ФУТЕР */
         footer {
-            background-color: var(--dark-bordeaux);
-            color: #fff;
+            background-color: #1A0A0D;
+            color: var(--white);
             text-align: center;
-            padding: 40px 20px;
-            margin-top: 60px;
-            font-size: 14px;
+            padding: 50px 20px;
+            margin-top: 80px;
+            border-top: 2px solid var(--gold);
         }
 
         footer p {
-            color: #ddd;
+            color: rgba(255,255,255,0.7);
             letter-spacing: 1px;
+            font-size: 14px;
+            font-weight: 500;
         }
 
-        @media (max-width: 768px) {
-            header { padding: 15px 20px; }
-            .logo-container img { height: 75px; }
-            .brand-name-header { font-size: 22px; }
-            .hero { flex-direction: column; padding: 40px 20px; text-align: center; }
+        /* РЕСПОНЗИВНОСТ */
+        @media (max-width: 900px) {
+            header { padding: 20px 25px; }
+            .hero { flex-direction: column; padding: 50px 25px; text-align: center; }
             .hero-content h1 { font-size: 38px; }
-            .products-section { padding: 40px 20px; }
+            .products-section { padding: 60px 25px; }
+            .about-section { padding: 60px 25px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ХЕДЕР -->
+    <!-- УЛТРА МОДЕРЕН ХЕДЕР -->
     <header>
         <a href="#" class="logo-container">
             <img src="logo.png" alt="Prime Balance Logo">
             <span class="brand-name-header">PRIME BALANCE</span>
         </a>
         <div class="header-right">
-            <!-- Јазични коцкички -->
+            <!-- Модерни јазични коцкички -->
             <div class="lang-switch">
                 <a href="#" class="lang-btn active">MK</a>
                 <a href="#" class="lang-btn">EN</a>
                 <a href="#" class="lang-btn">AL</a>
             </div>
-            <!-- Мени копче -->
+            <!-- Модерно мени копче -->
             <button class="menu-toggle" aria-label="Мени">
                 <span></span>
                 <span></span>
@@ -366,7 +427,7 @@
     <section class="hero">
         <div class="hero-content">
             <h1>ПРИРОДНА МОЌ.<br>СОВРШЕН БАЛАНС.</h1>
-            <p>Премиум готвена храна за кучиња. Состојки за човечка употреба, нутритивно балансирани за врвно здравје, силен имунитет и беспрекорно сјајно крзно.</p>
+            <p>Премиум готвена храна за кучиња. Врвни состојки за човечка употреба, научни формули за беспрекорно здравје, имунитет и сјајно крзно.</p>
             <a href="#products" class="btn-primary">Разгледај ги Менијата</a>
         </div>
         <div class="hero-image">
@@ -379,7 +440,7 @@
         <div class="about-container">
             <h2>Нашата Приказна: Љубов сервирана во чинија</h2>
             <p>Секој сопственик на куче во срцето ја носи истата желба – нивниот најверен пријател да живее што е можно подолго, поздрав и посреќен живот. Токму од таа чиста љубов се роди и нашата мисија.</p>
-            <p><strong>Prime Balance</strong> започна тивко, како мала семејна и одгледувачка приказна. Водени од желбата да им го пружиме најдоброто на нашите сопствени миленици, усовршивме вистински избалансирана формула. Ние милуваме да ја изразиме нашата љубов према милениците токму преку квалитетна, внимателно зготвена чинија.</p>
+            <p><strong>Prime Balance</strong> започна како мала семејна и одгледувачка приказна. Водени од желбата да им го пружиме најдоброто на нашите сопствени миленици, усовршивме вистински избалансирана формула. Ја изразуваме нашата љубов према милениците токму преку квалитетна, внимателно зготвена чинија.</p>
         </div>
     </section>
 
@@ -391,7 +452,9 @@
         <div class="products-grid">
             <!-- 1. Signature -->
             <div class="product-card">
-                <img src="signature.jpg" alt="Prime Signature Menu" class="product-img">
+                <div class="product-img-wrapper">
+                    <img src="signature.jpg" alt="Prime Signature Menu" class="product-img">
+                </div>
                 <div class="product-info">
                     <h3>Prime Signature</h3>
                     <p>Нашиот докажан, мулти-протеински рецепт кој нуди врвна виталност и силен имунитет. Совршен баланс за севкупно здравје и енергија.</p>
@@ -408,7 +471,9 @@
 
             <!-- 2. Beef -->
             <div class="product-card">
-                <img src="beef.jpg" alt="Prime Beef Menu" class="product-img">
+                <div class="product-img-wrapper">
+                    <img src="beef.jpg" alt="Prime Beef Menu" class="product-img">
+                </div>
                 <div class="product-info">
                     <h3>Prime Beef Edition</h3>
                     <p>Моќен оброк базиран на чисто јунешко месо, дизајниран за градење цврста мускулна маса и долготрајна издржливост кај активни кучиња.</p>
@@ -425,7 +490,9 @@
 
             <!-- 3. Salmon -->
             <div class="product-card">
-                <img src="salmon.jpg" alt="Prime Salmon Menu" class="product-img">
+                <div class="product-img-wrapper">
+                    <img src="salmon.jpg" alt="Prime Salmon Menu" class="product-img">
+                </div>
                 <div class="product-info">
                     <h3>Prime Salmon Edition</h3>
                     <p>Богата порција свеж лосос која изобилува со Омега-3 масни киселини. Создадена специјално за беспрекорно сјајно крзно и здрава кожа.</p>
@@ -442,7 +509,9 @@
 
             <!-- 4. Chicken -->
             <div class="product-card">
-                <img src="chicken.jpg" alt="Prime Chicken Menu" class="product-img">
+                <div class="product-img-wrapper">
+                    <img src="chicken.jpg" alt="Prime Chicken Menu" class="product-img">
+                </div>
                 <div class="product-info">
                     <h3>Prime Chicken Edition</h3>
                     <p>Лесен и лесно сварлив оброк со врвно пилешко месо, исклучително нежен за стомакот. Обезбедува чист протеин за секојдневна енергија.</p>
@@ -459,7 +528,9 @@
 
             <!-- 5. Pork -->
             <div class="product-card">
-                <img src="pork.jpg" alt="Prime Pork Menu" class="product-img">
+                <div class="product-img-wrapper">
+                    <img src="pork.jpg" alt="Prime Pork Menu" class="product-img">
+                </div>
                 <div class="product-info">
                     <h3>Prime Pork Edition</h3>
                     <p>Исклучително вкусен оброк од посно свинско месо, богат со цинк и Б-витамини. Совршено решение за пребирливи кучиња кое ја штити кожата.</p>
@@ -476,7 +547,9 @@
 
             <!-- 6. Snow-White Coat -->
             <div class="product-card">
-                <img src="snowwhite.jpg" alt="Snow-White Coat Menu" class="product-img">
+                <div class="product-img-wrapper">
+                    <img src="snowwhite.jpg" alt="Snow-White Coat Menu" class="product-img">
+                </div>
                 <div class="product-info">
                     <h3>Snow-White Coat (Специјална едиција)</h3>
                     <p>Формула со мисиркино месо и бела риба која природно ги елиминира црвените дамки околу очите. Вашиот сојузник за совршено бело влакно.</p>
@@ -493,7 +566,7 @@
         </div>
     </section>
 
-    <!-- ФУТЕР -->
+    <!-- ЛУКСУЗЕН ФУТЕР -->
     <footer>
         <p>&copy; 2026 Prime Balance. Сите права се задржани.</p>
     </footer>
