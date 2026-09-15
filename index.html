@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Balance | Природна моќ. Совршен баланс.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-bordeaux: #730010;
+            --dark-bordeaux: #4A0008;
+            --gold: #D4AF37;
+            --dark-gold: #9A7312;
+            --cream: #FDFBF7;
+            --text-dark: #2B1810;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* ХЕДЕР СЕКЦИЈА */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: var(--cream);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo-container img {
+            height: 55px;
+            width: auto;
+        }
+
+        .brand-name-header {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: var(--primary-bordeaux);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        /* ЈАЗИЧНИ КОЦКИЧКИ */
+        .lang-switch {
+            display: flex;
+            gap: 6px;
+        }
+
+        .lang-btn {
+            width: 35px;
+            height: 35px;
+            background-color: transparent;
+            border: 2px solid var(--gold);
+            color: var(--text-dark);
+            font-weight: 700;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .lang-btn:hover, .lang-btn.active {
+            background-color: var(--primary-bordeaux);
+            border-color: var(--primary-bordeaux);
+            color: #ffffff;
+        }
+
+        /* МЕНИ КОПЧЕ (3 цртички) */
+        .menu-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            padding: 5px;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 30px;
+            height: 3px;
+            background-color: var(--primary-bordeaux);
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        /* HERO СЕКЦИЈА */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 80px 50px;
+            max-width: 1300px;
+            margin: 0 auto;
+            gap: 50px;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-content h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 54px;
+            font-weight: 800;
+            color: var(--primary-bordeaux);
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-bordeaux), var(--dark-bordeaux));
+            color: #fff;
+            padding: 15px 35px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            box-shadow: 0 4px 15px rgba(115, 0, 16, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(115, 0, 16, 0.4);
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 480px;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            border: 3px solid var(--gold);
+        }
+
+        /* ЗА НАС СЕКЦИЈА */
+        .about-section {
+            background-color: #f7f3ed;
+            padding: 80px 50px;
+            text-align: center;
+        }
+
+        .about-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-container h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 40px;
+            color: var(--primary-bordeaux);
+            margin-bottom: 25px;
+        }
+
+        .about-container p {
+            font-size: 17px;
+            color: #444;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        /* ПРОИЗВОДИ / МЕНИЈА */
+        .products-section {
+            padding: 80px 50px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            color: var(--primary-bordeaux);
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 50px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 30px;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            color: var(--primary-bordeaux);
+            margin-bottom: 12px;
+        }
+
+        .product-card p {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .order-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .quantity-select {
+            padding: 8px 12px;
+            border: 1px solid var(--gold);
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            background: var(--cream);
+            color: var(--text-dark);
+        }
+
+        .btn-order {
+            background-color: var(--gold);
+            color: var(--text-dark);
+            border: none;
+            padding: 10px 20px;
+            font-weight: 700;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+            text-decoration: none;
+        }
+
+        .btn-order:hover {
+            background-color: var(--dark-gold);
+            color: #fff;
+        }
+
+        /* ФУТЕР */
+        footer {
+            background-color: var(--dark-bordeaux);
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            font-size: 14px;
+        }
+
+        footer p {
+            color: #ddd;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 15px 20px; }
+            .hero { flex-direction: column; padding: 40px 20px; text-align: center; }
+            .hero-content h1 { font-size: 38px; }
+            .products-section { padding: 40px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ХЕДЕР -->
+    <header>
+        <a href="#" class="logo-container">
+            <!-- Тука се става твоето лого -->
+            <span class="brand-name-header">PRIME BALANCE</span>
+        </a>
+        <div class="header-right">
+            <!-- Јазични коцкички -->
+            <div class="lang-switch">
+                <a href="#" class="lang-btn active">MK</a>
+                <a href="#" class="lang-btn">EN</a>
+                <a href="#" class="lang-btn">AL</a>
+            </div>
+            <!-- Мени копче -->
+            <button class="menu-toggle" aria-label="Мени">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO СЕКЦИЈА -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>ПРИРОДНА МОЌ.<br>СОВРШЕН БАЛАНС.</h1>
+            <p>Премиум готвена храна за кучиња. Состојки за човечка употреба, нутритивно балансирани за врвно здравје, силен имунитет и беспрекорно сјајно крзно.</p>
+            <a href="#products" class="btn-primary">Разгледај ги Менијата</a>
+        </div>
+        <div class="hero-image">
+            <!-- Тука е ставена фотографијата од чоколадниот лабрадор со сјајно крзно -->
+            <img src="IMG-20250526-WA0010(1).jpg" alt="Лабрадор со сјајно крзно - Prime Balance">
+        </div>
+    </section>
+
+    <!-- ЗА НАС СЕКЦИЈА -->
+    <section class="about-section">
+        <div class="about-container">
+            <h2>Нашата Приказна: Љубов сервирана во чинија</h2>
+            <p>Секој сопственик на куче во срцето ја носи истата желба – нивниот најверен пријател да живее што е можно подолго, поздрав и посреќен живот. Токму од таа чиста љубов се роди и нашата мисија.</p>
+            <p><strong>Prime Balance</strong> започна тивко, како мала семејна и одгледувачка приказна. Водени од желбата да им го пружиме најдоброто на нашите сопствени миленици, усовршивме вистински избалансирана формула. Ние милуваме да ја изразиме нашата љубов према милениците токму преку квалитетна, внимателно зготвена чинија.</p>
+        </div>
+    </section>
+
+    <!-- ПРОИЗВОДИ (6-ТЕ МЕНИЈА) -->
+    <section class="products-section" id="products">
+        <h2 class="section-title">Нашите Премиум Менија</h2>
+        <p class="section-subtitle">Изберете го идеалниот оброк прилагоден на потребите на вашиот миленик</p>
+
+        <div class="products-grid">
+            <!-- 1. Signature -->
+            <div class="product-card">
+                <div>
+                    <h3>Prime Signature</h3>
+                    <p>Нашиот докажан, мулти-протеински рецепт кој нуди врвна виталност и силен имунитет. Совршен баланс за севкупно здравје и енергија.</p>
+                </div>
+                <div class="order-box">
+                    <select class="quantity-select">
+                        <option value="500g">500g</option>
+                        <option value="1kg" selected>1 kg</option>
+                        <option value="3kg">3 kg</option>
+                    </select>
+                    <a href="mailto:tvoj@email.com?subject=Нарачка%20за%20Prime%20Signature" class="btn-order">Нарачај</a>
+                </div>
+            </div>
+
+            <!-- 2. Beef -->
+            <div class="product-card">
+                <div>
+                    <h3>Prime Beef Edition</h3>
+                    <p>Моќен оброк базиран на чисто јунешко месо, дизајниран за градење цврста мускулна маса и долготрајна издржливост кај активни кучиња.</p>
+                </div>
+                <div class="order-box">
+                    <select class="quantity-select">
+                        <option value="500g">500g</option>
+                        <option value="1kg" selected>1 kg</option>
+                        <option value="3kg">3 kg</option>
+                    </select>
+                    <a href="mailto:tvoj@email.com?subject=Нарачка%20за%20Prime%20Beef%20Edition" class="btn-order">Нарачај</a>
+                </div>
+            </div>
+
+            <!-- 3. Salmon -->
+            <div class="product-card">
+                <div>
+                    <h3>Prime Salmon Edition</h3>
+                    <p>Богата порција свеж лосос која изобилува со Омега-3 масни киселини. Создадена специјално за беспрекорно сјајно крзно и здрава кожа.</p>
+                </div>
+                <div class="order-box">
+                    <select class="quantity-select">
+                        <option value="500g">500g</option>
+                        <option value="1kg" selected>1 kg</option>
+                        <option value="3kg">3 kg</option>
+                    </select>
+                    <a href="mailto:tvoj@email.com?subject=Нарачка%20за%20Prime%20Salmon%20Edition" class="btn-order">Нарачај</a>
+                </div>
+            </div>
+
+            <!-- 4. Chicken -->
+            <div class="product-card">
+                <div>
+                    <h3>Prime Chicken Edition</h3>
+                    <p>Лесен и лесно сварлив оброк со врвно пилешко месо, исклучително нежен за стомакот. Обезбедува чист протеин за секојдневна енергија.</p>
+                </div>
+                <div class="order-box">
+                    <select class="quantity-select">
+                        <option value="500g">500g</option>
+                        <option value="1kg" selected>1 kg</option>
+                        <option value="3kg">3 kg</option>
+                    </select>
+                    <a href="mailto:tvoj@email.com?subject=Нарачка%20за%20Prime%20Chicken%20Edition" class="btn-order">Нарачај</a>
+                </div>
+            </div>
+
+            <!-- 5. Pork -->
+            <div class="product-card">
+                <div>
+                    <h3>Prime Pork Edition</h3>
+                    <p>Исклучително вкусен оброк од посно свинско месо, богат со цинк и Б-витамини. Совршено решение за пребирливи кучиња кое ја штити кожата.</p>
+                </div>
+                <div class="order-box">
+                    <select class="quantity-select">
+                        <option value="500g">500g</option>
+                        <option value="1kg" selected>1 kg</option>
+                        <option value="3kg">3 kg</option>
+                    </select>
+                    <a href="mailto:tvoj@email.com?subject=Нарачка%20за%20Prime%20Pork%20Edition" class="btn-order">Нарачај</a>
+                </div>
+            </div>
+
+            <!-- 6. Snow-White Coat -->
+            <div class="product-card">
+                <div>
+                    <h3>Snow-White Coat (Специјална едиција)</h3>
+                    <p>Формула со мисиркино месо и бела риба која природно ги елиминира црвените дамки околу очите. Вашиот сојузник за совршено бело влакно.</p>
+                </div>
+                <div class="order-box">
+                    <select class="quantity-select">
+                        <option value="500g">500g</option>
+                        <option value="1kg" selected>1 kg</option>
+                        <option value="3kg">3 kg</option>
+                    </select>
+                    <a href="mailto:tvoj@email.com?subject=Нарачка%20за%20Snow-White%20Coat" class="btn-order">Нарачај</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ФУТЕР -->
+    <footer>
+        <p>&copy; 2026 Prime Balance. Сите права се задржани.</p>
+    </footer>
+
+</body>
+</html>
