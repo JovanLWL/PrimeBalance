@@ -22,6 +22,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
@@ -386,13 +387,92 @@
             box-shadow: 0 6px 20px rgba(115, 0, 16, 0.4);
         }
 
+        /* БЛОГ СЕКЦИЈА НА ИСТАТА СТРАНИЦА */
+        .blog-section {
+            background-color: var(--white);
+            padding: 100px 60px;
+            border-top: 2px solid rgba(212, 175, 55, 0.25);
+        }
+
+        .blog-container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        .blog-container h2 {
+            font-size: 42px;
+            color: var(--bordeaux);
+            margin-bottom: 20px;
+            font-weight: 800;
+            text-align: center;
+        }
+
+        .blog-intro {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2D2D2D;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .recipe-block {
+            background: var(--cream);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.12);
+            border: 1.5px solid rgba(212, 175, 55, 0.35);
+        }
+
+        .recipe-block h3 {
+            font-size: 28px;
+            color: var(--bordeaux);
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .recipe-block p {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        .ingredient-list {
+            list-style: none;
+        }
+
+        .ingredient-list li {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2D2D2D;
+            margin-bottom: 15px;
+            padding-left: 22px;
+            position: relative;
+        }
+
+        .ingredient-list li::before {
+            content: "•";
+            color: var(--bordeaux);
+            font-weight: bold;
+            font-size: 22px;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        .ingredient-list strong {
+            color: var(--bordeaux);
+            font-weight: 700;
+        }
+
         /* ЛУКСУЗЕН ФУТЕР */
         footer {
             background-color: #1A0A0D;
             color: var(--white);
             text-align: center;
             padding: 50px 20px;
-            margin-top: 80px;
+            margin-top: 0;
             border-top: 2px solid var(--gold);
         }
 
@@ -410,7 +490,7 @@
             .brand-name-header { font-size: 26px; }
             .hero { flex-direction: column; padding: 50px 25px; text-align: center; }
             .hero-content h1 { font-size: 38px; }
-            .products-section { padding: 60px 25px; }
+            .products-section, .blog-section { padding: 60px 25px; }
             .about-section { padding: 60px 25px; }
         }
     </style>
@@ -460,7 +540,7 @@
         </div>
     </section>
 
-    <!-- ПРОИЗВОДИ (6-ТЕ МЕНИЈА СО ЛИНКОВИ НА СЛИКИТЕ ДО БЛОГОТ) -->
+    <!-- ПРОИЗВОДИ (6-ТЕ МЕНИЈА СО ЛИНКОВИ КОИ ВОДАТ ДО БЛОГОТ НА ИСТАТА СТРАНА) -->
     <section class="products-section" id="products">
         <h2 class="section-title">Нашите Премиум Менија</h2>
         <p class="section-subtitle">Изберете го идеалниот оброк прилагоден на потребите на вашиот миленик</p>
@@ -469,7 +549,7 @@
             <!-- 1. Signature -->
             <div class="product-card">
                 <div class="product-img-wrapper">
-                    <a href="blog.html" title="Прочитај ги сите бенефити">
+                    <a href="#blog-content" title="Прочитај ги сите бенефити">
                         <img src="signature.jpg" alt="Prime Signature Menu" class="product-img">
                     </a>
                 </div>
@@ -490,7 +570,7 @@
             <!-- 2. Beef -->
             <div class="product-card">
                 <div class="product-img-wrapper">
-                    <a href="blog.html" title="Прочитај ги сите бенефити">
+                    <a href="#blog-content" title="Прочитај ги сите бенефити">
                         <img src="beef.jpg" alt="Prime Beef Menu" class="product-img">
                     </a>
                 </div>
@@ -511,7 +591,7 @@
             <!-- 3. Salmon -->
             <div class="product-card">
                 <div class="product-img-wrapper">
-                    <a href="blog.html" title="Прочитај ги сите бенефити">
+                    <a href="#blog-content" title="Прочитај ги сите бенефити">
                         <img src="salmon.jpg" alt="Prime Salmon Menu" class="product-img">
                     </a>
                 </div>
@@ -532,7 +612,7 @@
             <!-- 4. Chicken -->
             <div class="product-card">
                 <div class="product-img-wrapper">
-                    <a href="blog.html" title="Прочитај ги сите бенефити">
+                    <a href="#blog-content" title="Прочитај ги сите бенефити">
                         <img src="chicken.jpg" alt="Prime Chicken Menu" class="product-img">
                     </a>
                 </div>
@@ -553,7 +633,7 @@
             <!-- 5. Pork -->
             <div class="product-card">
                 <div class="product-img-wrapper">
-                    <a href="blog.html" title="Прочитај ги сите бенефити">
+                    <a href="#blog-content" title="Прочитај ги сите бенефити">
                         <img src="pork.jpg" alt="Prime Pork Menu" class="product-img">
                     </a>
                 </div>
@@ -574,7 +654,7 @@
             <!-- 6. Snow-White Coat -->
             <div class="product-card">
                 <div class="product-img-wrapper">
-                    <a href="blog.html" title="Прочитај ги сите бенефити">
+                    <a href="#blog-content" title="Прочитај ги сите бенефити">
                         <img src="snowwhite.jpg" alt="Snow-White Coat Menu" class="product-img">
                     </a>
                 </div>
@@ -590,6 +670,61 @@
                         <a href="mailto:tvoj@email.com?subject=Нарачка%20за%20Snow-White%20Coat" class="btn-order">Нарачај</a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- БЛОГ СЕКЦИЈА СО ДЕТАЛНИ РЕЦЕПТИ И БЕНЕФИТИ -->
+    <section class="blog-section" id="blog-content">
+        <div class="blog-container">
+            <h2>Тајните на нашите рецепти: Здравје во секоја чинија</h2>
+            <p class="blog-intro">Откријте зошто секоја состојка во Prime Balance има пресудна улога за здравјето, виталноста и долгиот живот на вашето куче.</p>
+
+            <!-- 1. Snow-White Coat -->
+            <div class="recipe-block">
+                <h3>❄️ Snow-White Coat (Специјална едиција)</h3>
+                <p>Врвен баланс на лесно сварливо бело месо и нутритивно богато посно свинско, збогатено со двоен рибен комплекс. Формулирано за елиминирање на дамките од солзи, поддршка на имунитетот и одржување на совршено бело, густо влакно.</p>
+                <ul class="ingredient-list">
+                    <li><strong>Мисиркино месо (чисто):</strong> Лесно сварливо бело месо со ниско ниво на порфирини, чувар на белината околу очите.</li>
+                    <li><strong>Посно свинско месо (кртина):</strong> Богато со цинк и Б-витамини за обнова на кожата и неверојатен вкус.</li>
+                    <li><strong>Ослич (Бела риба):</strong> Нискокалоричен протеин кој не го оптоварува стомакот и ја одржува идеалната тежина.</li>
+                    <li><strong>Лосос филети:</strong> Омега-3 бустер за елиминирање на сува кожа и давање на свиленкаст изложбен сјај.</li>
+                    <li><strong>Пилешки џигер:</strong> Природен мултивитамин кој обезбедува есенцијален Витамин А и железо за силен имунитет.</li>
+                    <li><strong>Сладок компир (варен):</strong> Сложен јаглен хидрат кој бавно ослободува енергија и е перфектен за чувствителен дигестивен систем.</li>
+                    <li><strong>Тиквичка и целер:</strong> Растителни влакна за одлична дигестија; целерот природно го освежува здивот.</li>
+                    <li><strong>Кокосово масло:</strong> Природен антибактериски додаток кој спречува чешање и перутање под густото влакно.</li>
+                    <li><strong>Шумско овошје:</strong> Моќни антиоксиданси за клеточна заштита.</li>
+                    <li><strong>Мелена лушпа од јајце:</strong> Најбезбедниот природен извор на неопходниот калциум во зготвен оброк без коски.</li>
+                </ul>
+            </div>
+
+            <!-- 2. Prime Signature -->
+            <div class="recipe-block">
+                <h3>🥩 Prime Signature: Нашата Совршена Формула</h3>
+                <p>Ние не користиме полнила. Секоја состојка е внимателно одбрана со една единствена цел – да донесе видлива здравствена придобивка. Ова е научно избалансирана виталност.</p>
+                <ul class="ingredient-list">
+                    <li><strong>Јунешко месо:</strong> Чист, висококвалитетен протеин кој гради цврста мускулна маса и обезбедува долготрајна енергија.</li>
+                    <li><strong>Свеж лосос:</strong> Природен извор на Омега-3 масни киселини за беспрекорен сјај на крзното и здрава кожа.</li>
+                    <li><strong>Пилешко месо:</strong> Лесно сварлив протеин кој ја поддржува севкупната виталност и одржува силен скелет.</li>
+                    <li><strong>Варен компир:</strong> Внимателно дозиран извор на јаглехидрати за лесно варење и стабилна енергија.</li>
+                    <li><strong>Свеж зеленчук (Морков, Тиквица):</strong> Богаство од природни растителни влакна за здрав стомак и дигестија.</li>
+                    <li><strong>Јунешки џигер:</strong> МуЛтивитаминска бомба есенцијална за Витамин А и силен имунитет.</li>
+                    <li><strong>Јунешки бубрег:</strong> Извор на Б-група витамини и природно железо за одлична крвна слика.</li>
+                    <li><strong>Препеличино јајце:</strong> Висококонцентриран извор на холин и чисти протеини за фокус и развој.</li>
+                    <li><strong>Шумско овошје:</strong> Природни антиоксиданси за заштита на клетките.</li>
+                </ul>
+            </div>
+
+            <!-- 3. Основни едиции -->
+            <div class="recipe-block">
+                <h3>🌟 Основните едиции (Beef, Salmon, Chicken, Pork)</h3>
+                <p>Создадени по истите високи стандарди, прилагодени за кучиња со специфични вкусови или потреби во исхраната:</p>
+                <ul class="ingredient-list">
+                    <li><strong>Prime Beef Edition:</strong> Моќен оброк со чисто јунешко месо за цврста мускулна маса и издржливост кај активни кучиња.</li>
+                    <li><strong>Prime Salmon Edition:</strong> Богата порција свеж лосос со висок процент на Омега-3 за спектакуларно сјајно крзно.</li>
+                    <li><strong>Prime Chicken Edition:</strong> Нежен и лесно сварлив оброк за кучиња со чувствителен стомак и секојдневна лесна енергија.</li>
+                    <li><strong>Prime Pork Edition:</strong> Исклучително вкусен оброк од посно свинско месо, богат со цинк, идеален за пребирливи миленици.</li>
+                </ul>
             </div>
         </div>
     </section>
