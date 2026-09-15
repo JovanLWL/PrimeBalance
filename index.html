@@ -32,6 +32,13 @@
             -webkit-font-smoothing: antialiased;
         }
 
+        /* УНИВЕРЗАЛЕН СТИЛ ЗА СИТЕ НАСЛОВИ: БОЛДИРАНИ И СО СЈАЈНО БОРДО */
+        h1, h2, h3, .section-title, .brand-name-header, .about-container h2, .blog-container h2, .recipe-block h3, .product-card h3 a {
+            font-weight: 800;
+            color: var(--bordeaux);
+            text-shadow: 0 2px 12px rgba(115, 0, 16, 0.15);
+        }
+
         /* СВЕТЛЕН ХЕДЕР СО НЕЖНА БОРДО НИЈАНСА */
         header {
             display: flex;
@@ -62,9 +69,7 @@
         .brand-name-header {
             font-family: 'Cormorant Garamond', serif;
             font-size: 48px;
-            font-weight: 800;
             letter-spacing: 3px;
-            color: var(--bordeaux);
             text-transform: uppercase;
         }
 
@@ -164,8 +169,6 @@
         .hero-content h1 {
             font-family: 'Cormorant Garamond', serif;
             font-size: 48px;
-            font-weight: 800;
-            color: var(--bordeaux);
             margin-bottom: 16px;
             line-height: 1.1;
         }
@@ -229,9 +232,7 @@
         .about-container h2 {
             font-family: 'Cormorant Garamond', serif;
             font-size: 36px;
-            color: var(--bordeaux);
             margin-bottom: 15px;
-            font-weight: 800;
         }
 
         .about-container p {
@@ -262,9 +263,7 @@
             text-align: center;
             font-family: 'Cormorant Garamond', serif;
             font-size: 38px;
-            color: var(--bordeaux);
             margin-bottom: 8px;
-            font-weight: 800;
         }
 
         .section-subtitle {
@@ -331,9 +330,7 @@
         .product-card h3 a {
             font-family: 'Cormorant Garamond', serif;
             font-size: 24px;
-            color: var(--bordeaux);
             text-decoration: none;
-            font-weight: 700;
             transition: var(--transition);
         }
 
@@ -426,9 +423,7 @@
         .blog-container h2 {
             font-family: 'Cormorant Garamond', serif;
             font-size: 38px;
-            color: var(--bordeaux);
             margin-bottom: 12px;
-            font-weight: 800;
             text-align: center;
         }
 
@@ -476,8 +471,6 @@
         .recipe-block h3 {
             font-family: 'Cormorant Garamond', serif;
             font-size: 28px;
-            color: var(--bordeaux);
-            font-weight: 800;
         }
 
         .back-to-food-btn {
@@ -547,8 +540,8 @@
         .nutrition-title {
             font-family: 'Cormorant Garamond', serif;
             font-size: 20px;
-            color: var(--bordeaux);
             font-weight: 800;
+            color: var(--bordeaux);
             margin-bottom: 12px;
             border-bottom: 1px solid rgba(212, 175, 55, 0.3);
             padding-bottom: 6px;
@@ -649,7 +642,6 @@
         .cart-header h3 {
             font-family: 'Cormorant Garamond', serif;
             font-size: 28px;
-            color: var(--bordeaux);
         }
 
         .close-cart {
@@ -720,7 +712,6 @@
             transform: translateY(-2px);
         }
 
-        /* НОВА СЈАЈНА БОРДО ПОРАКА ЗА УСПЕШНА НАРАЧКА */
         .success-message {
             display: none;
             text-align: center;
@@ -818,7 +809,7 @@
                     </a>
                 </div>
                 <div class="product-info">
-                    <h3><a href="#blog-signature" style="text-decoration:none; color:var(--bordeaux);" data-mk="Prime Signature" data-en="Prime Signature" data-al="Prime Signature">Prime Signature</a></h3>
+                    <h3><a href="#blog-signature" data-mk="Prime Signature" data-en="Prime Signature" data-al="Prime Signature">Prime Signature</a></h3>
                     <p data-mk="Нашиот докажан, мулти-протеински рецепт кој нуди врвна виталност и силен имунитет. Совршен баланс за севкупно здравје и енергија." data-en="Our proven, multi-protein recipe offering top vitality and strong immunity. Perfect balance for overall health and energy." data-al="Receta jonë e provuar me shumë proteina që ofron vitalitet të lartë dhe imunitet të fortë. Balancë e përsosur për shëndetin dhe energjinë e përgjithshme.">Нашиот докажан, мулти-протеински рецепт кој нуди врвна виталност и силен имунитет. Совршен баланс за севкупно здравје и енергија.</p>
                     <div class="card-feeding-preview">
                         <strong data-mk="Препорачана доза (10kg куче):" data-en="Recommended dose (10kg dog):" data-al="Dozë e rekomanduar (qen 10kg):">Препорачана доза (10kg куче):</strong> 300g - 380g дневно
@@ -839,7 +830,7 @@
                     </a>
                 </div>
                 <div class="product-info">
-                    <h3><a href="#blog-beef" style="text-decoration:none; color:var(--bordeaux);" data-mk="Prime Beef Edition" data-en="Prime Beef Edition" data-al="Prime Beef Edition">Prime Beef Edition</a></h3>
+                    <h3><a href="#blog-beef" data-mk="Prime Beef Edition" data-en="Prime Beef Edition" data-al="Prime Beef Edition">Prime Beef Edition</a></h3>
                     <p data-mk="Моќен оброк базиран на јунешко месо, дизајниран за градење цврста мускулна маса и долготрајна издржливост кај активни кучиња." data-en="A powerful meal based on beef, designed for building solid muscle mass and long-lasting endurance in active dogs." data-al="Një vakt i fuqishëm i bazuar në mish viçi, i krijuar për të ndërtuar masë të fortë muskulore dhe qëndrueshmëri afatgjatë te qentë aktivë.">Моќен оброк базиран на јунешко месо, дизајниран за градење цврста мускулна маса и долготрајна издржливост кај активни кучиња.</p>
                     <div class="card-feeding-preview">
                         <strong data-mk="Препорачана доза (10kg куче):" data-en="Recommended dose (10kg dog):" data-al="Dozë e rekomanduar (qen 10kg):">Препорачана доза (10kg куче):</strong> 280g - 350g дневно
@@ -860,7 +851,7 @@
                     </a>
                 </div>
                 <div class="product-info">
-                    <h3><a href="#blog-salmon" style="text-decoration:none; color:var(--bordeaux);" data-mk="Prime Salmon Edition" data-en="Prime Salmon Edition" data-al="Prime Salmon Edition">Prime Salmon Edition</a></h3>
+                    <h3><a href="#blog-salmon" data-mk="Prime Salmon Edition" data-en="Prime Salmon Edition" data-al="Prime Salmon Edition">Prime Salmon Edition</a></h3>
                     <p data-mk="Богата порција свеж лосос која изобилува со Омега-3 масни киселини. Создадена специјално за беспрекорно сјајно крзно и здрава кожа." data-en="A rich portion of fresh salmon abundant in Omega-3 fatty acids. Created specifically for a flawlessly shiny coat and healthy skin." data-al="Një pjesë e pasur me salmon të freskët që abson me acide yndyrore Omega-3. Krijuar posaçërisht për një gëzof të ndritshëm dhe lëkurë të shëndetshme.">Богата порција свеж лосос која изобилува со Омега-3 масни киселини. Создадена специјално за беспрекорно сјајно крзно и здрава кожа.</p>
                     <div class="card-feeding-preview">
                         <strong data-mk="Препорачана доза (10kg куче):" data-en="Recommended dose (10kg dog):" data-al="Dozë e rekomanduar (qen 10kg):">Препорачана доза (10kg куче):</strong> 250g - 320g дневно
@@ -881,7 +872,7 @@
                     </a>
                 </div>
                 <div class="product-info">
-                    <h3><a href="#blog-chicken" style="text-decoration:none; color:var(--bordeaux);" data-mk="Prime Chicken Edition" data-en="Prime Chicken Edition" data-al="Prime Chicken Edition">Prime Chicken Edition</a></h3>
+                    <h3><a href="#blog-chicken" data-mk="Prime Chicken Edition" data-en="Prime Chicken Edition" data-al="Prime Chicken Edition">Prime Chicken Edition</a></h3>
                     <p data-mk="Лесен и лесно сварлив оброк со врвно пилешко месо, исклучително нежен за стомакот. Обезбедува чист протеин за секојдневна енергија." data-en="A light and easily digestible meal with premium chicken meat, exceptionally gentle on the stomach. Provides clean protein for daily energy." data-al="Një vakt i lehtë dhe lehtësisht i tretshëm me mish pule premium, jashtëzakonisht i butë për stomakun. Siguron proteina të pastra për energji ditore.">Лесен и лесно сварлив оброк со врвно пилешко месо, исклучително нежен за стомакот. Обезбедува чист протеин за секојдневна енергија.</p>
                     <div class="card-feeding-preview">
                         <strong data-mk="Препорачана доза (10kg куче):" data-en="Recommended dose (10kg dog):" data-al="Dozë e rekomanduar (qen 10kg):">Препорачана доза (10kg куче):</strong> 320g - 400g дневно
@@ -902,7 +893,7 @@
                     </a>
                 </div>
                 <div class="product-info">
-                    <h3><a href="#blog-pork" style="text-decoration:none; color:var(--bordeaux);" data-mk="Prime Pork Edition" data-en="Prime Pork Edition" data-al="Prime Pork Edition">Prime Pork Edition</a></h3>
+                    <h3><a href="#blog-pork" data-mk="Prime Pork Edition" data-en="Prime Pork Edition" data-al="Prime Pork Edition">Prime Pork Edition</a></h3>
                     <p data-mk="Исклучително вкусен оброк од посно свинско месо, богат со цинк и Б-витамини. Совршено решение за пребирливи кучиња кое ја штити кожата." data-en="An exceptionally tasty meal of lean pork, rich in zinc and B-vitamins. The perfect solution for picky dogs that protects the skin." data-al="Një vakt jashtëzakonisht i shijshëm me mish derri të dobët, i pasur me zink dhe vitamina B. Zgjidhja e përsosur për qentë e zgjedhur që mbron lëkurën.">Исклучително вкусен оброк од посно свинско месо, богат со цинк и Б-витамини. Совршено решение за пребирливи кучиња кое ја штити кожата.</p>
                     <div class="card-feeding-preview">
                         <strong data-mk="Препорачана доза (10kg куче):" data-en="Recommended dose (10kg dog):" data-al="Dozë e rekomanduar (qen 10kg):">Препорачана доза (10kg куче):</strong> 290g - 360g дневно
@@ -923,7 +914,7 @@
                     </a>
                 </div>
                 <div class="product-info">
-                    <h3><a href="#blog-snowwhite" style="text-decoration:none; color:var(--bordeaux);" data-mk="Snow-White Coat (Специјална едиција)" data-en="Snow-White Coat (Special Edition)" data-al="Snow-White Coat (Edicion Special)">Snow-White Coat (Специјална едиција)</a></h3>
+                    <h3><a href="#blog-snowwhite" data-mk="Snow-White Coat (Специјална едиција)" data-en="Snow-White Coat (Special Edition)" data-al="Snow-White Coat (Edicion Special)">Snow-White Coat (Специјална едиција)</a></h3>
                     <p data-mk="Формула со мисиркино месо и бела риба која природно ги елиминира црвените дамки околу очите. Вашиот сојузник за совршено бело влакно." data-en="Formula with turkey and white fish that naturally eliminates tear stains around the eyes. Your ally for a perfectly white coat." data-al="Formulë me mish gjeldeti dhe peshk të bardhë që eliminon në mënyrë natyrale njollat ​​e lotëve rreth syve. Aleati juaj për një qime krejtësisht të bardhë.">Формула со мисиркино месо и бела риба која природно ги елиминира црвените дамки околу очите. Вашиот сојузник за совршено бело влакно.</p>
                     <div class="card-feeding-preview">
                         <strong data-mk="Препорачана доза (10kg куче):" data-en="Recommended dose (10kg dog):" data-al="Dozë e rekomanduar (qen 10kg):">Препорачана доза (10kg куче):</strong> 310g - 390g дневно
@@ -938,7 +929,7 @@
         </div>
     </section>
 
-    <!-- СТРУЧНА БЛОГ СЕКЦИЈА НА ИСТАТА СТРАНИЦА (БЕЗ ЦЕЛЕР И БЕЗ НАУЧНИ ТЕРМИНИ) -->
+    <!-- СТРУЧНА БЛОГ СЕКЦИЈА НА ИСТАТА СТРАНИЦА -->
     <section class="blog-section" id="blog-content">
         <div class="blog-container">
             <h2 data-mk="Тајните на нашите рецепти: Здравје во секоја чинија" data-en="The Secrets of Our Recipes: Health in Every Bowl" data-al="Sekretet e Recetave Tona: Shëndet në Çdo Pjatë">Тајните на нашите рецепти: Здравје во секоја чинија</h2>
